@@ -1,0 +1,40 @@
+# Statidocs default config
+title: Statidocs
+baseline: Build a documentation website quickly
+baseurl: /
+description: Write your pages in Markdown, customize templates with Twig and Tailwind CSS, and enjoy the power of Cecil static site generator.
+author:
+  name: Arnaud Ligny
+  url: https://arnaudligny.fr
+image: og-card.png
+menus:
+  main:
+    - id: index
+      enabled: false
+    - id: docs
+      weight: 0
+sidebar: # docs groups in /pages/docs/
+  - SMS
+  - VOIX
+footer: Copyright © %author%
+github:
+  url: https://github.com/Cecilapp/statidocs
+  repo: https://github.com/Cecilapp/statidocs
+  branch: main
+docsearch:
+  enabled: false
+  # statidocs.cecil.app credentials
+  appId: F5QE72IRAL
+  indexName: staticecil
+  apiKey: b165b7766201deabe0be660ca0bdab94
+  insights: true
+
+# Cecil config for Statidocs
+theme:
+  - docs
+  - pwa
+serviceworker:
+  enabled: false
+metatags:
+  jsonld:
+    enabled: true

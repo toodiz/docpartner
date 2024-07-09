@@ -1,0 +1,29 @@
+{
+  "name": "cecil/statidocs",
+  "description": "Create and manage an effective documentation.",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Arnaud Ligny",
+      "email": "arnaud@ligny.fr",
+      "homepage": "https://arnaudligny.fr",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "cecil/theme-docs": "^2.27",
+    "cecil/theme-pwa": "^2.7"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "curl -sOL https://cecil.app/cecil.phar",
+      "php cecil.phar -V"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  }
+}
