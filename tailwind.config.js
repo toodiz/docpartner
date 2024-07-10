@@ -8,6 +8,12 @@ module.exports = {
   content: [
     './layouts/**/*.html.twig',
     './themes/**/layouts/**/*.html.twig',
+   './themes/**/includes/**/*.html.twig',
+   './themes/**/partials/**/*.html.twig',
+   './themes/**/assets/js/**/*.js',
+   './themes/**/assets/css/**/*.css',
+   
+
   ],
   // uncomment to define custom colors
   /*theme: {

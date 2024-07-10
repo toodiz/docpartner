@@ -4,8 +4,8 @@ baseline: Build a documentation website quickly
 baseurl: /
 description: Write your pages in Markdown, customize templates with Twig and Tailwind CSS, and enjoy the power of Cecil static site generator.
 author:
-  name: Arnaud Ligny
-  url: https://arnaudligny.fr
+  name: NDA MEDIA
+  url: https://ndamedia.fr/
 image: og-card.png
 menus:
   main:
@@ -16,7 +16,8 @@ menus:
 sidebar: # docs groups in /pages/docs/
   - SMS
   - VOIX
-footer: Copyright © %author%
+footer: Copyright © 2014 - 2023 %author%
+
 github:
   url: https://github.com/Cecilapp/statidocs
   repo: https://github.com/Cecilapp/statidocs
