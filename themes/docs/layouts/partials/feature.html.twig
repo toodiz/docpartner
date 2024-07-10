@@ -1,0 +1,7 @@
+              {#- feature ~#}
+              <section class="px-5 py-5 rounded-xl bg-primary-100 dark:dark:bg-primary-900 h-full">
+                <h3 class="font-semibold text-lg mb-2">{{ feature.title }}</h3>
+                <div class="text-secondary-600 dark:text-secondary-400 font-normal">
+                  {{ feature.description|markdown_to_html }}
+                </div>
+              </section>

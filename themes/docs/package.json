@@ -1,0 +1,8 @@
+{
+  "name": "theme-docs",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5",
+    "postcss-import": "^15.1.0",
+    "tailwindcss": "^3.4"
+  }
+}

@@ -1,0 +1,122 @@
+{% extends '_default/page.html.twig' %}
+
+    {%- block styles ~%}
+    {%- set styles = styles|merge(['https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.min.css']) ~%}
+    {%- endblock styles ~%}
+
+    {%- block sidebar ~%}
+      {%- embed 'partials/sidebar.html.twig' with {'showlarge': true} ~%}
+        {%- block navigation ~%}
+        <div class="pt-4">
+          {%- for group in site.sidebar ~%}
+            {%- if site.page('docs/' ~ group|slugify) ~%}
+              {%- set group_title = site.page('docs/' ~ group|slugify).title ~%}
+            {%- else ~%}
+              {%- set group_title = group ~%}
+            {%- endif ~%}
+            {%- set group_pages = site.pages.showable|filter(p => p.folder == 'docs/' ~ group|slugify) ~%}
+            {%- if group_pages|length > 0 ~%}
+          <div class="group-title">{{ group_title|trans }}</div>
+          <ol>
+            {#-{%- for p in site.pages.showable|filter(p => p.path matches '{^docs/' ~ group|slugify ~ '}') ~%}~#}
+            {%- for p in site.pages.showable|filter(p => p.folder == 'docs/' ~ group|slugify) ~%}
+            <li>
+              <a href="{{ url(p) }}" class="flex{% if url(p) == url(page) %} active{% endif %}">{{ p.title }}</a>
+            </li>
+            {%- endfor ~%}
+          </ol>
+            {%- endif ~%}
+          {%- endfor ~%}
+        </div>
+        {%- endblock navigation ~%}
+      {%- endembed ~%}
+    {%- endblock sidebar ~%}
+
+      {%- block article ~%}
+      <div class="flex">
+        <div class="w-full lg:ml-72 px-4 xl:px-16 py-6">
+          {#- "On this page" ~#}
+          <details class="mb-4 xl:hidden rounded-md bg-primary-100 dark:bg-primary-950 px-2 py-1">
+            <summary class="cursor-pointer text-sm uppercase text-secondary-600 dark:text-secondary-300">
+              {% trans %}On this page{% endtrans ~%}
+            </summary>
+            {{ page.body|toc }}
+          </details>
+          <article id="content" class="markdown markdown-slate markdown-a:text-primary-700 markdown-a:no-underline markdown-a:font-normal markdown-code:max-w-none dark:markdown-invert max-w-none">
+            {%- block content ~%}
+            {{ page.content }}
+            {%- endblock content ~%}
+          </article>
+          <footer class="mt-6">
+            {{- include('partials/github-edit.html.twig') ~}}
+          </footer>
+          {{- include('partials/nav-prev-next.html.twig') ~}}
+        </div>
+        {#- "On this page" ToC ~#}
+        <div>
+          <aside id="on-this-page" class="hidden xl:block py-6 w-64 text-secondary-500 dark:text-secondary-300 sticky top-[80px]">
+            <nav>
+              <div class="flex space-x-2 items-center mb-2 font-semibold text-sm uppercase tracking-wider">
+                <span>{% trans %}On this page{% endtrans %}</span>
+                <a href="#main" class="flex items-center text-secondary-500 dark:text-secondary-300" aria-label="{% trans %}Back to top{% endtrans %}" title="{% trans %}Back to top{% endtrans %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" /></svg>
+                </a>
+              </div>
+              <div id="on-this-page-toc">
+                {{ page.body|toc }}
+              </div>
+            </nav>
+            <div class="pt-4 mt-5 border-t border-secondary-400 dark:border-secondary-500">
+              {{- include('partials/github-edit.html.twig') ~}}
+            </div>
+          </aside>
+        </div>
+      </div>
+      {%- endblock article ~%}
+
+    {%- block scripts ~%}
+    {{- parent() ~}}
+    {{- asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.min.js', {minify: false})|html ~}}
+    {{- asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/' ~ site.jquery.version ~ '/jquery.slim.min.js', {minify: false})|html({integrity: 'sha512-5NqgLBAYtvRsyAzAvEBWhaW+NoB+vARl6QiA02AFMhCWvPpi7RWResDcTGYvQtzsHVCfiUhwvsijP+3ixUk1xw==', crossorigin: 'anonymous'}) }}
+    <script>
+      {%- apply minify_js ~%}
+      {# toc #}
+      tocbot.init({
+        tocSelector: '#on-this-page-toc',
+        contentSelector: '#content',
+        headingSelector: 'h2, h3',
+        hasInnerContainers: true,
+        scrollSmooth: false,
+        headingsOffset: 70,
+        scrollSmoothOffset: -70,
+      });
+      {# scroll top #}
+      window.addEventListener('scroll', function (e) {
+        document.getElementById('button-top').classList.add('opacity-0');
+        if (window.scrollY > 300) {
+          document.getElementById('button-top').classList.remove('opacity-0');
+        }
+      });
+      {# article anchor #}
+      $(function () {
+        $('article h2, article h3').each(function () {
+          var url = document.URL.replace(/#.*$/, "") + '#' + $(this).attr('id');
+          $(this).append('<a class="anchor-title" href="' + url + '">#</a>');
+        });
+      });
+      {%- endapply ~%}
+    </script>
+    {# mermaid #}
+    {{- asset('https://cdn.jsdelivr.net/npm/mermaid@' ~ site.mermaid.version ~ '/dist/mermaid.min.js', {minify: false})|html({id: 'mermaid', defer: 'true'}) ~}}
+    <script>
+      {%- apply minify_js ~%}
+      mermaid.addEventListener('load', function () {
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync('pre:has(> code.language-mermaid){background-color: inherit;}');
+        document.adoptedStyleSheets.push(sheet);
+        mermaid.initialize({ startOnLoad: false, theme: document.documentElement.dataset.theme == 'dark' ? 'dark' : 'default' });
+        mermaid.run({querySelector: '.language-mermaid'});
+      });
+      {%- endapply ~%}
+    </script>
+    {%- endblock scripts ~%}

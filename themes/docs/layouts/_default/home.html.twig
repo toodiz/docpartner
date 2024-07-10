@@ -1,0 +1,18 @@
+{% extends '_default/page.html.twig' %}
+
+    {%- block article ~%}
+      <div class="flex-col">
+        {#- blocks ~#}
+        {%- for block in page.blocks|default ~%}
+        {{- include('partials/blocks/' ~ block.name ~ '.html.twig', ignore_missing = true) ~}}
+        {%- endfor ~%}
+        {#- content ~#}
+        {%- if page.content ~%}
+        <article id="content" class="markdown markdown-slate markdown-a:text-primary-700 markdown-a:no-underline markdown-a:font-normal markdown-code:max-w-none dark:markdown-invert max-w-2xl mx-auto px-6 md:px-0 py-6">
+          {%- block content ~%}
+          {{ page.content }}
+          {%- endblock content ~%}
+        </article>
+        {%- endif ~%}
+      </div>
+    {%- endblock article ~%}

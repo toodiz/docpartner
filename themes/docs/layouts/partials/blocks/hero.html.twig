@@ -1,0 +1,21 @@
+        {#- hero ~#}
+        <section id="{{ block.name }}" class="px-4 md:px-8 lg:px-14 xl:px-24 py-6 pt-14 md:pt-20 lg:pt-36">
+          <div class="max-w-screen-xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-4">
+              {%- if block.image is defined ~%}
+              <div class="-mt-8 lg:mt-0 lg:order-2 w-2/3 lg:w-full max-w-80 mx-auto text-center drop-shadow-2xl shadow-primary-700">
+                {{ asset(block.image)|html(attributes={alt:'', class:'inline'}) }}
+              </div>
+              {%- endif ~%}
+              <div class="lg:col-span-2">
+                <div class="flex flex-col space-y-8 justify-center text-center lg:justify-start lg:text-left">
+                  <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight">
+                    <span class="font-semibold text-primary-700">{{ site.title }}</span><br>
+                    {{ site.baseline}}
+                  </h1>
+                  <div class="font-light text-xl lg:text-2xl">{{ block.description|markdown_to_html }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>

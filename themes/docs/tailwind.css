@@ -1,0 +1,163 @@
+@import "./tailwind-notes.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* links */
+  main a,
+  footer a {
+    @apply text-primary-700 dark:text-primary-400;
+  }
+  main a:hover,
+  footer a:hover {
+    @apply underline;
+  }
+  /* hx */
+  h1, h2, h3, h4 {
+    @apply text-primary-950;
+    @apply dark:text-secondary-100;
+  }
+  /* header */
+  header a {
+    @apply hover:no-underline
+  }
+  header .navbar-item {
+    @apply text-primary-100 hover:text-primary-50;
+  }
+  /* sidebar */
+  #sidebar div.group-title {
+    @apply uppercase font-semibold text-sm text-secondary-600 dark:text-secondary-200;
+  }
+  #sidebar ol {
+    @apply list-none p-0 mb-2;
+  }
+  #sidebar ol:last-child {
+    @apply mb-0;
+  }
+  #sidebar li {
+    @apply my-1;
+  }
+  #sidebar li:last-child {
+    @apply mb-0;
+  }
+  #sidebar li>a {
+    @apply text-secondary-800 dark:text-secondary-300 px-2.5 py-1.5 no-underline font-medium;
+  }
+  #sidebar li>a.active,
+  #sidebar li>a:hover {
+    @apply rounded bg-primary-200 dark:text-secondary-800;
+  }
+  #sidebar li>a.active {
+    @apply text-primary-700;
+  }
+  /* on this page */
+  main details li {
+    @apply m-200;
+  }
+  main details a,
+  main details a:hover {
+    @apply no-underline text-inherit;
+  }
+  /* article */
+  article.markdown figcaption,
+  article.markdown .note a {
+    @apply text-inherit;
+  }
+  article .anchor-title {
+    @apply pl-2;
+  }
+  /* on this page ToC */
+  #on-this-page ul {
+    @apply list-none;
+  }
+  #on-this-page-toc,
+  #on-this-page-toc a {
+    @apply text-primary-700 dark:text-primary-400;
+  }
+}
+
+@layer components {
+  /* selectors */
+  .formselect {
+    @apply p-1 border rounded-sm border-primary-50 border-opacity-25;
+  }
+  #sidebar .formselect {
+    @apply border-none;
+  }
+  .selector {
+    @apply border-0 cursor-pointer bg-inherit text-inherit;
+  }
+  .selector:hover {
+    @apply text-inherit;
+  }
+  .selector option {
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-950 dark:text-secondary-100;
+  }
+}
+
+/* DocSearch */
+/* should usse variables? https://github.com/algolia/docsearch/blob/df60b8ebe89c80ce3d00b80d94e95b6fd86edd19/packages/docsearch-css/src/_variables.css */
+.DocSearch.DocSearch-Button {
+  @apply w-full lg:w-48 rounded m-0 lg:px-4 py-2 bg-primary-800 focus:outline-none focus:bg-primary-700 shadow-inner cursor-pointer;
+  @apply max-lg:bg-transparent;
+  @apply max-lg:shadow-none;
+}
+.DocSearch .DocSearch-Button-Placeholder {
+  @apply text-primary-100 font-light;
+  @apply pl-3;
+}
+.DocSearch-Button-Keys {
+  display: none;
+}
+.DocSearch-Button .DocSearch-Search-Icon,
+.DocSearch-Search-Icon {
+  @apply text-primary-100;
+}
+.DocSearch-Form {
+  @apply text-primary-100 bg-primary-800 shadow-none;
+}
+.DocSearch-Input {
+  @apply text-primary-100;
+}
+.DocSearch-Input::placeholder {
+  @apply text-primary-100;
+}
+.DocSearch-Cancel {
+  @apply text-primary-800;
+}
+.DocSearch-Hit-source {
+  @apply text-primary-800;
+}
+.DocSearch-Hit[aria-selected=true] a {
+  @apply bg-primary-800;
+}
+.DocSearch-Hits mark {
+  @apply text-primary-800;
+}
+
+/* highlight code */
+.hljs {
+  @apply bg-transparent;
+}
+code.hljs {
+  @apply p-0;
+}
+pre code.hljs {
+  @apply p-0;
+}
+
+/* tocbot */
+.toc-list {
+  @apply pl-0;
+}
+.toc-list .is-collapsible {
+  @apply pl-[10px];
+}
+.toc-link::before {
+  @apply hidden;
+}
+.is-active-link {
+  @apply font-semibold;
+}

@@ -1,0 +1,48 @@
+pages:
+  default:
+    manifest:
+      path: manifest
+      output: webmanifest
+    serviceworker:
+      path: serviceworker
+      layout: serviceworker
+      output: js
+      multilingual: false
+      serviceworker:
+        precache: false
+    offline:
+      path: offline
+      layout: offline
+      output: html
+      uglyurl: true
+manifest:
+  background_color: '#FFFFFF'
+  theme_color: '#202020'
+  icons:
+    - icon-192x192.png
+    - icon-512x512.png
+    - src: icon-192x192-maskable.png
+      purpose: maskable
+    - src: icon-512x512-maskable.png
+      purpose: maskable
+  shortcuts: false
+serviceworker:
+  enabled: false
+  install:
+    prompt: true # show install prompt
+    precache:
+      pages:
+        limit: false # number or false
+      #assets:
+      #  - images/example.png
+  update:
+    snackbar:
+      enabled: false # show Snackbar message
+    notification:
+      enabled: false # show notification
+  cache:
+    request: reload # 'reload' or 'default'
+  offline:
+    page: offline # offline page ID
+    snackbar:
+      enabled: false # show Snackbar message

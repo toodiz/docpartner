@@ -1,0 +1,26 @@
+    {#- sidebar ~#}
+    <div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-0 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-primary-100 dark:bg-primary-900 shadow-md lg:shadow-none -translate-x-full {% if showlarge %}lg:translate-x-0{% endif %} transition-all duration-200 ease-out">
+      <div class="lg:hidden flex items-center h-14 pl-4 py-3">
+        {{- include('partials/title.html.twig') ~}}
+      </div>
+      <nav class="px-4 divide-y divide-secondary-400 lg:divide-y-0">
+        {#- main menu ~#}
+        <div class="flex lg:hidden mb-4 lg:mb-0">
+          <ol class="w-full">
+            {{- include('partials/menu.html.twig') ~}}
+          </ol>
+        </div>
+        {#- main navigation ~#}
+        {%- block navigation %}{% endblock navigation ~%}
+        {#- selectors ~#}
+        <div class="lg:hidden mt-4 pt-4 flex flex-col space-y-1">
+          {{- include('partials/selector-theme.html.twig', {'id': 'sidebar', 'label': true}) ~}}
+          {{- include('partials/selector-language.html.twig', {'id': 'sidebar', 'label': true}) ~}}
+        </div>
+      </nav>
+      <div class="grow lg:grow-0"></div>
+      <footer class="my-4 text-sm text-center text-secondary-800 dark:text-secondary-300 font-thin">
+        {% trans with {'%powered_by%': '<a href="' ~ cecil.url ~ '">Cecil</a>'} %}Powered by %powered_by%{% endtrans ~%}
+      </footer>
+    </div>
+    <div id="sidebar-cloudywrapper" class="hidden lg:hidden fixed top-0 z-40 w-full h-full bg-black opacity-50" onclick="toggleMenu()"></div>

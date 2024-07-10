@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}" class="scroll-pt-[70px] scroll-smooth overflow-y-scroll">
+<!DOCTYPE html>
+<html lang="{{ site.language }}" class="scroll-pt-[70px] scroll-smooth overflow-y-scroll">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {{- include('partials/metatags.html.twig') ~}}
+    <link rel="manifest" href="{{ url('manifest') }}" />
+    {%- set styles = ['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.highlightjs.version ~ '/styles/github-dark.min.css'] ~%}
+    {%- if site.docsearch.enabled ?? false ~%}
+    <meta name="docsearch:language" content="{{ site.language }}" />
+    <link rel="preconnect" href="https://{{ site.docsearch.appId|default }}-dsn.algolia.net" crossorigin />
+    {%- set styles = styles|merge(['https://cdn.jsdelivr.net/npm/@docsearch/css@' ~ site.docsearch.version]) ~%}
+    {%- endif ~%}
+    {%- block styles %}{% endblock ~%}
+    {%- set styles = styles|merge(['styles.css']) ~%}
+    <style>{{ asset(styles)|inline }}</style>
+  </head>
+  <body class="font-sans antialiased bg-primary-50 dark:bg-primary-950 text-[#050505] dark:text-secondary-100">
+    {#- sidebar ~#}
+    {%- block sidebar ~%}
+      {%- embed 'partials/sidebar.html.twig' with {'showlarge': false} %}{% endembed ~%}
+    {%- endblock sidebar ~%}
+    <header class="fixed top-0 inset-x-0 z-30 flex items-center h-14 px-4 py-3 bg-primary-700 dark:bg-primary-900 shadow-md">
+      {#- sidebar menu button + site title ~#}
+      {{- include('partials/title.html.twig') ~}}
+      {#- main menu ~#}
+      <div class="hidden lg:flex ml-3 items-center">
+        <ol class="flex space-x-6">
+          {{- include('partials/menu.html.twig') ~}}
+        </ol>
+      </div>
+      <div class="grow"></div>
+      {#- DocSearch ~#}
+      {%- if site.docsearch.enabled ?? false ~%}
+      <div id="search-container" class="md:inline-block ml-3 py-2"></div>
+      {%- endif ~%}
+      {#- GitHub link -#}
+      {%- if site.github.url|default ~%}
+      <a href="{{ site.github.url }}" title="{% trans with {'%title%': site.title} %}%title% on GitHub{% endtrans %}" class="navbar-item flex no-underline hover:no-underline ml-3 py-2 items-center">
+        <svg class="fill-current text-inherit hover:text-inherit w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20">
+          <title>{% trans with {'%title%': site.title} %}%title% on GitHub{% endtrans %}</title>
+          <path d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0"></path>
+        </svg>
+        <span class="hidden sm:block sm:ml-2">GitHub</span>
+      </a>
+      {%- endif ~%}
+      {#- selectors ~#}
+      <div class="flex justify-end space-x-2 ml-3">
+        <div class="navbar-item hidden sm:block">
+          {{- include('partials/selector-theme.html.twig') ~}}
+        </div>
+        <div class="navbar-item">
+          {{- include('partials/selector-language.html.twig') ~}}
+        </div>
+      </div>
+    </header>
+    <main id="main" class="h-full mt-14">
+      {%- block article ~%}
+      <div class="w-full lg:max-w-screen-lg mx-auto px-4 xl:px-16 py-6">
+        <article id="content" class="markdown markdown-slate markdown-a:text-primary-700 markdown-a:no-underline markdown-a:font-normal markdown-code:max-w-none dark:markdown-invert max-w-none">
+          {%- block content ~%}
+          {{ page.content }}
+          {%- endblock content ~%}
+        </article>
+      </div>
+      {%- endblock article ~%}
+      <div id="button-top" class="fixed bottom-0 mb-4 right-0 mr-4 z-10 opacity-0 duration-150 ease-in-out">
+        <a href="#main" class="rounded-full border-0 flex items-center justify-center w-10 h-10 bg-primary-700 dark:bg-primary-900 text-primary-100 hover:text-primary-50 shadow-md" aria-label="{% trans %}Back to top{% endtrans %}" title="{% trans %}Back to top{% endtrans %}">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+          </svg>
+        </a>
+      </div>
+    </main>
+<footer id="footer" class="mx-4 p-4 text-sm text-center border-t border-t-secondary-300">
+    <div>
+        <a href="https://www.smspartner.fr/" class="footer-link" target="_blank">SMS PARTNER</a> |
+        <a href="https://mailpartner.fr/" class="footer-link" target="_blank">MAIL PARTNER</a> |
+        <a href="https://www.voicepartner.fr/" class="footer-link" target="_blank">VOICE PARTNER</a> |
+        <a href="https://www.leboncheval.com/" class="footer-link" target="_blank">LE BON CHEVAL</a>
+    </div>
+    <div>&copy; 2014 - 2023 <a href="https://ndamedia.fr/" class="footer-link" target="_blank">NDA MEDIA</a>. Tous droits réservés. <a href="https://docpartner.dev/introduction/#" class="footer-link" target="_blank">Mentions légales</a> <a href="https://docpartner.dev/contact/" class="footer-link" target="_blank">Contact</a></div>
+</footer>
+
+    {%- block scripts ~%}
+    <script>
+      {%- apply minify_js ~%}
+      function toggleMenu() {
+        document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        document.getElementById('sidebar-cloudywrapper').classList.toggle('hidden');
+        document.getElementById('sidebar-open').classList.toggle('hidden');
+        document.getElementById('sidebar-close').classList.toggle('hidden');
+      }
+      {%- endapply ~%}
+    </script>
+    {%- if site.docsearch.enabled ?? false ~%}
+    {{ asset('https://cdn.jsdelivr.net/npm/@docsearch/js@' ~ site.docsearch.version ~ '/dist/umd/index.min.js', {filename: 'docsearch.min.js', minify: false})|html({id: 'docsearch', defer: 'true'}) }}
+    <script>
+      {%- apply minify_js ~%}
+      docsearch.addEventListener('load', function () {
+        {{- include('partials/docsearch.js.twig') ~}}
+      });
+      {%- endapply ~%}
+    </script>
+    {%- endif ~%}
+    {{- include('partials/regsw.js.twig', ignore_missing = true) ~}}
+    {%- endblock scripts ~%}
+  </body>
+</html>
