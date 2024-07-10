@@ -1,7 +1,9 @@
 # Statidocs default config
 title: Statidocs
 baseline: Build a documentation website quickly
-baseurl: /
+baseurl: http://localhost:8000/
+copy:
+- /assets/css/*
 description: Write your pages in Markdown, customize templates with Twig and Tailwind CSS, and enjoy the power of Cecil static site generator.
 author:
   name: NDA MEDIA
