@@ -1,15 +1,15 @@
-    {#- sidebar ~#}
-    <div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-0 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-primary-100 dark:bg-primary-900 shadow-md lg:shadow-none -translate-x-full {% if showlarge %}lg:translate-x-0{% endif %} transition-all duration-200 ease-out">
-      <div class="lg:hidden flex items-center h-14 pl-4 py-3">
-        {{- include('partials/title.html.twig') ~}}
-      </div>
-      <nav class="px-4 divide-y divide-secondary-400 lg:divide-y-0">
-        {#- main menu ~#}
-        <div class="flex lg:hidden mb-4 lg:mb-0">
-          <ol class="w-full">
-            {{- include('partials/menu.html.twig') ~}}
-          </ol>
-        </div>
+{#- sidebar ~#}
+<div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-0 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-custom-sidebar shadow-md lg:shadow-none -translate-x-full {% if showlarge %}lg:translate-x-0{% endif %} transition-all duration-200 ease-out">
+  <div class="lg:hidden flex items-center h-14 pl-4 py-3">
+    {{- include('partials/title.html.twig') ~}}
+  </div>
+  <nav class="px-4 divide-y divide-secondary-400 lg:divide-y-0">
+    {#- main menu ~#}
+    <div class="flex lg:hidden mb-4 lg:mb-0">
+      <ol class="w-full">
+        {{- include('partials/menu.html.twig') ~}}
+      </ol>
+    </div>
         {#- main navigation ~#}
         {%- block navigation %}{% endblock navigation ~%}
         {#- selectors ~#}

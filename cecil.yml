@@ -1,5 +1,5 @@
 # Statidocs default config
-title: Statidocs
+title: Doc Partner
 baseline: Build a documentation website quickly
 baseurl: http://localhost:8000/
 copy:

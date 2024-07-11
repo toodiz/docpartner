@@ -57,7 +57,7 @@
           <aside id="on-this-page" class="hidden xl:block py-6 w-64 text-secondary-500 dark:text-secondary-300 sticky top-[80px]">
             <nav>
               <div class="flex space-x-2 items-center mb-2 font-semibold text-sm uppercase tracking-wider">
-                <span>{% trans %}On this page{% endtrans %}</span>
+                <span>{% trans %}Sur cette page{% endtrans %}</span>
                 <a href="#main" class="flex items-center text-secondary-500 dark:text-secondary-300" aria-label="{% trans %}Back to top{% endtrans %}" title="{% trans %}Back to top{% endtrans %}">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" /></svg>
                 </a>
@@ -66,9 +66,7 @@
                 {{ page.body|toc }}
               </div>
             </nav>
-            <div class="pt-4 mt-5 border-t border-secondary-400 dark:border-secondary-500">
-              {{- include('partials/github-edit.html.twig') ~}}
-            </div>
+         
           </aside>
         </div>
       </div>
