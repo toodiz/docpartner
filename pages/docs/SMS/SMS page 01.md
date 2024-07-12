@@ -1,5 +1,6 @@
 ---
 title: Introduction 
+lang: fr
 description: Page d'introduction à l'API SMS Partner.
 ---
 

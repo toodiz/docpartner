@@ -2,6 +2,9 @@
 
     {%- block styles ~%}
     {%- set styles = styles|merge(['https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.min.css']) ~%}
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
     {%- endblock styles ~%}
 
     {%- block sidebar ~%}
@@ -38,7 +41,7 @@
           {#- "On this page" ~#}
           <details class="mb-4 xl:hidden rounded-md bg-primary-100 dark:bg-primary-950 px-2 py-1">
             <summary class="cursor-pointer text-sm uppercase text-secondary-600 dark:text-secondary-300">
-              {% trans %}On this page{% endtrans ~%}
+              {% trans %}Sur cette page{% endtrans ~%}
             </summary>
             {{ page.body|toc }}
           </details>

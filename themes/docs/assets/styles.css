@@ -295,7 +295,9 @@
     font-size: inherit;
     font-weight: inherit;
   }
-  
+  .custom-color:is(.dark *){
+    color: #c8ccd1;
+  }
   /*
   Reset links to optimize for opt-in styling instead of opt-out.
   */
@@ -305,6 +307,9 @@
     text-decoration: inherit;
   }
   
+  .custom-color {
+  color: #c8ccd1;
+}
   /*
   Add the correct font weight in Edge and Safari.
   */
@@ -644,10 +649,25 @@
     color: rgb(29 78 216 / var(--tw-text-opacity));
   }
   
+
+
+    
+  .feature a,
+    footer a {
+    --tw-text-opacity: 1;
+    color: rgba(55, 65, 81, 0.78);
+  }
+
+  .feature a:is(.dark *),
+  footer a:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: #D5E7FD;
+}
+
   main a:is(.dark *),
     footer a:is(.dark *) {
     --tw-text-opacity: 1;
-    color: rgb(96 165 250 / var(--tw-text-opacity));
+    color: rgb(201, 237, 248 / var(--tw-text-opacity));
   }
   
   main a:hover,
@@ -691,84 +711,6 @@
     color: rgb(239 246 255 / var(--tw-text-opacity));
   }
   
-  /* sidebar */
-  .bg-custom-sidebar {
-    background-color: #364760;
-  }
-
-
-   /* sidebar */
-   .bg-custom-sidebar:is(.dark *) {
-    background-color: #1E3A8A;
-  }
-  
-  #sidebar div.group-title {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-  
-  #sidebar div.group-title:is(.dark *) {
-    --tw-text-opacity: 1;
-    color: rgb(226 232 240 / var(--tw-text-opacity));
-  }
-  
-  #sidebar ol {
-    margin-bottom: 0.5rem;
-    list-style-type: none;
-    padding: 0px;
-  }
-  
-  #sidebar ol:last-child {
-    margin-bottom: 0px;
-  }
-  
-  #sidebar li {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  #sidebar li:last-child {
-    margin-bottom: 0px;
-  }
-  
-  #sidebar li>a {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-top: 0.375rem;
-    padding-bottom: 0.375rem;
-    font-weight: 500;
-    --tw-text-opacity: 1;
-    color: rgb(203 213 225 / var(--tw-text-opacity));
-    text-decoration-line: none;
-  }
-  
-  #sidebar li>a:is(.dark *) {
-    --tw-text-opacity: 1;
-    color: rgb(203 213 225 / var(--tw-text-opacity));
-  }
-  
-  #sidebar li>a.active,
-    #sidebar li>a:hover {
-    border-radius: 0.25rem;
-    --tw-bg-opacity: 1;
-    color: rgb(30 41 59 / var(--tw-text-opacity));
-    background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-  }
-  
-  #sidebar li>a.active:is(.dark *),
-    #sidebar li>a:hover:is(.dark *) {
-    --tw-text-opacity: 1;
-    color: rgb(30 41 59 / var(--tw-text-opacity));
-  }
-  
-  #sidebar li>a.active {
-    --tw-text-opacity: 1;
-    color: rgb(30 41 59  / var(--tw-text-opacity));
-  }
   
   /* on this page */
   
@@ -2662,4 +2604,68 @@
       padding-right: 6rem;
     }
   }
-  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+  }
+  .feature {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 0 21%; /* adjust the percentage to fit the number of items in a row */
+    margin: 10px;
+  }
+
+  .feature:is(.dark *) {
+    text-align: center;
+    background-color: rgb(30, 58, 138);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 0 21%; /* adjust the percentage to fit the number of items in a row */
+    margin: 10px;
+  }
+
+  .feature:hover {
+    background-color: #dfe6f5;
+    box-shadow: 0 0 10px rgba(41, 40, 40, 0.1);
+  }
+  .feature:hover:is(.dark *) {
+    background-color: #5d81db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .feature i {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+
+  #main-title {
+    text-align: center;
+    
+  }
+
+  .feature-icon  {
+    color: #1e2632 ; /* Un gris foncé moyen */
+  }
+  .feature-icon:is(.dark *) {
+    color: #D5E7FD ; /* Un gris foncé moyen */
+  }
+
+.custom-color {
+    color: #364760;
+}
+
+.custom-color:is(.dark *) {
+  color: #D5E7FD;
+}
+

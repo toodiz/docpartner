@@ -8,16 +8,21 @@
   <link rel="manifest" href="{{ url('manifest') }}" />
   
   <!-- Ajout des liens Bootstrap -->
-   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  {%- set styles = ['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.highlightjs.version ~ '/styles/github-dark.min.css'] ~%}
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    {%- set styles = ['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.highlightjs.version ~ '/styles/github-dark.min.css'] ~%}
   {%- if site.docsearch.enabled ?? false ~%}
   <meta name="docsearch:language" content="{{ site.language }}" />
   <link rel="preconnect" href="https://{{ site.docsearch.appId|default }}-dsn.algolia.net" crossorigin />
   {%- set styles = styles|merge(['https://cdn.jsdelivr.net/npm/@docsearch/css@' ~ site.docsearch.version]) ~%}
   {%- endif ~%}
   {%- block styles %}{% endblock ~%}
-  {%- set styles = styles|merge(['styles.css']) ~%}
+
+  {%- set styles = styles|merge(['styles.css', 'additional-styles.css']) ~%}
+
   <style>{{ asset(styles)|inline }}</style>
+  
   
 </head>
   <body class="font-sans antialiased bg-primary-50 dark:bg-primary-950 text-[#050505] dark:text-secondary-100">
@@ -81,9 +86,9 @@
     </main>
 <footer id="footer" class="mx-4 p-4 text-sm text-center border-t border-t-secondary-300">
     <div>
-        <a href="https://www.smspartner.fr/" class="footer-link" target="_blank">SMS PARTNER</a> |
-        <a href="https://mailpartner.fr/" class="footer-link" target="_blank">MAIL PARTNER</a> |
-        <a href="https://www.voicepartner.fr/" class="footer-link" target="_blank">VOICE PARTNER</a> |
+        <a href="https://www.smspartner.fr/" class="footer-link" target="_blank">SMS PARTNER</a>   -  
+        <a href="https://mailpartner.fr/" class="footer-link" target="_blank">MAIL PARTNER</a>   -   
+        <a href="https://www.voicepartner.fr/" class="footer-link" target="_blank">VOICE PARTNER</a>  -  
         <a href="https://www.leboncheval.com/" class="footer-link" target="_blank">LE BON CHEVAL</a>
     </div>
     <div>&copy; 2014 - 2023 <a href="https://ndamedia.fr/" class="footer-link" target="_blank">NDA MEDIA</a>. Tous droits réservés. <a href="https://docpartner.dev/introduction/#" class="footer-link" target="_blank">Mentions légales</a> <a href="https://docpartner.dev/contact/" class="footer-link" target="_blank">Contact</a></div>

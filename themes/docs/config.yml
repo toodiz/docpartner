@@ -1,8 +1,4 @@
-# Docs default config
-github:
-  url: https://github.com/cecilapp/statidocs
-  repo: https://github.com/cecilapp/statidocs
-  branch: main
+
 footer: Copyright © %author%
 manifest:
   background_color: '#1C4ED8'

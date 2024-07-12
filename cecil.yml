@@ -1,14 +1,27 @@
 # Statidocs default config
-title: Doc Partner
-baseline: Build a documentation website quickly
+title: Doc Partner 
 baseurl: http://localhost:8000/
 copy:
 - /assets/css/*
-description: Write your pages in Markdown, customize templates with Twig and Tailwind CSS, and enjoy the power of Cecil static site generator.
 author:
   name: NDA MEDIA
   url: https://ndamedia.fr/
-image: og-card.png
+# image: og-card.png
+
+language: fr
+
+languages:
+  - code: fr
+    name: Français
+    locale: fr_FR
+  - code: en
+    name: English
+    locale: en
+  - code: es
+    name: Español
+    locale: es_ES
+
+
 menus:
   main:
     - id: index
@@ -20,10 +33,7 @@ sidebar: # docs groups in /pages/docs/
   - VOIX
 footer: Copyright © 2014 - 2023 %author%
 
-github:
-  url: https://github.com/Cecilapp/statidocs
-  repo: https://github.com/Cecilapp/statidocs
-  branch: main
+
 docsearch:
   enabled: false
   # statidocs.cecil.app credentials
@@ -31,6 +41,7 @@ docsearch:
   indexName: staticecil
   apiKey: b165b7766201deabe0be660ca0bdab94
   insights: true
+  debug: true
 
 # Cecil config for Statidocs
 theme:
@@ -41,3 +52,13 @@ serviceworker:
 metatags:
   jsonld:
     enabled: true
+
+# Custom CSS and JS includes
+stylesheets:
+  - https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css
+  - /assets/css/custom.css
+scripts:
+  - https://code.jquery.com/jquery-3.5.1.slim.min.js
+  - https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js
+  - https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js

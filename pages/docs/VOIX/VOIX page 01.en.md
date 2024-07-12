@@ -1,6 +1,6 @@
 ---
-title: Page 2
-description: Page 2 description.
+title: Introduction
+description: >
 ---
 # Page 2
 
