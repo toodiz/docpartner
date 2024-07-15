@@ -1,19 +1,60 @@
-          {#- prev/next navigation ~#}
-          {%- if page.next is defined or page.prev is defined ~%}
-          <nav class="mt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-4">
-            {%- if page.prev is defined ~%}
-            <a class="basis-1/2 py-3 px-4 font-medium hover:no-underline text-left border-solid border border-secondary-300 hover:border-primary-700 dark:hover:border-primary-400 rounded-md" href="{{ url(page.prev) }}" title="{{ page.prev.title }}">
-              <div class="mb-2 text-sm text-secondary-600 dark:text-secondary-300">{% trans %}Précedent{% endtrans %}</div>
-              <div>← {{ page.prev.title }}</div>
-            </a>
-            {%- else ~%}
-            <div class="grow"></div>
-            {%- endif ~%}
-            {%- if page.next is defined ~%}
-            <a class="basis-1/2 py-3 px-4 font-medium hover:no-underline text-right border-solid border border-secondary-300 hover:border-primary-700 dark:hover:border-primary-400 rounded-md" href="{{ url(page.next) }}" title="{{ page.next.title }}">
-              <div class="mb-2 text-sm text-secondary-600 dark:text-secondary-300">{% trans %}Prochain{% endtrans %}</div>
-              <div>{{ page.next.title }} →</div>
-            </a>
-            {%- endif ~%}
-          </nav>
-          {%- endif ~%}
+{#- prev/next navigation ~#}
+{% set all_pages = [] %}
+{% for group in site.sidebar %}
+  {% set group_slug = group|slugify %}
+  {% set group_pages = site.pages.showable|filter(p => p.section == 'docs' and p.folder starts with 'docs/' ~ group_slug) %}
+  
+  {% set subgroups = {} %}
+  {% for page in group_pages %}
+    {% set path_parts = page.folder|split('/') %}
+    {% if path_parts|length > 2 %}
+      {% set subgroup = path_parts[2] %}
+      {% if subgroup not in subgroups|keys %}
+        {% set subgroups = subgroups|merge({(subgroup): []}) %}
+      {% endif %}
+      {% set subgroups = subgroups|merge({(subgroup): subgroups[subgroup]|merge([page])}) %}
+    {% else %}
+      {% set all_pages = all_pages|merge([page]) %}
+    {% endif %}
+  {% endfor %}
+  
+  {% for subgroup, subgroup_pages in subgroups %}
+    {% set all_pages = all_pages|merge(subgroup_pages) %}
+  {% endfor %}
+{% endfor %}
+
+{% set current_index = -1 %}
+{% set prev_page = null %}
+{% set next_page = null %}
+
+{% for i, p in all_pages %}
+  {% if current_index == -1 %}
+    {% if p.id == page.id %}
+      {% set current_index = i %}
+      {% if i > 0 %}
+        {% set prev_page = all_pages[i - 1] %}
+      {% endif %}
+    {% endif %}
+  {% elseif current_index != -1 and next_page is null %}
+    {% set next_page = p %}
+  {% endif %}
+{% endfor %}
+
+{% if prev_page or next_page %}
+<nav class="mt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-4">
+  {% if prev_page %}
+  <a class="basis-1/2 py-3 px-4 font-medium hover:no-underline text-left border-solid border border-secondary-300 hover:border-primary-700 dark:hover:border-primary-400 rounded-md" href="{{ url(prev_page) }}" title="{{ prev_page.title }}">
+    <div class="mb-2 text-sm text-secondary-600 dark:text-secondary-300">{% trans %}Précédent{% endtrans %}</div>
+    <div>← {{ prev_page.title }}</div>
+  </a>
+  {% else %}
+  <div class="grow"></div>
+  {% endif %}
+  {% if next_page %}
+  <a class="basis-1/2 py-3 px-4 font-medium hover:no-underline text-right border-solid border border-secondary-300 hover:border-primary-700 dark:hover:border-primary-400 rounded-md" href="{{ url(next_page) }}" title="{{ next_page.title }}">
+    <div class="mb-2 text-sm text-secondary-600 dark:text-secondary-300">{% trans %}Suivant{% endtrans %}</div>
+    <div>{{ next_page.title }} →</div>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}

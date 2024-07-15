@@ -86,12 +86,17 @@
     </main>
 <footer id="footer" class="mx-4 p-4 text-sm text-center border-t border-t-secondary-300">
     <div>
-        <a href="https://www.smspartner.fr/" class="footer-link" target="_blank">SMS PARTNER</a>   -  
-        <a href="https://mailpartner.fr/" class="footer-link" target="_blank">MAIL PARTNER</a>   -   
-        <a href="https://www.voicepartner.fr/" class="footer-link" target="_blank">VOICE PARTNER</a>  -  
+        <a href="https://www.smspartner.fr/" class="footer-link" target="_blank">SMS PARTNER</a> - 
+        <a href="https://mailpartner.fr/" class="footer-link" target="_blank">MAIL PARTNER</a> - 
+        <a href="https://www.voicepartner.fr/" class="footer-link" target="_blank">VOICE PARTNER</a> - 
         <a href="https://www.leboncheval.com/" class="footer-link" target="_blank">LE BON CHEVAL</a>
     </div>
-    <div>&copy; 2014 - 2023 <a href="https://ndamedia.fr/" class="footer-link" target="_blank">NDA MEDIA</a>. Tous droits réservés. <a href="https://docpartner.dev/introduction/#" class="footer-link" target="_blank">Mentions légales</a> <a href="https://docpartner.dev/contact/" class="footer-link" target="_blank">Contact</a></div>
+    <div>&copy; 2014 - 2023 
+        <a href="https://ndamedia.fr/" class="footer-link" target="_blank">NDA MEDIA</a>. 
+        {% trans %}Tous droits réservés.{% endtrans %}
+        <a href="https://docpartner.dev/introduction/#" class="footer-link" target="_blank">{% trans %}Mentions légales{% endtrans %}</a> 
+        <a href="https://docpartner.dev/contact/" class="footer-link" target="_blank">{% trans %}Contact{% endtrans %}</a>
+    </div>
 </footer>
 
     {%- block scripts ~%}
@@ -121,5 +126,6 @@
     {%- endif ~%}
     {{- include('partials/regsw.js.twig', ignore_missing = true) ~}}
     {%- endblock scripts ~%}
+    
   </body>
 </html>
