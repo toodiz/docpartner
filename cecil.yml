@@ -56,12 +56,12 @@ metatags:
   jsonld:
     enabled: true
 
+scripts:
+  fetch:
+    - php fetch_docs.php
+
 # Custom CSS and JS includes
 stylesheets:
   - https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
   - https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css
   - /assets/css/custom.css
-scripts:
-  - https://code.jquery.com/jquery-3.5.1.slim.min.js
-  - https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js
-  - https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js
