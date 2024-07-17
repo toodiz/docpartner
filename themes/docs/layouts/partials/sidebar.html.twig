@@ -1,7 +1,7 @@
 {#- sidebar ~#}
-<div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-0 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-custom-sidebar shadow-md lg:shadow-none -translate-x-full {% if showlarge %}lg:translate-x-0{% endif %} transition-all duration-200 ease-out">
+<div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-20 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-custom-sidebar shadow-md lg:shadow-none -translate-x-full {% if showlarge %}lg:translate-x-0{% endif %} transition-all duration-200 ease-out">
   <!-- ... (le reste du code reste inchangé) ... -->
-  <div class="pt-4">
+  <div class="pt-4 ">
     <ol>
       {% for group in site.sidebar %}
         {% set group_slug = group|slugify %}

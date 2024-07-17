@@ -100,12 +100,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     {%- apply minify_js ~%}
-    function toggleMenu() {
-      document.getElementById('sidebar').classList.toggle('-translate-x-full');
-      document.getElementById('sidebar-cloudywrapper').classList.toggle('hidden');
-      document.getElementById('sidebar-open').classList.toggle('hidden');
-      document.getElementById('sidebar-close').classList.toggle('hidden');
-    }
+function toggleMenu() {
+  document.getElementById('sidebar').classList.toggle('-translate-x-full');
+  document.getElementById('sidebar-cloudywrapper').classList.toggle('hidden');
+  document.getElementById('sidebar-open').classList.toggle('hidden');
+  document.getElementById('sidebar-close').classList.toggle('hidden');
+}
     {%- endapply ~%}
   </script>
   {%- if site.docsearch.enabled ?? false ~%}

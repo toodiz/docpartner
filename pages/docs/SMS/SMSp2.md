@@ -187,7 +187,7 @@ let data = 'apiKey=YOUR API KEY';
 let url = 'https://api.smspartner.fr/v1/me?' + data;
 
 https.get(url, (res) => {
-  let data = '';
+  let data = ';
 
   // Un morceau de données a été reçu.
   res.on('data', (chunk) => {
@@ -269,7 +269,7 @@ struct Credits: View {
  
     func getCredit() {
         let apiKey = "Your-api-key"
-        let urlString = "https://api.smspartner.fr/v1/me?apiKey=\(apiKey)"
+        let urlString = "https://api.smspartner.fr/v1/me?apiKey=(apiKey)"
  
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -278,7 +278,7 @@ struct Credits: View {
  
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: (error)")
             } else if let data = data {
                 let result = String(data: data, encoding: .utf8)
                 DispatchQueue.main.async {
@@ -366,6 +366,7 @@ class Program
   </div>
 </div>
 
+## Réponses
 
 <!-- Nouvelle section de navigation tabs pour JSON et XML -->
 <ul class="nav nav-tabs" id="formatTab" role="tablist" style="margin-top: 20px;">
@@ -433,6 +434,8 @@ class Program
   </div>
 </div>
 
+
+
 ## Code de contrôle
 
 | _  | Réponse |
@@ -442,6 +445,4 @@ class Program
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+

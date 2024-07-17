@@ -1,11 +1,17 @@
 <?php
 
-// Vérifier si le paramètre path est fourni
-if ($argc != 2) {
-    die("Usage: php content.php <path>\n");
+// Vérifier si les paramètres path et langue sont fournis
+if ($argc != 3) {
+    die("Usage: php content.php <path> <langue>\n");
 }
 
 $path = $argv[1];
+$langue = strtolower(substr($argv[2], 0, 2)); // Prendre les deux premières lettres et les mettre en minuscules
+
+// Modifier le chemin du fichier si la langue n'est pas 'fr'
+if ($langue != 'fr') {
+    $path = preg_replace('/\.md$/', ".$langue.md", $path);
+}
 
 // Paramètres de connexion à la base de données
 $host = 'localhost';
@@ -13,7 +19,6 @@ $db   = 'api_docs';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
-
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
