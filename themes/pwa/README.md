@@ -40,7 +40,7 @@ theme:
 Add the [web manifest](https://developer.mozilla.org/docs/Web/Manifest) in the HTML `<header>` of the main template:
 
 ```twig
-<link rel="manifest" href="{{ url('manifest') }}">
+<link rel="manifest" href="{{ site.url }}/manifest">
 ```
 
 Configure it:
