@@ -84,7 +84,8 @@ manifest:
 **Register** the service worker before the end of the HTML `</body>` of the main template:
 
 ```twig
-{{ include('partials/regsw.js.twig', {site: site}, with_context = false) }}
+{% include partials/regsw.js.twig site=site with_context=false %}
+
 ```
 
 Enable the service worker:
