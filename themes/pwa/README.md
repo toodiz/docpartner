@@ -40,7 +40,7 @@ theme:
 Add the [web manifest](https://developer.mozilla.org/docs/Web/Manifest) in the HTML `<header>` of the main template:
 
 ```twig
-<link rel="manifest" href="{{ site.url }}/manifest">
+<link rel="manifest" href="{{ url('manifest') }}">
 ```
 
 Configure it:
@@ -84,8 +84,7 @@ manifest:
 **Register** the service worker before the end of the HTML `</body>` of the main template:
 
 ```twig
-{% include themes\pwa\layouts\partials\regsw.js.twig site=site with_context=false %}
-
+{{ include('layouts\partials\regsw.js.twig', {site: site}, with_context = false) }}
 ```
 
 Enable the service worker:
