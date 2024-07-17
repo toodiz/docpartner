@@ -9,6 +9,7 @@ slug: page-01
 
 SMS messages are sent from the [SMS Partner](https://www.smspartner.fr/api-sms/) platform. From the site, you have immediate access to our free API: it allows you to easily integrate our SMS services into your website, software or CRM application in PHP, ASP, .NET, Java or any other language.
 
+
 ## Parameters
 
 Each API request supports at least the following parameters:
@@ -45,10 +46,10 @@ Content-Type: application/json
 
 ## Requests
 All API requests must be sent to http://api.smspartner.fr/v1/ordered, ordered is the API call you want to execute, with the parameters included in the body POST or URL (GET).
+
 ## Download an example in PHP
 
-<p>API Example <a href="https://github.com/smspartnerfr/SMS-API-PHP" class="btn btn-success btn-sm text-white">Voir l'exemple</a></p>
-
-
+<a href="https://github.com/smspartnerfr/SMS-API-PHP" class="btn btn-success btn-sm text-white">API Example </a>
 
 Feel free to consult our SDKs available on this site.
+
