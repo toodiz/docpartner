@@ -62,3 +62,20 @@ php cecil.phar build
 ```
 
 Then copy content of `_site` to your web server.
+
+## To lunch the server and drop the cashe use this bash 
+
+```bash
+./server.sh 
+
+```
+## To add new pages 
+
+you need to add your code in the database you can look at the structure in table.sql and exemple of insert in insert_data.sql 
+
+after that you can use this bash which takes two parameters the path file.md and the language like (fr , en , es)
+
+```bash
+$ ./mon_script.sh pages/docs/sms/smsp1.md es
+
+```
