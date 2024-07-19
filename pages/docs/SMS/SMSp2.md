@@ -426,12 +426,3 @@ class Program
 |200 | Tout s’est bien passé ! |
 
 
-## Status Codes
-
-| Code  | Response |
-| :---------------: |:---------------|
-|10 | Incorrect API Key |
-|200 | Successful request ! |
-
-
-

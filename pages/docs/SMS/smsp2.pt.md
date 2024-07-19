@@ -1,52 +1,38 @@
--- Insertion dans la table chemin
-INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/smsp2.es.md');
-
--- Insertion dans la table introduction
-INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
-('---
-title: Crediti
-description: Page 2 Crediti.
+---
+title: créditos
+description: Page 2 créditos.
 ---
 
-# Introduzione all\'API Partner SMS
+# Introdução ao Parceiro API SMS
 
-Questa interrogazione serve a recuperare il credito SMS disponibile e il numero di messaggi SMS in attesa.
-', 'it', 11); 
+Esta consulta é usado para recuperar seu crédito SMS disponível e o número de pendente de início SMS.
 
--- Insertion dans la table URLAPI
-INSERT INTO URLAPI (textcode, id_chemin) VALUES 
-('## URL
+
+## URL
 
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
   <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/me</span>
 </div>
 
-', 11);
+### Configurações
 
--- Insertion dans la table PARAMETRE
-INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
-('## Impostazioni
+Cada solicitação de API suporta os seguintes parâmetros :
 
-Ogni richiesta API supporta i seguenti parametri :
-
-| Parametro | Descrizione |
+| Parâmetro | Descrição |
 | :--------------- |:---------------|
-| **apiKey** | Chiave API per il tuo account. Lo ricevi nel tuo account PartnerSMS.|
+| **apiKey** | Chave de API da sua conta. Você obtê-lo em seu parceiro de conta SMS. |
 
-### Paramètres optionnels
+### Configurações opcionais
 
-| Parametro | Descrizione |
+| Parâmetro | Descrição |
 | :--------------- |:---------------|
-| **_format** | Formato della risposta. È possibile scegliere tra json o xml. Per impostazione predefinita, il formato di risposta è JSON.|
-', 'it', 11);
+| **_formato** | Formato de resposta. Você pode escolher entre json ou xml. Por padrão, o formato de resposta é JSON.. |
 
--- Insertion dans la table REQUETE_REPONSE
-INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
-('## Richiesta
 
-Richiesta di campione:
+
+## Petição
+Consulta de exemplo :
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -84,10 +70,10 @@ Richiesta di campione:
     <pre><code class="language-php">
 &lt;?php
 // Prepare data for GET request
-$data = \'apiKey=YOUR_API_KEY\';
+$data = 'apiKey=YOUR_API_KEY';
 
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, \'https://api.smspartner.fr/v1/me?\' . $data);
+curl_setopt($curl, CURLOPT_URL, 'https://api.smspartner.fr/v1/me?' . $data);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_TIMEOUT, 10);
 
@@ -196,26 +182,26 @@ class SMSPartner():
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
     <pre><code>
-const https = require(\'https\');
+const https = require('https');
 // Préparer les données pour la requête GET
-let data = \'apiKey=YOUR API KEY\';
-let url = \'https://api.smspartner.fr/v1/me?\' + data;
+let data = 'apiKey=YOUR API KEY';
+let url = 'https://api.smspartner.fr/v1/me?' + data;
 
 https.get(url, (res) => {
-  let data = \';
+  let data = ';
 
   // Un morceau de données a été reçu.
-  res.on(\'data\', (chunk) => {
+  res.on('data', (chunk) => {
     data += chunk;
   });
 
   // La totalité de la réponse a été reçue. Imprimer le résultat.
-  res.on(\'end\', () => {
+  res.on('end', () => {
     console.log(JSON.parse(data));
   });
 
 }).on("error", (err) => {
-  // Un message d\'erreur sera imprimé en cas d\'erreur.
+  // Un message d'erreur sera imprimé en cas d'erreur.
   console.log("Erreur: " + err.message);
 });
    </code></pre>
@@ -381,7 +367,7 @@ class Program
   </div>
 </div>
 
-## Responses
+## Respostas
 
 ### JSON
 ```json
@@ -406,7 +392,7 @@ class Program
 ### XML
 ```xml
     <pre><code class="language-xml">
-<?xml version=\'1.0\' encoding=\'UTF-8\'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <result>
     <entry>true</entry>
     <entry>200</entry>
@@ -432,16 +418,14 @@ class Program
     </entry>
 </result>
   ```
-', 
-'it', 11);
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('## Codice di controllo
 
-| _  | Rispondi a |
+## Código de controle
+
+| _  | Resposta |
 | :---------------: |:---------------|
-|10 | 	Chiave API errata |
-|200 | È andato tutto bene! ! |
+|10 | 	Chave de API inválida |
+|200 | Tudo correu bem! |
 
-', 'it', 11);
+
+

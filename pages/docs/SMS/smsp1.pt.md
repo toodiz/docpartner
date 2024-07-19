@@ -29,9 +29,8 @@ Cada solicitação da API suporta pelo menos os seguintes parâmetros:
 | json  | application/json |
 | xml | application/xml |
 
-
-
-#### JSON
+'#### JSON
+Você pode, por exemplo, formatar a mensagem SMS para JSON ou XML formatos, mas você deve inserir o cabeçalho Content-Type em conformidade :
 
 ```json
 POST /v1/send HTTP/1.1
@@ -46,9 +45,8 @@ Content-Type: application/json
 
 ```
 
-## Solicitações
+## Petição
 Todas as solicitações da API devem ser enviadas para http://api.smspartner.fr/v1/commande, onde commande é a chamada de API que você deseja executar, com os parâmetros incluídos no corpo do POST ou URL (GET).
-
 
 
 ## Baixar um exemplo em PHP

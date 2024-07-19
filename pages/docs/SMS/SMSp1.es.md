@@ -13,13 +13,13 @@ Los envíos de SMS se realizan desde [la plataforma SMS Partner](https://www.sms
 
 Cada solicitud de API es compatible con al menos los siguientes parámetros :
 
-| Paramètre | Description |
+| Parámetro | Descripción |
 |:-----------|:-------------|
 | `apiKey`  |  Clave de API de su cuenta. Usted lo consigue en su  [Cuenta de SMS Partner](https://my.smspartner.fr/connexion). |
 
 ### Ajustes opcionales
 
-| Paramètre | Description |
+| Parámetro | Descripción |
 |:-----------|:-------------|
 | `_format` | Formato de la respuesta. Usted tiene la posibilidad de elegir entre `json` y `xml`. Por defecto, el formato de respuesta es  `json`. Ejemplo : `https://api.smspartner.fr/v1/me?apiKey=YOUR_API_KEY&_format=json` |
 
