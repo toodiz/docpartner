@@ -51,5 +51,7 @@ All API requests must be sent to http://api.smspartner.fr/v1/ordered, ordered is
 
 <a href="https://github.com/smspartnerfr/SMS-API-PHP" class="btn btn-success btn-sm text-white">API Example </a>
 
-Feel free to consult our SDKs available on this site.
+
+
+Feel free to consult our [SDK](https://docpartner.dev/sdks). available on this site.
 

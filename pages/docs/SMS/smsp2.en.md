@@ -1,11 +1,13 @@
 ---
-title: Crédits
-description: Page 2 Crédits.
+title: Credits
+description: Page 2 Credits.
 ---
 
-# Introduction à l'API SMS Partner
+# Introduction to SMS Partner API
 
-Cette requête est utilisée pour récupérer votre crédit disponible de SMS, ainsi que le nombre de SMS en instance de départ.
+This endpoint is used to retrieve your available SMS credits and the number of pending SMS.
+
+
 
 ## URL
 
@@ -14,23 +16,24 @@ Cette requête est utilisée pour récupérer votre crédit disponible de SMS, a
   <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/me</span>
 </div>
 
-## Paramètres
+## Parameters
 
-Chaque demande d'API prend en charge les paramètres suivants :
+Each API request supports the following parameters:
 
-| Paramètre  | Description |
+| Parameter  | Description |
 | :--------------- |:---------------|
-| **apiKey** | Clé API de votre compte. Vous l'obtenez dans votre compte SMS Partner. |
+| **apiKey** | Your account's API key obtained from SMS Partner dashboard. |
 
-### Paramètres optionnels
+### Optional Parameters
 
-| Paramètre  | Description |
+| Parameter  | Description |
 | :--------------- |:---------------|
-| **_format** | Format de la réponse. Vous pouvez choisir entre JSON ou XML. Par défaut, le format de réponse est JSON. |
+| **_format** | Response format. Choose between JSON or XML. JSON is the default format. |
 
 
-## Requête
-Exemple de requête :
+## Request
+
+Sample request:
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -418,12 +421,6 @@ class Program
 </result>
   ```
 
-## Code de contrôle
-
-| _  | Réponse |
-| :---------------: |:---------------|
-|10 | Clé API incorrecte |
-|200 | Tout s’est bien passé ! |
 
 
 ## Status Codes
@@ -432,6 +429,4 @@ class Program
 | :---------------: |:---------------|
 |10 | Incorrect API Key |
 |200 | Successful request ! |
-
-
 

@@ -1,36 +1,52 @@
+-- Insertion dans la table chemin
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/smsp1.en.md');
+
+-- Insertion dans la table introduction
+INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
+('---
+title: Credits
+description: Page 2 Credits.
 ---
-title: Crédits
-description: Page 2 Crédits.
----
 
-# Introduction à l'API SMS Partner
+# Introduction to SMS Partner API
 
-Cette requête est utilisée pour récupérer votre crédit disponible de SMS, ainsi que le nombre de SMS en instance de départ.
+This endpoint is used to retrieve your available SMS credits and the number of pending SMS.
 
-## URL
+', 'en', 9);
+
+-- Insertion dans la table URLAPI
+INSERT INTO URLAPI (textcode, id_chemin) VALUES 
+('## URL
 
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
   <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/me</span>
-</div>
+</div>', 9),
 
-## Paramètres
 
-Chaque demande d'API prend en charge les paramètres suivants :
+-- Insertion dans la table PARAMETRE
+INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
+('## Parameters
 
-| Paramètre  | Description |
+Each API request supports the following parameters:
+
+| Parameter  | Description |
 | :--------------- |:---------------|
-| **apiKey** | Clé API de votre compte. Vous l'obtenez dans votre compte SMS Partner. |
+| **apiKey** | Your account\'s API key obtained from SMS Partner dashboard. |
 
-### Paramètres optionnels
+### Optional Parameters
 
-| Paramètre  | Description |
+| Parameter  | Description |
 | :--------------- |:---------------|
-| **_format** | Format de la réponse. Vous pouvez choisir entre JSON ou XML. Par défaut, le format de réponse est JSON. |
+| **_format** | Response format. Choose between JSON or XML. JSON is the default format. |
+', 'en', 9);
 
+-- Insertion dans la table REQUETE_REPONSE
+INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
+('## Request
 
-## Requête
-Exemple de requête :
+Sample request:
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -69,10 +85,10 @@ Exemple de requête :
     <pre><code class="language-php">
 &lt;?php
 // Prepare data for GET request
-$data = 'apiKey=YOUR_API_KEY';
+$data = \'apiKey=YOUR_API_KEY\';
 
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, 'https://api.smspartner.fr/v1/me?' . $data);
+curl_setopt($curl, CURLOPT_URL, \'https://api.smspartner.fr/v1/me?\' . $data);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_TIMEOUT, 10);
 
@@ -181,26 +197,26 @@ class SMSPartner():
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
     <pre><code>
-const https = require('https');
+const https = require(\'https\');
 // Préparer les données pour la requête GET
-let data = 'apiKey=YOUR API KEY';
-let url = 'https://api.smspartner.fr/v1/me?' + data;
+let data = \'apiKey=YOUR API KEY\';
+let url = \'https://api.smspartner.fr/v1/me?\' + data;
 
 https.get(url, (res) => {
-  let data = ';
+  let data = \';
 
   // Un morceau de données a été reçu.
-  res.on('data', (chunk) => {
+  res.on(\'data\', (chunk) => {
     data += chunk;
   });
 
   // La totalité de la réponse a été reçue. Imprimer le résultat.
-  res.on('end', () => {
+  res.on(\'end\', () => {
     console.log(JSON.parse(data));
   });
 
 }).on("error", (err) => {
-  // Un message d'erreur sera imprimé en cas d'erreur.
+  // Un message d\'erreur sera imprimé en cas d\'erreur.
   console.log("Erreur: " + err.message);
 });
    </code></pre>
@@ -391,7 +407,7 @@ class Program
 ### XML
 ```xml
     <pre><code class="language-xml">
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version=\'1.0\' encoding=\'UTF-8\'?>
 <result>
     <entry>true</entry>
     <entry>200</entry>
@@ -417,21 +433,14 @@ class Program
     </entry>
 </result>
   ```
+', 'en', 9);
 
-## Code de contrôle
-
-| _  | Réponse |
-| :---------------: |:---------------|
-|10 | Clé API incorrecte |
-|200 | Tout s’est bien passé ! |
-
-
+-- Insertion dans la table Suitecode 
+INSERT INTO Suitecode (textcode, langue, id_chemin) VALUES 
+('
 ## Status Codes
 
 | Code  | Response |
 | :---------------: |:---------------|
 |10 | Incorrect API Key |
-|200 | Successful request ! |
-
-
-
+|200 | Successful request ! |', 'en', 9);

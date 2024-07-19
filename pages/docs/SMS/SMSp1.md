@@ -43,6 +43,9 @@ Content-Type: application/json
 }
 ```
 
+## Requêtes
+Toutes les demandes de l’API doivent être envoyées à http://api.smspartner.fr/v1/commande, commande est l’appel API que vous souhaitez exécuter, avec les paramètres inclus dans **le body POST**  ou **l’URL (GET)**.
+
 ## Télécharger un exemple en PHP
 
 <a href="https://github.com/smspartnerfr/SMS-API-PHP" class="btn btn-success btn-sm text-white">Exemple API</a>

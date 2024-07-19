@@ -20,6 +20,12 @@ languages:
   - code: es
     name: Español
     locale: es_ES
+  - code: it
+    name: Italiano
+    locale: it_IT
+  - code: pt
+    name: Português
+    locale: pt_PT
 
 
 menus:
