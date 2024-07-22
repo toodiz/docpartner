@@ -76,6 +76,6 @@ you need to add your code in the database you can look at the structure in table
 after that you can use this bash which takes two parameters the path file.md and the language like (fr , en , es)
 
 ```bash
-$ ./mon_script.sh pages/docs/sms/smsp1.md es
+ ./mon_script.sh pages/docs/sms/smsp1.md es
 
 ```
