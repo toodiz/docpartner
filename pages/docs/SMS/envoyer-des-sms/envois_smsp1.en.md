@@ -1,50 +1,53 @@
 ---
-title: Envoi unitaire
+title: Single Send
 description: >
 ---
-# Envoyer des SMS
-Cette requête est utilisée pour envoyer des SMS en temps réel ou en différé.
+# Sending SMS
+This request is used to send SMS in real-time or scheduled.
+
 
 ## URL
 
 <div>
   <div style="background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
-  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/me</span>
+  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.smspartner.fr/v1/send</span>
 </div>
 
-## Paramètres
+
+## Parameters
 
    <div class="alert alert-info">
-        La plateforme n'envoie pas de SMS commerciaux entre <strong> 20h et 8h en semaine et les dimanches et jours fériés </strong>(restriction légale). Si un message SMS est envoyé, le message est <strong>en pause jusqu'au prochain jour ouvrable à 8h </strong>. Ne vous envoyez pas de SMS commerciaux? contactez-nous pour désactiver cette restriction : <a href="mailto:help@smspartner.fr">help@smspartner.fr</a>
+        The platform does not send commercial SMS between <strong>8 PM and 8 AM on weekdays and on Sundays and public holidays</strong> (legal restriction). If an SMS message is sent, the message is <strong>paused until the next business day at 8 AM</strong>. Not sending commercial SMS? Contact us to disable this restriction: <a href="mailto:help@smspartner.fr">help@smspartner.fr</a>
     </div>
-    
-        
-| Paramètre       | Description |
+           
+| Parameter       | Description |
 |-----------------|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-| **phoneNumbers** | Numéros de téléphone des destinataires. Pour l'envoi de plusieurs SMS les numéros doivent être séparés par des virgules. **La limite d'envoi sur une seule requête est de 500 numéros.** <ul><li>Au format national (0600000000) et international (+33600000000) pour des numéros français.</li><li>Au format international (+496xxxxxxxx), pour des numéros hors France.</li></ul> |
-| **message**     | Contenu du SMS. **160 caractères** maximum par SMS (au-delà, il vous sera décompté un SMS supplémentaire par tranche de 153 caractères). <br>Attention, certains caractères spéciaux et accents sont remplacés lors de l'envoi : <a href="#" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voir la liste</a> <br>Le caractère ” doit obligatoirement être échappé (\”) pour que le texte du SMS soit valide. Dans le cas contraire une erreur 400 sera retournée. <br>Le tag `:br:` permet de faire un saut de ligne. **Attention le saut de ligne compte pour deux caractères.** <br>**La mention STOP SMS est obligatoire pour les SMS à caractères commerciaux (voir le paramètre `isStopSms` ci-dessous).** <br>Si c'est un compte marketing la mention STOP SMS est ajoutée automatiquement. |
+| **apiKey**      | API key of your account. You will obtain it in your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
+| **phoneNumbers** | Phone numbers of recipients. For sending multiple SMS, numbers must be separated by commas. **The sending limit on a single request is 500 numbers.** <ul><li>In national format (0600000000) and international format (+33600000000) for French numbers.</li><li>In international format (+496xxxxxxxx) for numbers outside France.</li></ul> |
+| **message**     | SMS content. **160 characters** maximum per SMS (beyond that, you will be charged an additional SMS per 153 characters). <br>Attention, some special characters and accents are replaced during sending: <a href="#" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">See the list</a> <br>The character " must be escaped (") for the SMS text to be valid. Otherwise, a 400 error will be returned. <br>The `:br:` tag allows for a line break. **Attention, the line break counts as two characters.** <br>**The STOP SMS mention is mandatory for commercial SMS (see the `isStopSms` parameter below).** <br>If it's a marketing account, the STOP SMS mention is added automatically. |
 
-## Paramètres optionnels
+## Optional Parameters
 
-| Paramètre               | Description |
+| Parameter               | Description |
 |-------------------------|-------------|
-| **gamme**               | Gamme du SMS, sa valeur doit être : <ul><li>1 pour les SMS Premium</li><li>2 pour les SMS Low Cost</li></ul> ⚠️ Si ce paramètre est omis, les SMS seront envoyés dans la gamme Premium |
-| **sender**              | Nom d’émetteur du message. Si l’émetteur est laissé vide, vos SMS seront acheminés avec un shortcode opérateur en guise d’expéditeur (exemple : 36xxx). <br>⚠️ Le nombre de caractères pour le nom de l'émetteur est compris **entre 3 et 11 inclus** et ne doit pas comporter de caractères spéciaux. <br>Certains modèles de téléphone n'interprètent pas les caractères spéciaux dans le nom d'émetteur. |
-| **tag**                 | Chaîne de caractères de 20 caractères maximum sans espace(s) et vous permettant de tagger vos envois. |
-| **scheduledDeliveryDate** | Date d'envoi du SMS, au format `dd/MM/yyyy`, à définir uniquement si vous souhaitez que les SMS soient envoyés en différé. |
-| **time**                | Heure d'envoi du SMS (format 0-24), obligatoire si `scheduledDeliveryDate` est définie. |
-| **minute**              | Minute d'envoi du SMS (format 0-55, par intervalle de cinq minutes), obligatoire si `scheduledDeliveryDate` est définie. |
-| **urlResponse**         | URL de retour des Réponses (ex: https://www.monurlderesponse). |
-| **urlDlr**              | URL de retour des Accusé de réception (ex: https://www.monurldlr). |
-| **isStopSms**           | Gamme Premium : 1 pour ajouter la mention STOP à la fin du SMS (obligatoire pour les SMS commerciaux).<br> ⚠️ Gamme ÉCO : Ce paramètre n’est pas applicable pour cette gamme, il est nécessaire d'ajouter manuellement la mention NoPub=STOP pour les SMS commerciaux. |
-| **isUnicode**           | Si 1 : Active le mode Unicode, le nombre de caractères maximum par SMS sera de 70. <br>**Important :** le SMS unicode doit être activé sur votre compte par un administrateur pour que les envois soient disponibles. Merci de prendre contact avec le service technique pour l’activation de cette fonctionnalité.<br> [Voir la liste](https://www.smspartner.fr/blog/liste-complete-des-emoticones-a-copier-coller). |
-| **sandbox**             | Pour tester l’envoi de SMS, vous pouvez utiliser le paramètre `sandbox:` **1** pour activer le mode bac à sable. <mark style="background-color: #fff8c37a;">⚠️ Aucun SMS ne sera envoyé, et il n’y aura aucun débit sur votre compte. Ces SMS seront supprimés de vos listes d’envois automatiquement tous les jours. </mark>|
-| **_format**             | Format de la réponse. Vous pouvez choisir entre `JSON` ou `XML`. Par défaut, le format de réponse est `JSON`<mark style="background-color: #e6f3ff;">This sentence will be highlighted in blue.</mark> |
+| **range**               | SMS range, its value must be: <ul><li>1 for Premium SMS</li><li>2 for Low Cost SMS</li></ul> ⚠️ If this parameter is omitted, SMS will be sent in the Premium range |
+| **sender**              | Name of the message sender. If the sender is left empty, your SMS will be sent with an operator shortcode as the sender (e.g., 36xxx). <br>⚠️ The number of characters for the sender name is **between 3 and 11 inclusive** and must not contain special characters. <br>Some phone models do not interpret special characters in the sender name. |
+| **tag**                 | String of up to 20 characters without spaces, allowing you to tag your sends. |
+| **scheduledDeliveryDate** | SMS sending date, in the format `dd/MM/yyyy`, to be defined only if you want the SMS to be sent later. |
+| **time**                | SMS sending time (format 0-24), mandatory if `scheduledDeliveryDate` is defined. |
+| **minute**              | SMS sending minute (format 0-55, in five-minute intervals), mandatory if `scheduledDeliveryDate` is defined. |
+| **urlResponse**         | Response URL (e.g., https://www.myresponseurl). |
+| **urlDlr**              | Delivery Receipt URL (e.g., https://www.mydlrurl). |
+| **isStopSms**           | Premium range: 1 to add the STOP mention at the end of the SMS (mandatory for commercial SMS).<br> ⚠️ ECO range: This parameter is not applicable for this range, you need to manually add the NoPub=STOP mention for commercial SMS. |
+| **isUnicode**           | If 1: Activates Unicode mode, the maximum number of characters per SMS will be 70. <br>**Important:** Unicode SMS must be activated on your account by an administrator for sending to be available. Please contact technical support for the activation of this feature.<br> [See the list](https://www.smspartner.fr/blog/liste-complete-des-emoticones-a-copier-coller). |
+| **sandbox**             | To test SMS sending, you can use the `sandbox:` parameter **1** to activate sandbox mode. ⚠️ No SMS will be sent, and there will be no charge on your account. These SMS will be automatically deleted from your send lists every day. |
+| **_format**             | Response format. You can choose between `JSON` or `XML`. By default, the response format is `JSON`. |
 
 
-## Requête
-Exemple de requête :
+    
+
+## Request
+Example of a request
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -346,7 +349,7 @@ struct SMSUnitaire: View {
         request.httpMethod = "POST" // Méthode HTTP
         request.httpBody = jsonData // Corps de la requête
         request.addValue("application/json", forHTTPHeaderField: "Content-Type") // Type de contenu 
-        request.addValue("\(jsonData.count)", forHTTPHeaderField: "Content-Length") // Longueur du  contenu
+        request.addValue("(jsonData.count)", forHTTPHeaderField: "Content-Length") // Longueur du  contenu
         request.addValue("no-cache", forHTTPHeaderField: "cache-control") // Contrôle du cache 
         request.addValue("https://webhook.site/TOKEN", forHTTPHeaderField: "webhookUrl") // URL du
          webhook *cette ligne est facultative*
@@ -356,15 +359,15 @@ struct SMSUnitaire: View {
             guard let httpResponse = response as? HTTPURLResponse else {
                 fatalError("Erreur : réponse HTTP non valide.")
             }
-            print("statusCode: \(httpResponse.statusCode)") // Impression du statut HTTP
+            print("statusCode: (httpResponse.statusCode)") // Impression du statut HTTP
             
             if let error = error {
-                print("Error: \(error.localizedDescription)") // Impression de l'erreur, si elle existe
+                print("Error: (error.localizedDescription)") // Impression de l'erreur, si elle existe
             }
             
             if let data = data {
                 if let responseString = String(data: data, encoding: .utf8) {
-                    print("Réponse : \(responseString)") // Impression de la réponse, si elle existe
+                    print("Réponse : (responseString)") // Impression de la réponse, si elle existe
                 }
             }
         }
@@ -512,32 +515,34 @@ class Program
 </result>
   ```
 
-## Erreurs
-Exemple de message d’erreur:
+
+
+## Errors
+Example of an error message:
 
 ### JSON
 ```json
 {
     "success": false,
-    "code":9,
+    "code": 9,
     "errors": [{
         "elementId": "children[message].data",
-        "message": "Le message est requis"
+        "message": "The message is required"
     }, {
         "elementId": "children[phoneNumbers].data",
-        "message": "Ce numero de telephone n'est pas valide (922264)"
+        "message": "This phone number is not valid (922264)"
     }, {
         "elementId": "children[sender].data",
-        "message": "L'emetteur ne peut pas etre plus long que 11 caracteres"
+        "message": "The sender cannot be longer than 11 characters"
     }, {
         "elementId": "children[scheduledDeliveryDate].data",
-        "message": "La date (21/11/2014 \u00e0 :) est anterieure a la date actuelle."
+        "message": "The date (21/11/2014 at :) is earlier than the current date."
     }, {
         "elementId": "children[minute].data",
-        "message": "La minute est requise"
+        "message": "The minute is required"
     }, {
         "elementId": "children[time].data",
-        "message": "L'heure est requise"
+        "message": "The time is required"
     }]
 }
 ```
@@ -550,41 +555,102 @@ Exemple de message d’erreur:
           <entry>
                 <entry>
                   <entry>children[message].data</entry>
-                  <entry>Le message est requis</entry>
+                  <entry>The message is required</entry>
                 </entry>
                 <entry>
                    <entry>children[phoneNumbers].data</entry>
-                   <entry>Ce numéro de téléphone n'est pas valide (922264)</entry>
+                   <entry>This phone number is not valid (922264)</entry>
                 </entry>
                 <entry>
                     <entry>children[sender].data</entry>
-                    <entry>L'émetteur ne peut pas être plus long que 11 caractères</entry>
+                    <entry>The sender cannot be longer than 11 characters</entry>
                 </entry>
                 <entry>
                     <entry>children[scheduledDeliveryDate].data</entry>
-                    <entry>La date (21/11/2014 à :) est anterieure à la date actuelle. Si vous
-                     souhaitez l'envoyer maintenant vous devez sélectionner [Envoi immédiat]</entry>
+                    <entry>The date (21/11/2014 at :) is earlier than the current date. If you
+                     want to send it now, you must select [Send immediately]</entry>
                 </entry>
                 <entry>
                     <entry>children[minute].data</entry>
-                    <entry>La minute est requise</entry>
+                    <entry>The minute is required</entry>
                 </entry>
                 <entry>
                     <entry>children[time].data</entry>
-                    <entry>L'heure est requise</entry>
+                    <entry>The time is required</entry>
                 </entry>
       </entry>
 </result>
   ```
 
-## Code de contrôle
+## Control Codes
 
 | _  | Code erreurs |
 | :---------------: |:---------------|
-|1 | La Clé API est requise |
-|2 | 	Le numéro de téléphone est requis |
-|9 | Au moins une contrainte n’a pas été respectée lors de l’envoi :<br> L’émetteur ne peut pas être plus long que 11 caractères.<br>Numéro de téléphone non valide.<br> Si **scheduledDeliveryDate** est défini:<ul><li>La date (dd/mm/yyyy) est antérieure à la date actuelle.</li><li>La minute est requise.</li><li>L’heure est requise..</li></ul>|
+|1 | 	The API Key is required |
+|2 | 	The phone number is required |
+|9 | At least one constraint was not respected during sending :<br> L’émetteur ne peut pas être plus long que 11 caractères.<br>Numéro de téléphone non valide.<br> Si **scheduledDeliveryDate** est défini:<ul><li>La date (dd/mm/yyyy) est antérieure à la date actuelle.</li><li>La minute est requise.</li><li>L’heure est requise..</li></ul>|
 |10 | Clé API incorrecte |
 |11 | Manque de crédits |
+
+
+
+## List of Replaced Characters
+
+| Characters | Replaced by |
+|:------------:|:---------------:|
+| ą          | à             |
+| ’          | ‘             |
+| ÿ          | y             |
+| ç          | Ç             |
+| û          | u             |
+| ü          | u             |
+| ï          | i             |
+| ô          | o             |
+| ö          | o             |
+| ó          | o             |
+| î          | i             |
+| ë          | e             |
+| ê          | e             |
+| [          | (             |
+| ]          | )             |
+| {          | (             |
+| }          | )             |
+| `          | ‘             |
+| µ          | u             |
+| Ä          | A             |
+| À          | A             |
+| Á          | A             |
+| Â          | A             |
+| Ã          | A             |
+| È          | E             |
+| Ê          | E             |
+| Ë          | E             |
+| Î          | I             |
+| Ü          | U             |
+| Ù          | U             |
+| Ú          | U             |
+| Û          | U             |
+| Ý          | Y             |
+| ä          | a             |
+| á          | a             |
+| â          | a             |
+| ã          | a             |
+| Ö          | O             |
+| Ô          | O             |
+| œ          | oe            |
+| ^          | Removed      |
+| ~          | Removed      |
+| |         | Removed      |
+| \         | Removed      |
+| ¨          | Removed      |
+| °          | .             |
+| ‘          | ‘             |
+| “          | ‘             |
+| ñ          | n             |
+| Ñ          | N             |
+| §          | Removed      |
+| «          | “             |
+| »          | “             |
+
 
 

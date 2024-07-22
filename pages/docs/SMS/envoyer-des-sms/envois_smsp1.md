@@ -487,7 +487,7 @@ class Program
   </div>
 </div>
 
-## Responses
+## Réponses
 
 ### JSON
 ```json
@@ -590,4 +590,66 @@ Exemple de message d’erreur:
 |9 | Au moins une contrainte n’a pas été respectée lors de l’envoi :<br> L’émetteur ne peut pas être plus long que 11 caractères.<br>Numéro de téléphone non valide.<br> Si **scheduledDeliveryDate** est défini:<ul><li>La date (dd/mm/yyyy) est antérieure à la date actuelle.</li><li>La minute est requise.</li><li>L’heure est requise..</li></ul>|
 |10 | Clé API incorrecte |
 |11 | Manque de crédits |
+
+## Liste des caractères remplacés
+
+| Caractères | Remplacé par |
+|:------------:|:---------------:|
+| ą          | à             |
+| ’          | ‘             |
+| ÿ          | y             |
+| ç          | Ç             |
+| û          | u             |
+| ü          | u             |
+| ï          | i             |
+| ô          | o             |
+| ö          | o             |
+| ó          | o             |
+| î          | i             |
+| ë          | e             |
+| ê          | e             |
+| [          | (             |
+| ]          | )             |
+| {          | (             |
+| }          | )             |
+| `          | ‘             |
+| µ          | u             |
+| Ä          | A             |
+| À          | A             |
+| Á          | A             |
+| Â          | A             |
+| Ã          | A             |
+| È          | E             |
+| Ê          | E             |
+| Ë          | E             |
+| Î          | I             |
+| Ü          | U             |
+| Ù          | U             |
+| Ú          | U             |
+| Û          | U             |
+| Ý          | Y             |
+| ä          | a             |
+| á          | a             |
+| â          | a             |
+| ã          | a             |
+| Ö          | O             |
+| Ô          | O             |
+| œ          | oe            |
+| ^          | Supprimé      |
+| ~          | Supprimé      |
+| \|          | Supprimé      |
+|            | Supprimé      |
+| ¨          | Supprimé      |
+| °          | .             |
+| ‘          | ‘             |
+| “          | ‘             |
+| ñ          | n             |
+| Ñ          | N             |
+| §          | Supprimé      |
+| «          | “             |
+| »          | “             |
+
+
+
+
 

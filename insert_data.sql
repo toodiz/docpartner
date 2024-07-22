@@ -5,11 +5,11 @@ INSERT INTO chemin (path) VALUES
 -- Insertion dans la table introduction
 INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
 ('---
-title: Envoi unitaire
+title: Single Send
 description: >
 ---
-# Envoyer des SMS
-Cette requête est utilisée pour envoyer des SMS en temps réel ou en différé.
+# Sending SMS
+This request is used to send SMS in real-time or scheduled.
 ', 'fr', 13); 
 
 -- Insertion dans la table URLAPI

@@ -10,7 +10,8 @@
         {% if group_pages|length > 0 %}
           <li class="group mb-4">
             <a href="#" class="group-title w-full text-left font-bold mb-2 flex items-center justify-between hover:bg-opacity-10 hover:bg-secondary-500 transition-colors duration-200" onclick="toggleGroup(this, event)">
-              <span class="flex-grow pr-2">{{ group }}</span>
+              {% set translated_group = group|trans %}
+              <span class="flex-grow pr-2">{{ translated_group }}</span>
               <i class="bi bi-chevron-down transition-transform ml-auto"></i>
             </a>
             <ol class="group-content hidden pl-4">
@@ -35,7 +36,8 @@
               {% for subgroup, subgroup_pages in subgroups %}
                 <li class="mb-2">
                   <a href="#" class="w-full text-left flex items-center hover:bg-opacity-10 hover:bg-secondary-500 transition-colors duration-200" onclick="toggleGroup(this, event)">
-                    <span class="flex-grow pr-2">{{ subgroup|replace({'-': ' '})|title }}</span>
+                 <span class="flex-grow pr-2">{{ subgroup|replace({'-': ' ', '_': ' '})|lower|capitalize }}</span>
+
                     <i class="bi bi-chevron-down transition-transform ml-auto"></i>
                   </a>
                   <ol class="hidden pl-4 mt-2">

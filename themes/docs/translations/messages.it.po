@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,7 +12,7 @@ msgstr ""
 
 #: partials/sidebar.html.twig:14
 msgid "VOIX"
-msgstr "VOICE"
+msgstr "VOCE"
 
 #: partials/sidebar.html.twig:14
 msgid "MAIL"
@@ -20,52 +20,52 @@ msgstr "EMAIL"
 
 #: partials/sidebar.html.twig:14
 msgid "VERIFICATION NUMEROS"
-msgstr "NUMBERS CHECK"
+msgstr "VERIFICA NUMERI"
 
 #: partials/sidebar.html.twig:14
 msgid "LOCATION NUMEROS"
-msgstr "RENTAL NUMBERS"
+msgstr "POSIZIONE DEI NUMERI"
 
 #: docs/page.html.twig:66
 msgid "Sur cette page"
-msgstr "On this page"
+msgstr "In questa pagina"
 
 #: partials/nav-prev-next.html.twig:6
 msgid "Précédent"
-msgstr "Previous"
+msgstr "Precedente"
 
 #: partials/nav-prev-next.html.twig:55
 msgid "Suivant"
-msgstr "Next"
+msgstr "Successivo"
 
 #: _default/page.html.twig:96
 msgid "Tous droits réservés."
-msgstr "All rights reserved."
+msgstr "Tutti i diritti riservati."
 
 #: _default/page.html.twig:97
 msgid "Mentions légales"
-msgstr "Legal Notice"
+msgstr "Note legali"
 
 #: _default/page.html.twig:98
 msgid "Contact"
-msgstr "Contact"
+msgstr "Contatto"
 
 #: partials/selector-theme.html.twig:5
 msgid "System"
-msgstr "Systèm"
+msgstr "Sistema"
 
 #: partials/selector-theme.html.twig:6
 msgid "Dark"
-msgstr "Dark"
+msgstr "Scuro"
 
 #: partials/selector-theme.html.twig:7
 msgid "Light"
-msgstr "Light"
+msgstr "Chiaro"
 
 #: partials/selector-theme.html.twig:3
 msgid "Theme:"
-msgstr "Theme :"
+msgstr "Tema:"
 
 #: partials/selector-language.html.twig:4
 msgid "Language:"
-msgstr "Language :"
+msgstr "Lingua:"
