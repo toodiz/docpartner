@@ -1,8 +1,14 @@
 <?php
 
+// Fonction pour afficher les messages d'erreur en rouge
+function error_message($message) {
+    echo "\033[31m$message\033[0m\n";
+    die();
+}
+
 // Vérifier si les paramètres path et langue sont fournis
 if ($argc != 3) {
-    die("Usage: php content.php <path> <langue>\n");
+    error_message("Usage: php content.php <path> <langue>");
 }
 
 $path = $argv[1];
@@ -39,7 +45,7 @@ $stmt->execute([$path]);
 $result = $stmt->fetch();
 
 if (!$result) {
-    die("Chemin non trouvé dans la base de données.\n");
+    error_message("Chemin non trouvé dans la base de données.");
 }
 
 $id_chemin = $result['id'];

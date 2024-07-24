@@ -1,6 +1,6 @@
 -- Insertion dans la table chemin
 INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/smsp2.es.md');
+('pages/docs/tablecaractere.en.md');
 
 -- Insertion dans la table introduction
 INSERT INTO introduction (textcode, langue, id_chemin) VALUES 

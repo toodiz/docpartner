@@ -9,6 +9,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
 
   {%- set styles = ['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.highlightjs.version ~ '/styles/github-dark.min.css'] ~%}
   {%- if site.docsearch.enabled ?? false ~%}
@@ -95,6 +96,67 @@
   </footer>
 
   {%- block scripts ~%}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<script>
+function reinitializePrism() {
+  if (typeof Prism !== 'undefined') {
+    Prism.highlightAll();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const currentPath = window.location.pathname;
+
+  function setActiveLink(url) {
+    sidebarLinks.forEach(link => {
+      if (link.getAttribute('data-url') === url) {
+        link.classList.add('active', 'font-bold');
+      } else {
+        link.classList.remove('active', 'font-bold');
+      }
+    });
+  }
+
+  // Set initial active link
+  setActiveLink(currentPath);
+  reinitializePrism();
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const url = this.getAttribute('data-url');
+      
+      setActiveLink(url);
+      
+      // Load content without refreshing the page
+      fetch(url)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const content = doc.querySelector('#content'); // Adjust this selector to match your main content area
+          if (content) {
+            document.querySelector('#content').innerHTML = content.innerHTML;
+            history.pushState(null, '', url);
+            reinitializePrism(); // Réinitialiser Prism.js après le chargement du nouveau contenu
+          }
+        });
+    });
+  });
+});
+
+function toggleGroup(element, event) {
+  event.preventDefault();
+  const content = element.nextElementSibling;
+  const icon = element.querySelector('i');
+  content.classList.toggle('hidden');
+  icon.classList.toggle('rotate-180');
+}
+</script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -119,6 +181,14 @@ function toggleMenu() {
   </script>
   {%- endif ~%}
   {{- include('partials/regsw.js.twig', ignore_missing = true) ~}}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
   {%- endblock scripts ~%}
 </body>
 </html>

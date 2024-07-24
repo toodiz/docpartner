@@ -88,7 +88,7 @@ echo $result;
     </code></pre>
   </div>
   <div class="tab-pane fade" id="vbnet" role="tabpanel" aria-labelledby="vbnet-tab">
-   <pre><code>
+   <pre><code class="language-vbnet">
 cURL
 Imports System.IO
 Imports System.Net
@@ -149,7 +149,7 @@ End Module
   </div>
   <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
     <!-- Python code example goes here -->
-    <pre><code>
+    <pre><code class="language-python">
 # std
 import logging
 import json
@@ -177,13 +177,13 @@ class SMSPartner():
   </div>
   <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
-    <pre><code>
+    <pre><code class="language-curl">
     curl -H "Content-Type: application/json" -X GET  https://api.smspartner.fr/v1/me?apiKey=xxx
    </code></pre>
   </div>
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
-    <pre><code>
+    <pre><code class="language-javascript">
 const https = require('https');
 // Préparer les données pour la requête GET
 let data = 'apiKey=YOUR API KEY';
@@ -210,7 +210,7 @@ https.get(url, (res) => {
   </div>
   <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
     <!-- JAVA code example goes here -->
-   <pre><code>
+   <pre><code class="language-java">
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -251,7 +251,7 @@ public class CreditsSms {
   </div>
   <div class="tab-pane fade" id="swift" role="tabpanel" aria-labelledby="swift-tab">
     <!-- SWIFT code example goes here -->
-    <pre><code>
+    <pre><code class="language-swift">
 import SwiftUI
  
 struct Credits: View {
@@ -303,7 +303,7 @@ struct CreditView_Previews: PreviewProvider {
   </div>
   <div class="tab-pane fade" id="go" role="tabpanel" aria-labelledby="go-tab">
     <!-- GO code example goes here -->
-    <pre><code>
+    <pre><code class="language-go">
 package main
 
 import (
@@ -338,7 +338,7 @@ func main() {
   </div>
   <div class="tab-pane fade" id="csharp" role="tabpanel" aria-labelledby="csharp-tab">
     <!-- C# code example goes here -->
-    <pre><code>
+    <pre><code class="language-csharp">
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -425,7 +425,7 @@ class Program
 
 ## Status Codes
 
-| Code  | Response |
+| Code | Response |
 | :---------------: |:---------------|
 |10 | Incorrect API Key |
 |200 | Successful request ! |

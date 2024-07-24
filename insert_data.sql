@@ -1,16 +1,17 @@
 -- Insertion dans la table chemin
 INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/envoyer-des-sms/envois_smsp1.md');
+('pages/docs/sms/envoyer-des-sms/envois_smsp5.md');
 
 -- Insertion dans la table introduction
 INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
 ('---
-title: Single Send
+title: Envoyer un sondage
 description: >
 ---
-# Sending SMS
-This request is used to send SMS in real-time or scheduled.
-', 'fr', 13); 
+# Envoyer un sondage
+Cette requête est utilisée pour envoyer un sondage en temps réel ou en différé.
+
+', 'fr', 21); 
 
 -- Insertion dans la table URLAPI
 INSERT INTO URLAPI (textcode, id_chemin) VALUES 
@@ -18,9 +19,9 @@ INSERT INTO URLAPI (textcode, id_chemin) VALUES
 
 <div>
   <div style="background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
-  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/me</span>
+  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.smspartner.fr/v1/sondage/to/send</span>
 </div>
-', 13);
+', 21);
 
 -- Insertion dans la table PARAMETRE
 INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
@@ -31,30 +32,21 @@ INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES
     </div>
            
 | Paramètre       | Description |
-|-----------------|-------------| 
+|:-----------------:|-------------| 
 | **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
 | **phoneNumbers** | Numéros de téléphone des destinataires. Pour l\'envoi de plusieurs SMS les numéros doivent être séparés par des virgules. **La limite d\'envoi sur une seule requête est de 500 numéros.** <ul><li>Au format national (0600000000) et international (+33600000000) pour des numéros français.</li><li>Au format international (+496xxxxxxxx), pour des numéros hors France.</li></ul> |
-| **message**     | Contenu du SMS. **160 caractères** maximum par SMS (au-delà, il vous sera décompté un SMS supplémentaire par tranche de 153 caractères). <br>Attention, certains caractères spéciaux et accents sont remplacés lors de l\'envoi : <a href="#" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voir la liste</a> <br>Le caractère ” doit obligatoirement être échappé (\”) pour que le texte du SMS soit valide. Dans le cas contraire une erreur 400 sera retournée. <br>Le tag `:br:` permet de faire un saut de ligne. **Attention le saut de ligne compte pour deux caractères.** <br>**La mention STOP SMS est obligatoire pour les SMS à caractères commerciaux (voir le paramètre `isStopSms` ci-dessous).** <br>Si c\'est un compte marketing la mention STOP SMS est ajoutée automatiquement. |
-
+| **sondageIdent**      | Identifiant du sondage. |
 ## Paramètres optionnels
 
 | Paramètre               | Description |
-|-------------------------|-------------|
-| **gamme**               | Gamme du SMS, sa valeur doit être : <ul><li>1 pour les SMS Premium</li><li>2 pour les SMS Low Cost</li></ul> ⚠️ Si ce paramètre est omis, les SMS seront envoyés dans la gamme Premium |
-| **sender**              | Nom d’émetteur du message. Si l’émetteur est laissé vide, vos SMS seront acheminés avec un shortcode opérateur en guise d’expéditeur (exemple : 36xxx). <br>⚠️ Le nombre de caractères pour le nom de l\'émetteur est compris **entre 3 et 11 inclus** et ne doit pas comporter de caractères spéciaux. <br>Certains modèles de téléphone n\'interprètent pas les caractères spéciaux dans le nom d\'émetteur. |
+|:-------------------------:|-------------|
 | **tag**                 | Chaîne de caractères de 20 caractères maximum sans espace(s) et vous permettant de tagger vos envois. |
 | **scheduledDeliveryDate** | Date d\'envoi du SMS, au format `dd/MM/yyyy`, à définir uniquement si vous souhaitez que les SMS soient envoyés en différé. |
 | **time**                | Heure d\'envoi du SMS (format 0-24), obligatoire si `scheduledDeliveryDate` est définie. |
 | **minute**              | Minute d\'envoi du SMS (format 0-55, par intervalle de cinq minutes), obligatoire si `scheduledDeliveryDate` est définie. |
-| **urlResponse**         | URL de retour des Réponses (ex: https://www.monurlderesponse). |
-| **urlDlr**              | URL de retour des Accusé de réception (ex: https://www.monurldlr). |
-| **isStopSms**           | Gamme Premium : 1 pour ajouter la mention STOP à la fin du SMS (obligatoire pour les SMS commerciaux).<br> ⚠️ Gamme ÉCO : Ce paramètre n’est pas applicable pour cette gamme, il est nécessaire d\'ajouter manuellement la mention NoPub=STOP pour les SMS commerciaux. |
-| **isUnicode**           | Si 1 : Active le mode Unicode, le nombre de caractères maximum par SMS sera de 70. <br>**Important :** le SMS unicode doit être activé sur votre compte par un administrateur pour que les envois soient disponibles. Merci de prendre contact avec le service technique pour l’activation de cette fonctionnalité.<br> [Voir la liste](https://www.smspartner.fr/blog/liste-complete-des-emoticones-a-copier-coller). |
-| **sandbox**             | Pour tester l’envoi de SMS, vous pouvez utiliser le paramètre `sandbox:` **1** pour activer le mode bac à sable. ⚠️ Aucun SMS ne sera envoyé, et il n’y aura aucun débit sur votre compte. Ces SMS seront supprimés de vos listes d’envois automatiquement tous les jours.|
 | **_format**             | Format de la réponse. Vous pouvez choisir entre `JSON` ou `XML`. Par défaut, le format de réponse est `JSON` |
 
-
-    ', 'fr', 13);
+', 'fr', 21);
 
 -- Insertion dans la table REQUETE_REPONSE
 INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
@@ -92,28 +84,41 @@ Exemple de requête :
   </li>
 </ul>
 
+
+
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
 &lt;?php
-// Prepare data for POST request $fields = array( \'apiKey\'=> \'YOUR API KEY\', \'phoneNumbers\'=> \'
-+336xxxxxxxx\', \'message\'=> \'This is your message\', \'sender\' => \'mycompany\',
- \'scheduledDeliveryDate\'=> \'21/10/2014\', \'time\'=> 9, \'minute\'=> 0 );
- $curl = curl_init(); 
- curl_setopt($curl, CURLOPT_URL,\'https://api.smspartner.fr/v1/send\');
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
-curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-curl_setopt($curl, CURLOPT_POST, 1); 
-curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($fields)); 
-$result = curl_exec($curl); 
-curl_close($curl);
- // Process your response here echo $result;
+        // Prepare data for POST request
+        $fields = array(
+            \'apiKey\'=> \'YOUR API KEY\',
+            \'phoneNumbers\'=> \'336xxxxxxxx\',
+            \'sondageIdent\' => \'SONDAGE_IDENT\',
+            \'scheduledDeliveryDate\'=> \'21/10/2014\',
+            \'time\'=> 9,
+            \'minute\'=> 0
+        );
+ 
+ 
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL,\'https://api.smspartner.fr/v1/sondage/to/send\');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($fields));
+ 
+        $result = curl_exec($curl);
+        curl_close($curl);
+ 
+        // Process your response here
+        echo $result;
 ?&gt;
     </code></pre>
   </div>
-  <div class="tab-pane fade" id="vbnet" role="tabpanel" aria-labelledby="vbnet-tab">
-   <pre><code>
+ <div class="tab-pane fade" id="vbnet" role="tabpanel" aria-labelledby="vbnet-tab">
+   <pre><code class="language-vbnet">
 Imports System.IO
 Imports System.Net
  
@@ -125,14 +130,14 @@ Module Module1
     Dim apiKey As String = "VOTRE_APIKEY"
  
     #send sms
-    url = base_url & "send"
+    url = base_url & "sondage/to/send"
     #note : utiliser une librairie JSON en production, par exemple :
     #https//www.nuget.org/packages/Newtonsoft.Json/
     Dim parameters As String = String.Format(
-        "{{""apiKey"":""{0}"",""phoneNumbers"":""{1}"",""message"":""{2}""}}",
+        "{{""apiKey"":""{0}"",""phoneNumbers"":""{1}"",""sondageIdent"":""{2}""}}",
         apiKey,
         "+33XXXXXXXXX",
-        "message de test")
+        "SONDAGE_IDENT")
     Console.Write(parameters)
     apiRequest("POST", url, parameters)
  
@@ -178,138 +183,142 @@ End Module
   </div>
   <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
     <!-- Python code example goes here -->
-    <pre><code>
-import http.client
+    <pre><code class="language-python">
+# std
+import logging
 import json
-conn = http.client.HTTPSConnection("api.smspartner.fr")
-
-payload = json.dumps({
-"apiKey": "your api key smspartner", #remplacez par votre clé API SMSPartner
-"phoneNumbers": "+336xxxxxxxx", #remplacez par votre numéro de téléphone
-"sender": "Your sender name",
-"gamme": 1,
-"message": "Cest un message test PYTHON", #remplacez par votre message
- "webhookUrl": "https://webhook.site/TOKEN" #remplacez TOKEN par votre token webhook.site
-})
-
-headers = {
-\'Content-Type\': \'application/json\',
-\'Content-Length\': str(len(payload)),
-\'cache-control\': \'no-cache\'
-}
-
-conn.request("POST", "/v1/send", payload, headers) #Une requête POST est envoyée au serveur
- SMSPartner avec le chemin d\'URL "/v1/send"
-
-res = conn.getresponse() #La réponse est ensuite stockée dans la variable res.
-
-data = res.read() 
-
-print(data.decode("utf-8")) #Cette ligne lit les données de la réponse HTTP.
+from collections import OrderedDict
+ 
+# 3p
+import requests
+ 
+API_KEY = "MY API KEY"
+URL = "https://api.smspartner.fr/v1"
+ 
+class SMSPartner():
+    def send_sms(self,phone_numbers, sondageIdent):
+		#sender = "DEMOSMS"
+		print(phone_numbers)
+ 
+		data = OrderedDict([
+			("apiKey", API_KEY),
+			("phoneNumbers", phone_numbers),
+			("sondageIdent", sondageIdent)
+		])
+ 
+		url = URL + "/send"
+		r = requests.post(url, data=json.dumps(data), verify=False)
+ 
+		r_json = r.json()
+		if r_json.get("success") == True:
+			print(r_json)
+			status = True
+		else:
+			print("SMS msg {} not delivered to {}".format(msg, phone_numbers))
+			status = False
+		return status
    </code></pre>
   </div>
-  <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
+    <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
-    <pre><code>
-curl -H  "Content-Type: application/json" -X POST -d \'{"apiKey":"xxxxx","phoneNumbers":"xxxx",
-"message":"test","sender":"mycompany"}\' https://api.smspartner.fr/v1/send
+    <pre><code class="language-bash">
+    curl -H  "Content-Type: application/json" -X POST -d \'{"apiKey":"xxxxx","phoneNumbers":"xxxx","sondageIdent":"SONDAGE_IDENT"}\' https://api.smspartner.fr/v1/sondage/to/send
    </code></pre>
   </div>
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
-    <pre><code>
-// Importer le module \'https\' de Node.js
+    <pre><code class="language-javascript">
 const https = require(\'https\');
 
-// Objet JSON qui contient les informations nécessaires pour envoyer le SMS
-const data = JSON.stringify({
-    apiKey: \'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\', //remplacez par votre clé API
-    phoneNumbers: \'+336XXXXXXXX\',  //remplacez par votre numéro de téléphone
-    sender: \'NodeJS\',
-    gamme: 1,
-    message: "Cest un message test NodeJS" //remplacez par votre message
+// Préparer les données pour la requête POST
+let data = JSON.stringify({
+  apiKey: \'YOUR API KEY\',
+  phoneNumbers: \'+336XXXXXXXX\',
+  // identifiant du sondage que vous avez créé dans votre compte SMS Partner
+  sondageIdent: \'SONDAGE ID\',
+  scheduledDeliveryDate: \'04/07/2023\',
+  time: 11,
+  minute: 55 //tous les 5 minutes ex: 00, 05, 10, 15, 20, etc.
 });
 
-// Définir les options pour la requête HTTP POST vers l\'API SMS Partner
-const options = {
+let options = {
   hostname: \'api.smspartner.fr\',
-  port: 443,
-  path: \'/v1/send\',
+  path: \'/v1/sondage/to/send\',
   method: \'POST\',
   headers: {
     \'Content-Type\': \'application/json\',
-    \'Content-Length\': data.length,
-    \'cache-control\': \'no-cache\',
-    \'webhookUrl\': \'https://webhook.site/TOKEN\' // Webhook URL *cette ligne est optionnel*
+    \'Content-Length\': data.length
   }
 };
 
-// Demande HTTP POST avec les options et les données définies précédemment
-const req = https.request(options, (res) => {
-  console.log(`statusCode: ${res.statusCode}`);
-  
-  // Afficher les données de réponse de l\'API sur la sortie standard
-  res.on(\'data\', (d) => {
-    process.stdout.write(d);
+let req = https.request(options, (res) => {
+  let data = \'\';
+  res.on(\'data\', (chunk) => {
+    data += chunk;
   });
+
+  res.on(\'end\', () => {
+    console.log(JSON.parse(data));
+  });
+
+}).on("error", (err) => {
+  console.log("Erreur: " + err.message);
 });
 
-// Affichage en cas d\'erreur lors de l\'exécution de la requête HTTP POST
-req.on(\'error\', (error) => {
-  console.error(error);
-});
-
-// Envoyer les données de l\'objet \'data\' à la demande
 req.write(data);
-// Terminer la demande HTTP POST
 req.end();
    </code></pre>
   </div>
   <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
     <!-- JAVA code example goes here -->
-   <pre><code>
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.OutputStream;
+   <pre><code class="language-java">
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.stream.Collectors;
-import org.json.JSONObject;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-public class SMSRequest {
+public class SondageParSMS {
     public static void main(String[] args) {
         try {
-        // Création de l\'objet URL avec l\'adresse de l\'API SMS
-            URL url = new URL("https://api.smspartner.fr/v1/send");
-        // Ouverture de la connexion HTTP avec l\'API
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/json");
-            conn.setRequestProperty("cache-control", "no-cache");
-            conn.setDoOutput(true);
+            // Prepare data for POST request
+            String apiKey = "your_api_key";
+            String phoneNumbers = "+336XXXXXXXX";
+            String sondageIdent = "your_sondage_ident";
+            String scheduledDeliveryDate = "05/07/2023";
+            int time = 10;
+            int minute = 35;
 
-        // Création de l\'objet JSON contenant les paramètres du SMS à envoyer   
-            JSONObject json = new JSONObject();
-            json.put("apiKey", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"); //your api key smspartner
-            json.put("phoneNumbers", "+336XXXXXXXX"); //your phone number
-            json.put("virtualNumber", "+336XXXXXXXX");
-            json.put("sender", "demo JAVA");
-            json.put("gamme", 1);
-            json.put("message", "C\'est un message test en JAVA !");
-            json.put("webhookUrl", "https://webhook.site/TOKEN"); //your webhook url
-        
-        // Écriture des données JSON dans le corps de la requête HTTP
-            OutputStream os = conn.getOutputStream(); 
-            os.write(json.toString().getBytes());
-            os.flush();
+            // Create JSON payload
+            String jsonPayload = "{\"apiKey\": \"" + apiKey + "\", \"phoneNumbers\": \"" + phoneNumbers +
+                    "\", \"sondageIdent\": \"" + sondageIdent + "\", \"scheduledDeliveryDate\": \"" +
+                    scheduledDeliveryDate + "\", \"time\": " + time + ", \"minute\": " + minute + "}";
 
-        // Lecture de la réponse de l\'API
-            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String response = br.lines().collect(Collectors.joining());
-            System.out.println(response);
-            
-        // Fermeture de la connexion HTTP
-            conn.disconnect();
+            // Create POST request
+            URL url = new URL("https://api.smspartner.fr/v1/sondage/to/send");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setDoOutput(true);
+
+            // Send POST request
+            OutputStream outputStream = connection.getOutputStream();
+            outputStream.write(jsonPayload.getBytes());
+            outputStream.flush();
+            outputStream.close();
+
+            // Get response
+            int responseCode = connection.getResponseCode();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+
+            // Process your response here
+            System.out.println(response.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -319,141 +328,133 @@ public class SMSRequest {
   </div>
   <div class="tab-pane fade" id="swift" role="tabpanel" aria-labelledby="swift-tab">
     <!-- SWIFT code example goes here -->
-    <pre><code>
+    <pre><code class="language-swift">
 import SwiftUI
 
-struct SMSUnitaire: View {
+struct SondageSMS: View {
+    @State private var result: String = "Loading..."
+
     var body: some View {
-        // Un bouton qui appelle la fonction sendSMS() lorsqu\'il est pressé
-        Button(action: {
-            sendSMS()
-        }) {
-            Text("Envoyer SMS unitaire")
-                .font(.system(size: 20)) // Taille du texte
-                .foregroundColor(.white) // Couleur du texte
-                .frame(minWidth: 0, maxWidth: .infinity) // Taille du bouton, qui s\'ajuste automatiquement
-                .padding() // Padding autour du texte
-                .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity
-                (0.8)]), startPoint: .top, endPoint: .bottom)) // Fond du bouton, un dégradé de bleu
-                .cornerRadius(10) // Coins arrondis du bouton
-                .padding(.horizontal) // Espacement horizontal autour du bouton
+        VStack {
+            Text("Sondage SMS")
+                .font(.title)
+                .padding()
+
+            Text(result)
+                .font(.system(size: 20))
+                .padding()
         }
+        .onAppear(perform: sendSondage)
     }
 
-    func sendSMS() {
-        // Objet JSON contenant les informations nécessaires pour envoyer le SMS
-        let data = [
-            "apiKey": "XXXXXXXXXXXX YOUR API KEY XXXXXXXXXXXXX", // remplacez par votre clé API
-            "phoneNumbers": "+336XXXXXXXX", // remplacez par votre numéro de téléphone
-            "sender": "Swift",
-            "gamme": 1,
-            "message": "C\'est un message test Swift" // remplacez par votre message
-        ] as [String : Any]
-        
-        // Conversion de l\'objet JSON en données
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []) else {
-            fatalError("Erreur lors de la conversion des données en JSON.")
-        }
-        
-        // Définition des options pour la requête HTTP POST à l\'API SMS Partner
-        let url = URL(string: "https://api.smspartner.fr/v1/send")!
+    func sendSondage() {
+        let apiKey = "YOUR_API_KEY"
+        let phoneNumber = "+336xxxxxxxx"
+        let sondageIdent = "SONDAGE_IDENT"
+        let scheduledDeliveryDate = "05/07/2023"
+        let time = 9
+        let minute = 0
+
+        let urlString = "https://api.smspartner.fr/v1/sondage/to/send"
+        let url = URL(string: urlString)!
+
         var request = URLRequest(url: url)
-        request.httpMethod = "POST" // Méthode HTTP
-        request.httpBody = jsonData // Corps de la requête
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // Type de contenu 
-        request.addValue("\(jsonData.count)", forHTTPHeaderField: "Content-Length") // Longueur du  contenu
-        request.addValue("no-cache", forHTTPHeaderField: "cache-control") // Contrôle du cache 
-        request.addValue("https://webhook.site/TOKEN", forHTTPHeaderField: "webhookUrl") // URL du
-         webhook *cette ligne est facultative*
-        
-        // Exécution de la requête HTTP POST avec les options et données définies précédemment
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let parameters: [String: Any] = [
+            "apiKey": apiKey,
+            "phoneNumbers": phoneNumber,
+            "sondageIdent": sondageIdent,
+            "scheduledDeliveryDate": scheduledDeliveryDate,
+            "time": time,
+            "minute": minute
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                fatalError("Erreur : réponse HTTP non valide.")
-            }
-            print("statusCode: \(httpResponse.statusCode)") // Impression du statut HTTP
-            
             if let error = error {
-                print("Error: \(error.localizedDescription)") // Impression de l\'erreur, si elle existe
-            }
-            
-            if let data = data {
-                if let responseString = String(data: data, encoding: .utf8) {
-                    print("Réponse : \(responseString)") // Impression de la réponse, si elle existe
+                print("Error: \(error)")
+            } else if let data = data {
+                let resultString = String(data: data, encoding: .utf8)
+                DispatchQueue.main.async {
+                    self.result = resultString ?? "Error"
                 }
             }
         }
-        task.resume() // Démarrage de la tâche
+
+        task.resume()
+    }
+}
+
+struct SondageSMS_Previews: PreviewProvider {
+    static var previews: some View {
+        SondageSMS()
     }
 }
    </code></pre>
   </div>
   <div class="tab-pane fade" id="go" role="tabpanel" aria-labelledby="go-tab">
     <!-- GO code example goes here -->
-    <pre><code>
+    <pre><code class="language-go">
 package main
 
 import (
 	"bytes"
-	"fmt"
+	"encoding/json"
+	"io/ioutil"
+	"log"
 	"net/http"
+	"time"
 )
 
 func main() {
-	apiKey := "VOTRE CLE API"
-	phoneNumbers := "+336xxxxxxxx"
-	message := "Ceci est votre message"
-	sender := "monentreprise"
-	scheduledDeliveryDate := "21/10/2014"
-	time := 9
-	minute := 0
-
-	// Construire le corps JSON pour la requête POST
-	jsonData := fmt.Sprintf(`{
-		"apiKey": "%s",
-		"phoneNumbers": "%s",
-		"message": "%s",
-		"sender": "%s",
-		"scheduledDeliveryDate": "%s",
-		"time": %d,
-		"minute": %d
-	}`, apiKey, phoneNumbers, message, sender, scheduledDeliveryDate, time, minute)
-
-	// Effectuer la requête POST
-	url := "https://api.smspartner.fr/v1/send"
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(jsonData)))
-	if err != nil {
-		fmt.Println("Erreur lors de la création de la requête:", err)
-		return
+	// Prepare data for POST request
+	data := map[string]interface{}{
+		"apiKey":                "YOUR API KEY",
+		"phoneNumbers":          "+336xxxxxxxx",
+		"sondageIdent":          "SONDAGE_IDENT",
+		"scheduledDeliveryDate": "21/10/2024",
+		"time":                  9,
+		"minute":                0,
 	}
+
+	payload, err := json.Marshal(data)
+	if err != nil {
+		log.Fatalf("Error preparing data: %v", err)
+	}
+
+	// Create POST request
+	client := &http.Client{Timeout: 10 * time.Second}
+	req, err := http.NewRequest("POST", "https://api.smspartner.fr/v1/sondage/to/send", bytes.NewBuffer(payload))
+	if err != nil {
+		log.Fatalf("Error creating request: %v", err)
+	}
+
 	req.Header.Set("Content-Type", "application/json")
 
-	client := &http.Client{}
+	// Send POST request
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println("Erreur lors de l\'envoi de la requête:", err)
-		return
+		log.Fatalf("Error sending request: %v", err)
 	}
 	defer resp.Body.Close()
 
-	// Traiter la réponse
-	if resp.StatusCode == http.StatusOK {
-		body := new(bytes.Buffer)
-		_, err := body.ReadFrom(resp.Body)
-		if err != nil {
-			fmt.Println("Erreur lors de la lecture de la réponse:", err)
-			return
-		}
-		fmt.Println(body.String())
-	} else {
-		fmt.Println("La requête POST a échoué. Code de réponse:", resp.StatusCode)
+	// Get response
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalf("Error reading response body: %v", err)
 	}
+
+	// Process your response here
+	log.Printf("Response: %s", body)
 }
    </code></pre>
   </div>
   <div class="tab-pane fade" id="csharp" role="tabpanel" aria-labelledby="csharp-tab">
     <!-- C# code example goes here -->
-    <pre><code>
+    <pre><code class="language-csharp">
 using System;
 using System.Net.Http;
 using System.Text;
@@ -470,8 +471,7 @@ class Program
         {
             apiKey = "YOUR_API_KEY",
             phoneNumbers = "+336xxxxxxxx",
-            message = "This is your message",
-            sender = "mycompany",
+            sondageIdent = "SONDAGE_IDENT",
             scheduledDeliveryDate = "21/10/2014",
             time = 9,
             minute = 0
@@ -482,7 +482,7 @@ class Program
             Encoding.UTF8,
             "application/json");
 
-        HttpResponseMessage response = await client.PostAsync("https://api.smspartner.fr/v1/send", content);
+        HttpResponseMessage response = await client.PostAsync("https://api.smspartner.fr/v1/sondage/to/send", content);
 
         if (response.IsSuccessStatusCode)
         {
@@ -499,7 +499,7 @@ class Program
   </div>
 </div>
 
-## Responses
+## Réponses
 
 ### JSON
 ```json
@@ -512,21 +512,12 @@ class Program
    "currency": "EUR"
 }
 ```
-### XML
-```xml
-    <?xml version=\'1.0\' encoding=\'UTF-8\'?>
-<result>
-  <entry>true</entry>
-  <entry>200</entry>
-  <entry>306</entry>
-  <entry>1</entry>
-  <entry>0.038</entry>
-  <entry>
-        <![CDATA[EUR]]>
-  </entry>
-</result>
-  ```
+',
+'fr', 21);
 
+-- Insertion dans la table Suitecode 
+INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
+('
 ## Erreurs
 Exemple de message d’erreur:
 
@@ -535,11 +526,11 @@ Exemple de message d’erreur:
 {
     "success": false,
     "code":9,
-    "errors": [{
+    "error": [{
         "elementId": "children[message].data",
         "message": "Le message est requis"
     }, {
-        "elementId": "children[phoneNumbers].data",
+        "elementId": "children[phoneNumber].data",
         "message": "Ce numero de telephone n\'est pas valide (922264)"
     }, {
         "elementId": "children[sender].data",
@@ -556,47 +547,8 @@ Exemple de message d’erreur:
     }]
 }
 ```
-### XML
-```xml
-<?xml version=\'1.0\' encoding=\'UTF-8\'?>
- <result>
-          <entry>false</entry>
-          <entry>9</entry>
-          <entry>
-                <entry>
-                  <entry>children[message].data</entry>
-                  <entry>Le message est requis</entry>
-                </entry>
-                <entry>
-                   <entry>children[phoneNumbers].data</entry>
-                   <entry>Ce numéro de téléphone n\'est pas valide (922264)</entry>
-                </entry>
-                <entry>
-                    <entry>children[sender].data</entry>
-                    <entry>L\'émetteur ne peut pas être plus long que 11 caractères</entry>
-                </entry>
-                <entry>
-                    <entry>children[scheduledDeliveryDate].data</entry>
-                    <entry>La date (21/11/2014 à :) est anterieure à la date actuelle. Si vous
-                     souhaitez l\'envoyer maintenant vous devez sélectionner [Envoi immédiat]</entry>
-                </entry>
-                <entry>
-                    <entry>children[minute].data</entry>
-                    <entry>La minute est requise</entry>
-                </entry>
-                <entry>
-                    <entry>children[time].data</entry>
-                    <entry>L\'heure est requise</entry>
-                </entry>
-      </entry>
-</result>
-  ```
-', 
-'fr', 13);
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('## Code de contrôle
+## Code de contrôle
 
 | _  | Code erreurs |
 | :---------------: |:---------------|
@@ -604,4 +556,8 @@ INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES
 |2 | 	Le numéro de téléphone est requis |
 |9 | Au moins une contrainte n’a pas été respectée lors de l’envoi :<br> L’émetteur ne peut pas être plus long que 11 caractères.<br>Numéro de téléphone non valide.<br> Si **scheduledDeliveryDate** est défini:<ul><li>La date (dd/mm/yyyy) est antérieure à la date actuelle.</li><li>La minute est requise.</li><li>L’heure est requise..</li></ul>|
 |10 | Clé API incorrecte |
-|11 | Manque de crédits |', 'fr', 13);
+|11 | Manque de crédits |
+
+## Liste des caractères remplacés
+Consulter la table des caractéres remplacés <a href="/docs/tablecaractere" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;"> 📒 Voir table</a> <br> <br>
+', 'fr', 21);

@@ -101,7 +101,7 @@ curl_close($curl);
     </code></pre>
   </div>
   <div class="tab-pane fade" id="vbnet" role="tabpanel" aria-labelledby="vbnet-tab">
-   <pre><code>
+   <pre><code class="language-vbnet">
 Imports System.IO
 Imports System.Net
  
@@ -166,7 +166,7 @@ End Module
   </div>
   <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
     <!-- Python code example goes here -->
-    <pre><code>
+    <pre><code class="language-python">
 import http.client
 import json
 conn = http.client.HTTPSConnection("api.smspartner.fr")
@@ -198,14 +198,14 @@ print(data.decode("utf-8")) #Cette ligne lit les données de la réponse HTTP.
   </div>
   <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
-    <pre><code>
+    <pre><code class="language-curl">
 curl -H  "Content-Type: application/json" -X POST -d '{"apiKey":"xxxxx","phoneNumbers":"xxxx",
 "message":"test","sender":"mycompany"}' https://api.smspartner.fr/v1/send
    </code></pre>
   </div>
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
-    <pre><code>
+    <pre><code class="language-javascript">
 // Importer le module 'https' de Node.js
 const https = require('https');
 
@@ -255,7 +255,7 @@ req.end();
   </div>
   <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
     <!-- JAVA code example goes here -->
-   <pre><code>
+   <pre><code class="language-java">
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.OutputStream;
@@ -307,7 +307,7 @@ public class SMSRequest {
   </div>
   <div class="tab-pane fade" id="swift" role="tabpanel" aria-labelledby="swift-tab">
     <!-- SWIFT code example goes here -->
-    <pre><code>
+    <pre><code class="language-swift">
 import SwiftUI
 
 struct SMSUnitaire: View {
@@ -378,7 +378,7 @@ struct SMSUnitaire: View {
   </div>
   <div class="tab-pane fade" id="go" role="tabpanel" aria-labelledby="go-tab">
     <!-- GO code example goes here -->
-    <pre><code>
+    <pre><code class="language-go">
 package main
 
 import (
@@ -441,7 +441,7 @@ func main() {
   </div>
   <div class="tab-pane fade" id="csharp" role="tabpanel" aria-labelledby="csharp-tab">
     <!-- C# code example goes here -->
-    <pre><code>
+    <pre><code class="language-csharp">
 using System;
 using System.Net.Http;
 using System.Text;
@@ -592,65 +592,7 @@ Example of an error message:
 |10 | Clé API incorrecte |
 |11 | Manque de crédits |
 
-
-
 ## List of Replaced Characters
 
-| Characters | Replaced by |
-|:------------:|:---------------:|
-| ą          | à             |
-| ’          | ‘             |
-| ÿ          | y             |
-| ç          | Ç             |
-| û          | u             |
-| ü          | u             |
-| ï          | i             |
-| ô          | o             |
-| ö          | o             |
-| ó          | o             |
-| î          | i             |
-| ë          | e             |
-| ê          | e             |
-| [          | (             |
-| ]          | )             |
-| {          | (             |
-| }          | )             |
-| `          | ‘             |
-| µ          | u             |
-| Ä          | A             |
-| À          | A             |
-| Á          | A             |
-| Â          | A             |
-| Ã          | A             |
-| È          | E             |
-| Ê          | E             |
-| Ë          | E             |
-| Î          | I             |
-| Ü          | U             |
-| Ù          | U             |
-| Ú          | U             |
-| Û          | U             |
-| Ý          | Y             |
-| ä          | a             |
-| á          | a             |
-| â          | a             |
-| ã          | a             |
-| Ö          | O             |
-| Ô          | O             |
-| œ          | oe            |
-| ^          | Removed      |
-| ~          | Removed      |
-| |         | Removed      |
-| \         | Removed      |
-| ¨          | Removed      |
-| °          | .             |
-| ‘          | ‘             |
-| “          | ‘             |
-| ñ          | n             |
-| Ñ          | N             |
-| §          | Removed      |
-| «          | “             |
-| »          | “             |
-
-
+Consult the table of replaced characters : <a href="/docs/sms/envoyer-des-sms/envois_smsp4" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;"> 📒 View table</a>
 

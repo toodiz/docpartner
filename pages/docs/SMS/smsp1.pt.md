@@ -10,7 +10,7 @@ Os envios de SMS são feitos através da [API SMS](https://www.smspartner.fr/api
 
 
 
-## Parâmetros
+## Configurações
 
 Cada solicitação da API suporta pelo menos os seguintes parâmetros:
 

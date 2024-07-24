@@ -7,7 +7,7 @@ blocks:
 
   <div class="features">
     <div class="feature">
-      <a href="/docs/sms/sms-page-01">
+      <a href="/docs/sms/smsp1">
         <i class="bi bi-chat-dots feature-icon"></i>
         <h3 >SMS</h3>
         <p>Integrate directly our API for your SMS sending (SMS Premium, Low Cost SMS, international SMS). 

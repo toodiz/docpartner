@@ -50,6 +50,6 @@ Toutes les demandes de l’API doivent être envoyées à http://api.smspartner.
 
 <a href="https://github.com/smspartnerfr/SMS-API-PHP" class="btn btn-success btn-sm text-white">Exemple API</a>
 
-N’hésitez pas à consulter nos SDK disponible sur ce site.
+N’hésitez pas à consulter nos [SDK](https://docpartner.dev/sdks).disponible sur ce site.
 
 
