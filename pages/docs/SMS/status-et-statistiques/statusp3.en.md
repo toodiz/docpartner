@@ -1,43 +1,34 @@
--- Insertion dans la table chemin
-INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/status-et-statistiques/statusp2.md');
-
--- Insertion dans la table introduction
-INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
-('---
-title: Statut par Tag
+---
+title: Status by Message
 description: >
 ---
-# Statut par Tag
-Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un Tag.
-<div class="alert alert-info">
-A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme. </div>
-', 'fr',  31); 
+# Status by ID
+This request allows you to retrieve the statuses of multiple SMS from an ID.
 
--- Insertion dans la table URLAPI
-INSERT INTO URLAPI (textcode, id_chemin) VALUES 
-('## URL
+<div class="alert alert-info">
+Note: delivery reports are typically received a few seconds after sending the SMS; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.
+    </div>
+
+
+
+## URL
 
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
-  <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/message-status</span>
+  <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/bulk-status</span>
 </div>
-', , 31);
 
--- Insertion dans la table PARAMETRE
-INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
-('## Paramètres
+
+### Parameters
            
-| Paramètre       | Description |
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-|**tag**   | Le tag du message.|
-', 'fr', , 31);
+| **apiKey**      | API key of your account. You can obtain it from your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
+| **messageId** | Message ID. <br> It can be found in [the response when sending an SMS](../envoyer-des-sms/envois_smsp1.md).|
 
--- Insertion dans la table REQUETE_REPONSE
-INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
-('## Requête
-Exemple de requête :
+
+## Request
+Request example
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -70,20 +61,18 @@ Exemple de requête :
   </li>
 </ul>
 
-
-
-
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
-&lt;? // Prepare data for GET request
-       // Prepare data for GET request
-        $data = \'apiKey=YOUR_API_KEY&tag=montag\';
+&lt;?php
+ 
+        // Prepare data for GET request
+        $data = 'apiKey=YOUR_API_KEY&messageId=300';
  
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL,
-        \'https://api.smspartner.fr/v1/bulk-status-by-tag?\'.$data);
+        curl_setopt($curl,
+         CURLOPT_URL,'https://api.smspartner.fr/v1/bulk-status?'.$data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 10);
  
@@ -93,6 +82,7 @@ Exemple de requête :
  
         // Process your response here
         echo $result;
+
 ?&gt;
     </code></pre>
   </div>
@@ -107,11 +97,11 @@ Module Module1
  
     Dim base_url As String = "http://api.smspartner.fr/v1/"
     Dim apiKey As String = "VOTRE_APIKEY"
-    Dim tag As String = "montag"
+    Dim messageId As Integer = XXX
  
     #check credits
     Dim url As String
-    url = base_url & "bulk-status-by-tag" & "?apiKey=" & apiKey & "&tag=" & tag
+    url = base_url & "bulk-status" & "?apiKey=" & apiKey & "&messageId=" & messageId
  
     Dim credits As String
     credits = apiRequest("GET", url, Nothing)
@@ -170,8 +160,8 @@ API_KEY = "MY API KEY"
 URL = "https://api.smspartner.fr/v1"
  
 class SMSPartner():
-    def get_delivery(self,tag):
-		url = URL + "/bulk-status-by-tag?apiKey=" + API_KEY +  "&tag=" + tag
+    def get_delivery(self,message_id):
+		url = URL + "/bulk-status?apiKey=" + API_KEY +  "&messageId=" + message_id
 		r = requests.get(url)
 		r_json = r.json()
 		if r_json.get("success") == True:
@@ -181,31 +171,35 @@ class SMSPartner():
 			print(r_json)
 			status = False
 		return status
-    </pre> </code>
   </div>
     <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
     <pre><code class="language-bash">
 curl -H  "Content-Type: application/json" -X GET  
-https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=xxx&tag=montag   </code></pre>
+https://api.smspartner.fr/v1/bulk-status?apiKey=xxx&messageId=300
+   </code></pre>
   </div>
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
     <pre><code class="language-javascript">
-const https = require(\'https\');
+const https = require('https');
 
-//Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un tag.
-let data = \'apiKey=YOUR_API_KEY&tag=montag\';
-let url = \'https://api.smspartner.fr/v1/bulk-status-by-tag?\' + data;
+//Cette requête permet de récupérer les statuts de 
+//plusieurs SMS à partir d’un ID.
+
+// Préparer les données pour la requête GET
+let data = 'apiKey=YOUR_API_KEY&messageId=300';
+let url = 'https://api.smspartner.fr/v1/bulk-status?' + 
+data;
 
 https.get(url, (res) => {
   let data = '';
 
-  res.on(\'data\', (chunk) => {
+  res.on('data', (chunk) => {
     data += chunk;
   });
 
-  res.on(\'end\', () => {
+  res.on('end', () => {
     console.log(JSON.parse(data));
   });
 
@@ -222,22 +216,25 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class StatutParTag {
+public class StatutSmsParID {
     public static void main(String[] args) {
         try {
             // Prepare data for GET request
             String apiKey = "YOUR_API_KEY";
-            String tag = "montag";
+            String messageId = "300";
 
             // Create GET request URL
-            String urlString = "https://api.smspartner.fr/v1/bulk-status-by-tag?" +
-                    "apiKey=" + apiKey + "&tag=" + tag;
+            String urlString = "https://api.smspartner.fr/v1/bulk-status?" +
+
+                    "apiKey=" + apiKey + "&messageId=" + 
+                    messageId;
 
             // Create URL object
             URL url = new URL(urlString);
 
             // Create HTTP connection
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection connection = 
+            (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(10000);
             connection.setReadTimeout(10000);
@@ -274,12 +271,12 @@ public class StatutParTag {
     <pre><code class="language-swift">
 import SwiftUI
 
-struct StatutSmsParTag: View {
+struct StatutSmsParID: View {
     @State private var result: String = "Loading..."
-    
+
     var body: some View {
         VStack {
-            Text("Statut Sms Par Tag")
+            Text("Statut SMS Par ID")
                 .font(.title)
                 .padding()
 
@@ -287,24 +284,27 @@ struct StatutSmsParTag: View {
                 .font(.system(size: 20))
                 .padding()
         }
-        .onAppear(perform: getStatusByTag)
+        .onAppear(perform: getStatusById)
     }
 
-    func getStatusByTag() {
+    func getStatusById() {
         let apiKey = "YOUR_API_KEY"
-        let tag = "montag"
-        let urlString = "https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=\(apiKey)&tag=\(tag)"
+        let messageId = "300"
+        let urlString = 
+        "https://api.smspartner.fr/v1/bulk-status?apiKey=(apiKey)&messageId=(messageId)"
 
         guard let url = URL(string: urlString) else {
             print("URL inválida")
             return
         }
 
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url) 
+        { (data, response, error) in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: (error)")
             } else if let data = data {
-                let result = String(data: data, encoding: .utf8)
+                let result = 
+                String(data: data, encoding: .utf8)
                 DispatchQueue.main.async {
                     self.result = result ?? "Error"
                 }
@@ -314,11 +314,18 @@ struct StatutSmsParTag: View {
         task.resume()
     }
 }
+
+struct StatutSmsParID_Previews: PreviewProvider {
+    static var previews: some View {
+        StatutSmsParID()
+    }
+}
    </code></pre>
   </div>
   <div class="tab-pane fade" id="go" role="tabpanel" aria-labelledby="go-tab">
     <!-- GO code example goes here -->
-   package main
+    <pre><code class="language-go">
+package main
 
 import (
 	"io/ioutil"
@@ -330,11 +337,11 @@ import (
 func main() {
 	// Prepare data for GET request
 	apiKey := "YOUR_API_KEY"
-	tag := "montag"
+	messageId := "300"
 
 	// Create GET request URL
-	url := "https://api.smspartner.fr/v1/bulk-status-by-tag?" +
-		"apiKey=" + apiKey + "&tag=" + tag
+	url := "https://api.smspartner.fr/v1/bulk-status?" +
+		"apiKey=" + apiKey + "&messageId=" + messageId
 
 	// Create HTTP client
 	client := &http.Client{Timeout: 10 * time.Second}
@@ -371,8 +378,8 @@ class Program
     static async Task Main(string[] args)
     {
         var apiKey = "YOUR_API_KEY";
-        var tag = "montag";
-        var uri = new Uri($"https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey={apiKey}&tag={tag}");
+        var messageId = "300";
+        var uri = new Uri($"https://api.smspartner.fr/v1/bulk-status?apiKey={apiKey}&messageId={messageId}");
 
         HttpResponseMessage response = await client.GetAsync(uri);
 
@@ -391,14 +398,14 @@ class Program
   </div>
 </div>
 
-## Réponses
+## Response
 
 ### JSON
+```json
 {
     "success": true,
     "code": 200,
-    "currentPage": 1,
-    "total": 2,
+    "message_id": "111",
     "StatutResponse_List": [
         {
             "phoneNumber": "+336XXXXXXX1",
@@ -415,18 +422,15 @@ class Program
              ...
 }
 ```
-### 3 statuts de remises possibles
+### 3 possible delivery statuses
 * **Delivered**
 * **Not delivered**
 * **Waiting**
-',
-'fr', , 31);
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('
-## Erreurs
-Exemple de message d’erreur:
+
+
+## Errors
+Example of an error message:
 
 ### JSON
 ```json
@@ -437,14 +441,15 @@ Exemple de message d’erreur:
 }
 ```
 
-## Code de contrôle
+## Control Codes
 
-| _  | Code erreurs |
+| _  | Error Codes |
 | :---------------: |:---------------|
-|1 | La Clé API est requise |
-|3 | 	L’ID du message est requis |
-|4 | Message introuvable|
-|10 | Clé API incorrecte |
-|200 | 	Tout s’est bien passé ! |
+| 1 | API Key is required |
+| 3 | Message ID is required |
+| 4 | Message not found |
+| 10 | Incorrect API Key |
+| 200 | Everything went well! |
 
-', 'fr', , 31);
+
+

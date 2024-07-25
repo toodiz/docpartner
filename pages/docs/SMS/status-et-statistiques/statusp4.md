@@ -1,10 +1,4 @@
--- Insertion dans la table chemin
-INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/status-et-statistiques/statusp2.md');
-
--- Insertion dans la table introduction
-INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
-('---
+---
 title: Statut par Tag
 description: >
 ---
@@ -12,31 +6,25 @@ description: >
 Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un Tag.
 <div class="alert alert-info">
 A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme. </div>
-', 'fr',  31); 
 
--- Insertion dans la table URLAPI
-INSERT INTO URLAPI (textcode, id_chemin) VALUES 
-('## URL
+
+## URL
 
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
   <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/message-status</span>
 </div>
-', , 31);
 
--- Insertion dans la table PARAMETRE
-INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
-('## Paramètres
+
+## Paramètres
            
 | Paramètre       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
+| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
 |**tag**   | Le tag du message.|
-', 'fr', , 31);
 
--- Insertion dans la table REQUETE_REPONSE
-INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
-('## Requête
+
+## Requête
 Exemple de requête :
 
 <!-- Nav tabs -->
@@ -79,11 +67,11 @@ Exemple de requête :
     <pre><code class="language-php">
 &lt;? // Prepare data for GET request
        // Prepare data for GET request
-        $data = \'apiKey=YOUR_API_KEY&tag=montag\';
+        $data = 'apiKey=YOUR_API_KEY&tag=montag';
  
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL,
-        \'https://api.smspartner.fr/v1/bulk-status-by-tag?\'.$data);
+        'https://api.smspartner.fr/v1/bulk-status-by-tag?'.$data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 10);
  
@@ -192,20 +180,20 @@ https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=xxx&tag=montag   </code><
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
     <pre><code class="language-javascript">
-const https = require(\'https\');
+const https = require('https');
 
 //Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un tag.
-let data = \'apiKey=YOUR_API_KEY&tag=montag\';
-let url = \'https://api.smspartner.fr/v1/bulk-status-by-tag?\' + data;
+let data = 'apiKey=YOUR_API_KEY&tag=montag';
+let url = 'https://api.smspartner.fr/v1/bulk-status-by-tag?' + data;
 
 https.get(url, (res) => {
-  let data = '';
+  let data = ';
 
-  res.on(\'data\', (chunk) => {
+  res.on('data', (chunk) => {
     data += chunk;
   });
 
-  res.on(\'end\', () => {
+  res.on('end', () => {
     console.log(JSON.parse(data));
   });
 
@@ -293,7 +281,7 @@ struct StatutSmsParTag: View {
     func getStatusByTag() {
         let apiKey = "YOUR_API_KEY"
         let tag = "montag"
-        let urlString = "https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=\(apiKey)&tag=\(tag)"
+        let urlString = "https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=(apiKey)&tag=(tag)"
 
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -302,7 +290,7 @@ struct StatutSmsParTag: View {
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: (error)")
             } else if let data = data {
                 let result = String(data: data, encoding: .utf8)
                 DispatchQueue.main.async {
@@ -394,6 +382,7 @@ class Program
 ## Réponses
 
 ### JSON
+```json
 {
     "success": true,
     "code": 200,
@@ -419,12 +408,9 @@ class Program
 * **Delivered**
 * **Not delivered**
 * **Waiting**
-',
-'fr', , 31);
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('
+
+
 ## Erreurs
 Exemple de message d’erreur:
 
@@ -447,4 +433,5 @@ Exemple de message d’erreur:
 |10 | Clé API incorrecte |
 |200 | 	Tout s’est bien passé ! |
 
-', 'fr', , 31);
+
+

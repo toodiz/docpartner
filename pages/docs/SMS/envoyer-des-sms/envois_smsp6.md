@@ -1,42 +1,38 @@
--- Insertion dans la table chemin
-INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/status-et-statistiques/statusp2.md');
-
--- Insertion dans la table introduction
-INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
-('---
-title: Statut par Tag
+---
+title: Annuler l’envoi d’un SMS
 description: >
 ---
-# Statut par Tag
-Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un Tag.
-<div class="alert alert-info">
-A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme. </div>
-', 'fr',  31); 
+# Annuler l’envoi d’un SMS différé
+Cette requête est utilisée pour envoyer un sondage en temps réel ou en différé.
 
--- Insertion dans la table URLAPI
-INSERT INTO URLAPI (textcode, id_chemin) VALUES 
-('## URL
+## URL
 
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
-  <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/message-status</span>
+  <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/message-cancel</span>
 </div>
-', , 31);
 
--- Insertion dans la table PARAMETRE
-INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
-('## Paramètres
+
+
+## Paramètres
            
 | Paramètre       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-|**tag**   | Le tag du message.|
-', 'fr', , 31);
+| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
+| **messageId** | ID du message. <br> Il se trouve dans [la réponse lors de l’envoi d’un SMS](envois_smsp1.md).|
 
--- Insertion dans la table REQUETE_REPONSE
-INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
-('## Requête
+### Paramètres optionnels
+| Paramètre       | Description |
+|:-----------------:|-------------| 
+| **_format**             | Format de la réponse. Vous pouvez choisir entre `JSON` ou `XML`. Par défaut, le format de réponse est `JSON` |
+
+<div class="alert alert-info">
+       Attention !! Il n’est pas possible d’annuler l’envoi d’un SMS<strong> moins de 5 minutes avant son envoi </strong>.
+    </div>
+
+
+
+## Requête
 Exemple de requête :
 
 <!-- Nav tabs -->
@@ -72,18 +68,17 @@ Exemple de requête :
 
 
 
-
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
-&lt;? // Prepare data for GET request
-       // Prepare data for GET request
-        $data = \'apiKey=YOUR_API_KEY&tag=montag\';
+&lt;?php
+        // Prepare data for GET request
+        $data = 'apiKey=YOUR_API_KEY&messageId=300';
  
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL,
-        \'https://api.smspartner.fr/v1/bulk-status-by-tag?\'.$data);
+        'https://api.smspartner.fr/v1/message-cancel?'.$data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 10);
  
@@ -107,11 +102,11 @@ Module Module1
  
     Dim base_url As String = "http://api.smspartner.fr/v1/"
     Dim apiKey As String = "VOTRE_APIKEY"
-    Dim tag As String = "montag"
+    Dim messageId As Integer = XXX
  
     #check credits
     Dim url As String
-    url = base_url & "bulk-status-by-tag" & "?apiKey=" & apiKey & "&tag=" & tag
+    url = base_url & "message-cancel" & "?apiKey=" & apiKey & "&messageId=" & messageId
  
     Dim credits As String
     credits = apiRequest("GET", url, Nothing)
@@ -153,6 +148,7 @@ Module Module1
   End Function
  
 End Module
+
    </code></pre>
   </div>
   <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
@@ -170,8 +166,8 @@ API_KEY = "MY API KEY"
 URL = "https://api.smspartner.fr/v1"
  
 class SMSPartner():
-    def get_delivery(self,tag):
-		url = URL + "/bulk-status-by-tag?apiKey=" + API_KEY +  "&tag=" + tag
+    def get_delivery(self,phone_numbers,message_id):
+		url = URL + "/message-cancel?apiKey=" + API_KEY + "&messageId=" + message_id
 		r = requests.get(url)
 		r_json = r.json()
 		if r_json.get("success") == True:
@@ -181,35 +177,38 @@ class SMSPartner():
 			print(r_json)
 			status = False
 		return status
-    </pre> </code>
+   </code></pre>
   </div>
     <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
     <pre><code class="language-bash">
-curl -H  "Content-Type: application/json" -X GET  
-https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=xxx&tag=montag   </code></pre>
+  curl -H  "Content-Type: application/json" -X GET  https://api.smspartner.fr/v1/message-cancel?apiKey=xxx&messageId=300
+   </code></pre>
   </div>
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
     <pre><code class="language-javascript">
-const https = require(\'https\');
+const https = require('https');
 
-//Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un tag.
-let data = \'apiKey=YOUR_API_KEY&tag=montag\';
-let url = \'https://api.smspartner.fr/v1/bulk-status-by-tag?\' + data;
+// Préparer les données pour la requête GET
+let data = 'apiKey=YOUR_API_KEY&messageId=300';
+let url = 'https://api.smspartner.fr/v1/message-cancel?' + data;
 
 https.get(url, (res) => {
   let data = '';
 
-  res.on(\'data\', (chunk) => {
+  // Un morceau de données a été reçu.
+  res.on('data', (chunk) => {
     data += chunk;
   });
 
-  res.on(\'end\', () => {
+  // La totalité de la réponse a été reçue. Imprimer le résultat.
+  res.on('end', () => {
     console.log(JSON.parse(data));
   });
 
 }).on("error", (err) => {
+  // Un message d'erreur sera imprimé en cas d'erreur.
   console.log("Erreur: " + err.message);
 });
    </code></pre>
@@ -222,16 +221,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class StatutParTag {
+public class AnnulerEnvoiSMS {
     public static void main(String[] args) {
         try {
             // Prepare data for GET request
             String apiKey = "YOUR_API_KEY";
-            String tag = "montag";
+            String messageId = "300";
 
             // Create GET request URL
-            String urlString = "https://api.smspartner.fr/v1/bulk-status-by-tag?" +
-                    "apiKey=" + apiKey + "&tag=" + tag;
+            String urlString = "https://api.smspartner.fr/v1/message-cancel?" +
+                    "apiKey=" + apiKey + "&messageId=" + messageId;
 
             // Create URL object
             URL url = new URL(urlString);
@@ -274,12 +273,12 @@ public class StatutParTag {
     <pre><code class="language-swift">
 import SwiftUI
 
-struct StatutSmsParTag: View {
+struct AnnulerEnvoi: View {
     @State private var result: String = "Loading..."
-    
+
     var body: some View {
         VStack {
-            Text("Statut Sms Par Tag")
+            Text("Annuler Envoi")
                 .font(.title)
                 .padding()
 
@@ -287,13 +286,13 @@ struct StatutSmsParTag: View {
                 .font(.system(size: 20))
                 .padding()
         }
-        .onAppear(perform: getStatusByTag)
+        .onAppear(perform: cancelMessage)
     }
 
-    func getStatusByTag() {
+    func cancelMessage() {
         let apiKey = "YOUR_API_KEY"
-        let tag = "montag"
-        let urlString = "https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey=\(apiKey)&tag=\(tag)"
+        let messageId = "300"
+        let urlString = "https://api.smspartner.fr/v1/message-cancel?apiKey=(apiKey)&messageId=(messageId)"
 
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -302,7 +301,7 @@ struct StatutSmsParTag: View {
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: (error)")
             } else if let data = data {
                 let result = String(data: data, encoding: .utf8)
                 DispatchQueue.main.async {
@@ -314,11 +313,18 @@ struct StatutSmsParTag: View {
         task.resume()
     }
 }
+
+struct AnnulerEnvoi_Previews: PreviewProvider {
+    static var previews: some View {
+        AnnulerEnvoi()
+    }
+}
    </code></pre>
   </div>
   <div class="tab-pane fade" id="go" role="tabpanel" aria-labelledby="go-tab">
     <!-- GO code example goes here -->
-   package main
+    <pre><code class="language-go">
+package main
 
 import (
 	"io/ioutil"
@@ -330,11 +336,11 @@ import (
 func main() {
 	// Prepare data for GET request
 	apiKey := "YOUR_API_KEY"
-	tag := "montag"
+	messageId := "300"
 
 	// Create GET request URL
-	url := "https://api.smspartner.fr/v1/bulk-status-by-tag?" +
-		"apiKey=" + apiKey + "&tag=" + tag
+	url := "https://api.smspartner.fr/v1/message-cancel?" +
+		"apiKey=" + apiKey + "&messageId=" + messageId
 
 	// Create HTTP client
 	client := &http.Client{Timeout: 10 * time.Second}
@@ -371,8 +377,8 @@ class Program
     static async Task Main(string[] args)
     {
         var apiKey = "YOUR_API_KEY";
-        var tag = "montag";
-        var uri = new Uri($"https://api.smspartner.fr/v1/bulk-status-by-tag?apiKey={apiKey}&tag={tag}");
+        var messageId = "300";
+        var uri = new Uri($"https://api.smspartner.fr/v1/message-cancel?apiKey={apiKey}&messageId={messageId}");
 
         HttpResponseMessage response = await client.GetAsync(uri);
 
@@ -394,37 +400,17 @@ class Program
 ## Réponses
 
 ### JSON
+```json
 {
-    "success": true,
-    "code": 200,
-    "currentPage": 1,
-    "total": 2,
-    "StatutResponse_List": [
-        {
-            "phoneNumber": "+336XXXXXXX1",
-            "status": "Delivered",
-            "stopSMS": false,
-            "date": "1517989111"
-        },
-        {
-            "phoneNumber": "+336XXXXXXX2",
-            "status": "Delivered",
-            "stopSMS": false,
-            "date": "1517989101"
-        }
-             ...
+  "success": true,
+  "code": 200,
+  "message": "L'envoi du SMS a été annulé."
 }
 ```
-### 3 statuts de remises possibles
-* **Delivered**
-* **Not delivered**
-* **Waiting**
-',
-'fr', , 31);
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('
+
+
+
 ## Erreurs
 Exemple de message d’erreur:
 
@@ -442,9 +428,13 @@ Exemple de message d’erreur:
 | _  | Code erreurs |
 | :---------------: |:---------------|
 |1 | La Clé API est requise |
-|3 | 	L’ID du message est requis |
+|3 | L’ID du message est requis |
 |4 | Message introuvable|
+|5 | L’envoi du SMS a déjà été annulé |
+|6 | Vous ne pouvez pas annuler l’envoi d’un SMS moins de 5 minutes avant son envoi |
+|7 | 	Vous ne pouvez pas annuler un SMS déjà envoyé |
 |10 | Clé API incorrecte |
-|200 | 	Tout s’est bien passé ! |
+|200 |Tout s’est bien passé ! |
 
-', 'fr', , 31);
+
+

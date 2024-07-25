@@ -1,48 +1,33 @@
--- Insertion dans la table chemin
-INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/status-et-statistiques/statusp1.en.md');
-
--- Insertion into the introduction table
-INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
-('---
-title: Multiple Status
+---
+title: Statut multiple
 description: >
 ---
-# Delivery Status
-This request allows you to retrieve the status of multiple SMS (maximum 500 numbers).
+# Statut de remise
+Cette requête permet de récupérer le statut de plusieurs SMS (maximum 500 numéros).
 
 <div class="alert alert-info">
-Note: delivery reports are typically received a few seconds after sending the SMS; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.
+A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme.
     </div>
-', 'en', 28); 
 
--- Insertion into the URLAPI table
-INSERT INTO URLAPI (textcode, id_chemin) VALUES 
-('## URL
+
+## URL
 
 <div>
   <div style="background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
   <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/multi-status</span>
 </div>
-', 28);
 
--- Insertion into the PARAMETRE table
-INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
-('## Parameters
+
+## Paramètres
            
-| Parameter       | Description |
+| Paramètre       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | API key of your account. You can obtain it from your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
-|**SMSStatus_List**   | **phoneNumber:** <br> Recipients'' phone numbers. <br> They must be:<br> – in international format (+336xxxxxxxx). <br> **messageId**: <br> Message ID. <br> It can be found in [the response when sending an SMS](../envoyer-des-sms/envois_smsp1.md).|
+| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
+|**SMSStatus_List**   | **phoneNumber:** <br> Numéros de téléphone des destinataires. <br> Ils doivent être:<br> – au format international (+336xxxxxxxx). <br> **messageId**: <br> ID du message. <br> Il se trouve dans [la réponse lors de l’envoi d’un SMS](../envoyer-des-sms/envois_smsp1.md).|
 <br>
 <div class="alert alert-info">
-Attention!! It is not possible to cancel an SMS sending <strong>less than 5 minutes before its scheduled time</strong>.
-    </div>', 'en', 28);
-
--- Insertion dans la table REQUETE_REPONSE
-INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
-('## Request
-Request example
+Attention !! Il n’est pas possible d’annuler l’envoi d’un SMS <strong>moins de 5 minutes avant son envoi</strong>.
+    </div>
 
 ## Requête
 Exemple de requête :
@@ -71,16 +56,16 @@ Exemple de requête :
     <pre><code class="language-php">
 &lt;?  // Prepare data for POST request
         $fields = array(
-            \'apiKey\'=> \'YOUR API KEY\',
-            \'SMSStatut_List\'=>>array(
-                array(\'phoneNumber\'=>\'+336xxxxxxxx\',\'messageId\'=>messageId1),
-                array(\'phoneNumber\'=>\'+336xxxxxxxx\',\'messageId\'=>messageId2)
+            'apiKey'=> 'YOUR API KEY',
+            'SMSStatut_List'=>>array(
+                array('phoneNumber'=>'+336xxxxxxxx','messageId'=>messageId1),
+                array('phoneNumber'=>'+336xxxxxxxx','messageId'=>messageId2)
              )
         );
  
  
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL,\'https://api.smspartner.fr/v1/multi-status\');
+        curl_setopt($curl, CURLOPT_URL,'https://api.smspartner.fr/v1/multi-status');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 10);
         curl_setopt($curl, CURLOPT_POST, 1);
@@ -203,16 +188,16 @@ class SMSPartner():
     <!-- cURL code example goes here -->
     <pre><code class="language-bash">
 curl -X POST https://api.smspartner.fr/v1/multi-status -H "Content-Type: application/json" -d 
-\'{"apiKey": "Votre clé API","SMSStatut_List": 
+'{"apiKey": "Votre clé API","SMSStatut_List": 
 [{"phoneNumber": "0619922264", "messageId": 199897},
 {"phoneNumber": "06xxxxxxx2", "messageId": 1000},
-{"phoneNumber": "06xxxxxxx1", "messageId": 1222}]}\'
+{"phoneNumber": "06xxxxxxx1", "messageId": 1222}]}'
    </code></pre>
   </div>
   
 </div>
 
-## response
+## Réponses
 
 ### JSON
 ```json
@@ -247,18 +232,15 @@ curl -X POST https://api.smspartner.fr/v1/multi-status -H "Content-Type: applica
     ]
 }
 ```
-### 3 possible delivery statuses
+### 3 statuts de remises possibles
 * **Delivered**
 * **Not delivered**
-* **Waiting**',
-'en', 28);
+* **Waiting**
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('
 
-## Errors
-Example of an error message:
+
+## Erreurs
+Exemple de message d’erreur:
 
 ### JSON
 ```json
@@ -269,12 +251,13 @@ Example of an error message:
 }
 ```
 
-## Control Codes
+## Code de contrôle
 
-| _  | Error Codes |
+| _  | Code erreurs |
 | :---------------: |:---------------|
-| 1 | API Key is required |
-| 4 | Message not found |
-| 200 | Everything went well! |
+|1 | La Clé API est requise |
+|4 | Message introuvable|
+|10 | Clé API incorrecte |
 
-', 'en', 28);
+
+
