@@ -1,53 +1,38 @@
--- Insertion dans la table chemin
-INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/status-et-statistiques/statusp2.md');
-
--- Insertion dans la table introduction
-INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
-('---
-title: Statistique des envois
+---
+title: Sending Statistics
 description: >
 ---
-# Statistique des envois
-Cette requête est utilisée pour récupérer les statistiques des envois sur une période précise. Elle permet de récupérer le nombre de SMS envoyés et le cout associé à ces envoiS.
-', 'fr',  32); 
+# Sending Statistics
+This request is used to retrieve sending statistics for a specific period. It allows you to get the number of SMS sent and the associated cost of these sends.
 
--- Insertion dans la table URLAPI
-INSERT INTO URLAPI (textcode, id_chemin) VALUES 
-('## URL
+
+## URL
 
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
   <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/statistics/cost-resume</span>
 </div>
-',  32);
 
--- Insertion dans la table PARAMETRE
-INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
-('## Paramètres
 
-| Paramètre       | Description |
+## Parameters
+
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
+| **apiKey**      | API key of your account. You can obtain it from your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
 
-Une limite de 5 requêtes par minute est appliquée.
+A limit of 5 requests per minute is applied.
           
-| Paramètre **interval**   | Description |
+| Parameter **interval**   | Description |
 |:-----------------:|-------------| 
-| **last_month**      | Le mois précédent. |
-|**last_twelve_months**|Numéros de téléphone du destinataire. <br> <ul><li>Au format national (0600000000) et international (+33600000000) pour des numéros français.</li><li>Au format international (+496xxxxxxxx), pour des numéros hors France.</li></ul>| 
-|**from**| 12 derniers mois| 
-| **custom** | dans ce cas les dates de début (from) et de fin (to) sont requises. |
+| **last_month**      | The previous month. |
+|**last_twelve_months**| Last 12 months | 
+|**from**| Start date for custom interval | 
+| **custom** | In this case, start date (from) and end date (to) are required. |
 
 
-', 'fr',  32);
 
-          
-
--- Insertion dans la table REQUETE_REPONSE
-INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
-('## Requête
-Exemple de requête :
+## Request
+Request example
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -80,15 +65,14 @@ Exemple de requête :
   </li>
 </ul>
 
-
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
 &lt;? // Prepare data for GET request
-       $apiKey = \'YOUR_API_KEY\';
-$url = \'https://api.smspartner.fr/v1/statistics/cost-resume?apiKey=\' 
-. $apiKey . \'&interval=last_twelve_months\'; 
+       $apiKey = 'YOUR_API_KEY';
+$url = 'https://api.smspartner.fr/v1/statistics/cost-resume?apiKey=' 
+. $apiKey . '&interval=last_twelve_months'; 
 
 // Initialise cURL session
 $ch = curl_init($url);
@@ -101,7 +85,7 @@ $response = curl_exec($ch);
 
 // Handle errors
 if (curl_errno($ch)) {
-    echo \'Erreur: \' . curl_error($ch);
+    echo 'Erreur: ' . curl_error($ch);
 } else {
     // Decode the result
     $data = json_decode($response, true);
@@ -120,22 +104,22 @@ Imports System.IO
 
 Module Module1
     Sub Main()
-        \' Prepare data for GET request
+        ' Prepare data for GET request
         Dim apiKey As String = "YOUR_API_KEY"
         Dim url As String = "https://api.smspartner.fr/v1/statistics/cost-resume?apiKey=" 
         & apiKey & "&interval=last_twelve_months"
 
-        \' Initialise WebRequest
+        ' Initialise WebRequest
         Dim request As WebRequest = WebRequest.Create(url)
         request.Method = "GET"
 
-        \' Get the response
+        ' Get the response
         Try
             Dim response As WebResponse = request.GetResponse()
             Using dataStream As Stream = response.GetResponseStream()
                 Using reader As New StreamReader(dataStream)
                     Dim responseFromServer As String = reader.ReadToEnd()
-                    \' Decode the result
+                    ' Decode the result
                     Dim data As Object = Newtonsoft.Json.JsonConvert.DeserializeObject
                     (responseFromServer)
                     Console.WriteLine(data)
@@ -152,9 +136,9 @@ End Module
   <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
  <pre><code class="language-go">
    import requests
-apiKey = \'YOUR_API_KEY\'
-url = f\'https://api.smspartner.fr/v1/statistics/cost-resume?
-apiKey={apiKey}&interval=last_twelve_months\'
+apiKey = 'YOUR_API_KEY'
+url = f'https://api.smspartner.fr/v1/statistics/cost-resume?
+apiKey={apiKey}&interval=last_twelve_months'
 
 try:
     response = requests.get(url)
@@ -165,14 +149,14 @@ except requests.exceptions.RequestException as e:
     print(f"Erreur: {e}")
 
 
-Ou avec la bibliothèque \'urllib\':
+Ou avec la bibliothèque 'urllib':
 
 import json
 from urllib import request, error
 
-apiKey = \'YOUR_API_KEY\'
-url = f\'https://api.smspartner.fr/v1/statistics/cost-resume?
-apiKey={apiKey}&interval=last_twelve_months\'
+apiKey = 'YOUR_API_KEY'
+url = f'https://api.smspartner.fr/v1/statistics/cost-resume?
+apiKey={apiKey}&interval=last_twelve_months'
 
 try:
     with request.urlopen(url) as response:
@@ -192,22 +176,22 @@ curl -H "Content-Type: application/json" -X GET
   <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
     <!-- NodeJS code example goes here -->
     <pre><code class="language-javascript">
-const https = require(`\'https\');
+const https = require(`'https');
 
-let apiKey = \'YOUR_API_KEY\';
+let apiKey = 'YOUR_API_KEY';
 let url = `https://api.smspartner.fr/v1/statistics/cost-resume?apiKey=${apiKey}
 &interval=last_twelve_months`; // 12 derniers mois
 //interval=last_month // 1 dernier mois
 //interval=custom&from=21-10-2022&to=21-10-2022 // intervalle personnalisé
 
 https.get(url, (res) => {
-  let data = \'\';
+  let data = '';
 
-  res.on(\'data\', (chunk) => {
+  res.on('data', (chunk) => {
     data += chunk;
   });
 
-  res.on(\'end\', () => {
+  res.on('end', () => {
     console.log(JSON.parse(data));
   });
 
@@ -301,7 +285,7 @@ struct StatistiqueDesEnvois: View {
         let apiKey = "YOUR_API_KEY"
         let interval = "last_twelve_months"
         let urlString = "https://api.smspartner.fr/v1/statistics/cost-resume
-        ?apiKey=\(apiKey)&interval=\(interval)"
+        ?apiKey=(apiKey)&interval=(interval)"
 
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
@@ -314,9 +298,9 @@ struct StatistiqueDesEnvois: View {
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: (error)")
                 DispatchQueue.main.async {
-                    self.result = "Error: \(error)"
+                    self.result = "Error: (error)"
                 }
             } else if let data = data {
                 let str = String(data: data, encoding: .utf8)
@@ -401,7 +385,7 @@ class Program
         }
         else
         {
-            // Afficher un message en cas d\'échec de la requête GET
+            // Afficher un message en cas d'échec de la requête GET
             Console.WriteLine("La requête GET a échoué avec le code de statut: " + response.StatusCode);
         }
     }
@@ -410,7 +394,7 @@ class Program
   </div>
 </div>
 
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -438,34 +422,32 @@ class Program
 "nb_send": "1409"        
 },
 ```
-### 3 statuts de remises possibles
+### 3 possible delivery statuses
 * **Delivered**
 * **Not delivered**
 * **Waiting**
-',
-'fr',  32);
 
--- Insertion dans la table Suitecode 
-INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
-('
-## Erreurs
-Exemple de message d’erreur:
+
+
+## Errors
+Example of an error message:
 
 ### JSON
 ```json
 {
     "success": false,
     "code": 10,
-    "message": "Clé API incorrecte"
+    "message": "Incorrect API Key"
 }
 ```
 
-## Code de contrôle
+## Control Codes
 
-| _  | Code erreurs |
+| _  | Error Codes |
 | :---------------: |:---------------|
-|1 | La Clé API est requise |
-|10 | Clé API incorrecte |
-|200 | 	Tout s’est bien passé ! |
+| 1 | API Key is required |
+| 10 | Incorrect API Key |
+| 200 | Everything went well! |
 
-', 'fr',  32);
+
+

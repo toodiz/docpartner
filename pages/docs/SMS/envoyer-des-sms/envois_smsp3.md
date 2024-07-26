@@ -21,7 +21,7 @@ Cette requête est utilisée pour envoyer des SMS en temps réel ou en différé
 | **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
 |**to**|Numéros de téléphone du destinataire. <br> <ul><li>Au format national (0600000000) et international (+33600000000) pour des numéros français.</li><li>Au format international (+496xxxxxxxx), pour des numéros hors France.</li></ul>| 
 |**from**|	Votre numéro virtuel au format internationnal ( 336xxxxxxxx )| 
-| **message** | Contenu du SMS. **160 caractères** maximum par SMS (au-delà, il vous sera décompté un SMS supplémentaire par tranche de 153 caractères). <br>Attention, certains caractères spéciaux et accents sont remplacés lors de l'envoi : <a href="#" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voir la liste</a> <br> <br>Le caractère ” doit obligatoirement être échappé (”) pour que le texte du SMS soit valide. Dans le cas contraire une erreur 400 sera retournée. <br>Le tag `:br:` permet de faire un saut de ligne. **Attention le saut de ligne compte pour deux caractères.** <br>**La mention STOP SMS est obligatoire pour les SMS à caractères commerciaux**. |
+
 
 ## Paramètres optionnels
 

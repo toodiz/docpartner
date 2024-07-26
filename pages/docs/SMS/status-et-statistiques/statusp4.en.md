@@ -1,11 +1,11 @@
 ---
-title: Statut par Tag
+title: Status by Tag
 description: >
 ---
-# Statut par Tag
-Cette requête permet de récupérer les statuts de plusieurs SMS à partir d’un Tag.
+# Status by Tag
+This request allows you to retrieve the statuses of multiple SMS using a Tag.
 <div class="alert alert-info">
-A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme. </div>
+Note: delivery reports are typically received a few seconds after sending the SMS; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform. </div>
 
 
 ## URL
@@ -16,19 +16,18 @@ A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l�
 </div>
 
 
-## Paramètres
+## Parameters
 
-Chaque demande d’API prend en charge les paramètres suivants :
-           
-| Paramètre       | Description |
+Each API request supports the following parameters:  
+         
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-|**tag**   | Le tag du message.|
+| **apiKey**      | API key of your account. You can obtain it from your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
+|**tag**   | The message tag.|
 
 
-## Requête
-Exemple de requête :
-
+## Request
+Request example
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -381,7 +380,8 @@ class Program
   </div>
 </div>
 
-## Réponses
+## Response
+
 
 ### JSON
 ```json
@@ -406,34 +406,34 @@ class Program
              ...
 }
 ```
-### 3 statuts de remises possibles
+### 3 possible delivery statuses
 * **Delivered**
 * **Not delivered**
 * **Waiting**
 
 
 
-## Erreurs
-Exemple de message d’erreur:
+## Errors
+Example of an error message:
 
 ### JSON
 ```json
 {
     "success": false,
     "code": 10,
-    "message": "Clé API incorrecte"
+    "message": "Incorrect API Key"
 }
 ```
 
-## Code de contrôle
+## Control Codes
 
-| _  | Code erreurs |
+| _  | Error Codes |
 | :---------------: |:---------------|
-|1 | La Clé API est requise |
-|3 | 	L’ID du message est requis |
-|4 | Message introuvable|
-|10 | Clé API incorrecte |
-|200 | 	Tout s’est bien passé ! |
+| 1 | API Key is required |
+| 3 | Message ID is required |
+| 4 | Message not found |
+| 10 | Incorrect API Key |
+| 200 | Everything went well! |
 
 
 
