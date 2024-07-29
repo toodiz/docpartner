@@ -1,26 +1,48 @@
 -- Insertion dans la table chemin
 INSERT INTO chemin (path) VALUES 
-('pages/docs/sms/envoyer-des-sms/envois_smsp6.en.md');
+('pages/docs/sms/sous-comptes/sous_comptep1.md');
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep1.en.md');
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep2.md');
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep2.en.md');
+
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep3.md');
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep3.en.md');
+
+
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep4.md');
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep4.en.md');
+
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep5.md');
+INSERT INTO chemin (path) VALUES 
+('pages/docs/sms/sous-comptes/sous_comptep5.en.md');
 
 -- Insertion dans la table introduction
 INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
 ('---
-title: Modifier un contact
+title: Obtenir le détail d’un contact
 description: >
 ---
-# Modifier un contact
-', 'fr', 44);
+# Obtenir le détail d’un contact
+', 'fr', 52);
 
 -- Insertion dans la table URLAPI
 INSERT INTO URLAPI (textcode, id_chemin) VALUES 
 ('## URL
 
 <div>
-  <div style="background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
-  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> http://api.smspartner.fr/v1/contact/update</span>
+  <div style="background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
+  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.smspartner.fr/v1/contact/detail</span>
 </div>
 
-', 44);
+', 52);
 
 -- Insertion dans la table PARAMETRE
 INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
@@ -32,17 +54,9 @@ Chaque demande d’API prend en charge les paramètres suivants :
 | Paramètre       | Description |
 |:-----------------:|-------------| 
 | **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-| **contactId** |Identifiant du contact à modifier| 
-| **phoneNumber** |Numéros de téléphone du contact. <br> Pour l’envoi de plusieurs SMS les numéros doivent être séparés par des virgules. <br> Ils peuvent être :  <ul><li>Au format national (0600000000) et international (+33600000000) pour des numéros français.</li><li>Au format international (+496xxxxxxxx), pour des numéros hors France.</li></ul>| 
-| **firstname** | Prénom (32 caractères maximum). |
-|**lastname** 	| Nom (32 caractères maximum).| 
-|**date** 	| Date au format YYYY-MM-DD. Pourra être utilisé pour des envois automatique (ex: anniversaire )| 
-|**url** 	| Url , elle doit commencer par http:// ou https://| 
-|**custom1** 	| Champ personnalisé 1.| 
-|**custom2** 	| Champ personnalisé 2.| 
-|**custom3** 	| Champ personnalisé 3.| 
-|**custom4** 	| Champ personnalisé 4.| 
-', 'fr', 44);
+| **apiKey**      |Identifiant du contact. |
+
+', 'fr', 52);
 
 -- Insertion dans la table REQUETE_REPONSE
 INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
@@ -53,43 +67,36 @@ Exemple de requête :
 
 ``` bash
 {
-  "url": "http://api.smspartner.fr/v1/contact/update",
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "data": {
-    "apiKey": "YOUR_API_KEY",
-    "contactId": "ID CONTACT",
-    "contact": {
-      "phoneNumber": "+xxxxxxxxx",
-      "firstname": "prénom",
-      "lastname": "nom",
-      "url": "",
-      "date": "12-06-2020",
-      "custom2": "custom2"
-    }
-  }
+  "url": "https://api.smspartner.fr/v1/contact/detail?apiKey=YOUR_API_KEY&contactId=ID_CONTACT",
+  "method": "GET",
+  "location": true
 }
 ```
 ## Réponses
 ``` json
 {
-  "success": true,
-  "code": 200,
-  "contact": {
-    "phoneNumber": "+xxxxxxxx",
-    "firstname": "prénom",
-    "lastname": "nom",
-    "url": "",
-    "date": "12-06-2020",
-    "custom2": "custom2",
-    "contactId": "ID CONTACT"
-  }
+   "success": true,
+   "code": 200,
+   "contact": {
+       "contactId": "ID CONTACT",
+       "phone": "+xxxxxxxxxxx",
+       "firstname": "",
+       "lastname": "",
+       "url": "",
+       "shortUrl": "",
+       "date": "",
+       "custom1": "",
+       "custom2": "",
+       "custom3": "",
+       "custom4": "",
+       "createdAt": "2020-10-02T16:40:05+02:00",
+       "stopSms": false,
+       "groupId": 6363
+   }
 }
 ```
 ',
-'fr', 44);
+'fr', 52);
 
 -- Insertion dans la table Suitecode 
 INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
@@ -98,12 +105,10 @@ INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES
 Exemple de message d’erreur :
 
 ``` json
-{   
-{ 
-"success": false, 
-"code": 10, 
-"message": "Clef API incorrecte" 
-}
+{
+  "success": false,
+  "code": 10,
+  "message": "Clef API incorrecte"
 }
 ```
 
@@ -111,37 +116,36 @@ Exemple de message d’erreur :
 
 | _  | Code erreurs |
 | :---------------: |:---------------|
-|1 | 	groupId est requis |
-|2 | 	Contact infos sont requises |
+|1 | contactId est requis |
 |10 | La Clé API est requise |
-|15 | Le numéro est déjà dans le groupe |
+|404 | Le contact n’existe pas |
+
 <br>
 
-', 'fr', 44);
+', 'fr', 52);
 
 
 
 --------------------------------------------
--- Insertion dans la table introduction
 -- Insertion into the introduction table
 INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
 ('---
-title: Modify a contact
+title: Get contact details
 description: >
 ---
-# Modify a contact
-', 'en', 45);
+# Get contact details
+', 'en', 53);
 
 -- Insertion into the URLAPI table
 INSERT INTO URLAPI (textcode, id_chemin) VALUES 
 ('## URL
 
 <div>
-  <div style="background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
-  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> http://api.smspartner.fr/v1/contact/update</span>
+  <div style="background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
+  <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.smspartner.fr/v1/contact/detail</span>
 </div>
 
-', 45);
+', 53);
 
 -- Insertion into the PARAMETRE table
 INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
@@ -152,65 +156,51 @@ Each API request supports the following parameters:
            
 | Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | API key of your account. You will get it in your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
-| **contactId** |Identifier of the contact to modify| 
-| **phoneNumber** |Contact\'s phone numbers. <br> For sending multiple SMS, the numbers must be separated by commas. <br> They can be:  <ul><li>In national format (0600000000) and international format (+33600000000) for French numbers.</li><li>In international format (+496xxxxxxxx), for numbers outside France.</li></ul>| 
-| **firstname** | First name (32 characters maximum). |
-|**lastname** 	| Last name (32 characters maximum).| 
-|**date** 	| Date in YYYY-MM-DD format. Can be used for automatic sending (e.g., birthday)| 
-|**url** 	| URL, it must start with http:// or https://| 
-|**custom1** 	| Custom field 1.| 
-|**custom2** 	| Custom field 2.| 
-|**custom3** 	| Custom field 3.| 
-|**custom4** 	| Custom field 4.| 
-', 'en', 45);
+| **apiKey**      | API key of your account. You can obtain it in your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
+| **contactId**      | Contact identifier. |
+
+', 'en', 53);
 
 -- Insertion into the REQUETE_REPONSE table
 INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
 ('
 ## Request
 
-Example of a request:
+Request example:
 
 ``` bash
 {
-  "url": "http://api.smspartner.fr/v1/contact/update",
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "data": {
-    "apiKey": "YOUR_API_KEY",
-    "contactId": "CONTACT ID",
-    "contact": {
-      "phoneNumber": "+xxxxxxxxx",
-      "firstname": "firstname",
-      "lastname": "lastname",
-      "url": "",
-      "date": "12-06-2020",
-      "custom2": "custom2"
-    }
-  }
+  "url": "https://api.smspartner.fr/v1/contact/detail?apiKey=YOUR_API_KEY&contactId=CONTACT_ID",
+  "method": "GET",
+  "location": true
 }
+
 ```
  ## Responses
 ``` json   
 {
-  "success": true,
-  "code": 200,
-  "contact": {
-    "phoneNumber": "+xxxxxxxx",
-    "firstname": "firstname",
-    "lastname": "lastname",
-    "url": "",
-    "date": "12-06-2020",
-    "custom2": "custom2",
-    "contactId": "CONTACT ID"
-  }
+   "success": true,
+   "code": 200,
+   "contact": {
+       "contactId": "CONTACT ID",
+       "phone": "+xxxxxxxxxxx",
+       "firstname": "",
+       "lastname": "",
+       "url": "",
+       "shortUrl": "",
+       "date": "",
+       "custom1": "",
+       "custom2": "",
+       "custom3": "",
+       "custom4": "",
+       "createdAt": "2020-10-02T16:40:05+02:00",
+       "stopSms": false,
+       "groupId": 6363
+   }
 }
 ``` 
 ',
-'en', 45);
+'en', 53);
 
 INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
 ('
@@ -229,13 +219,158 @@ Error message example:
 
 | _  | Error Codes |
 | :---------------: |:---------------|
-|1 | groupId is required |
-|2 | Contact info is required |
+|1 | 	contactId is required |
 |10 | API key is required |
-|15 | The number is already in the group |
+|404 | 	The contact does not exist |
 
  <br>
-', 'en', 45);
+', 'en', 53);
 
 
+
+--------------------------------------------------------------
+-- Insertion dans la table Suitecode 
+INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 
+('
+
+## Errors
+Example of an error message:
+
+### JSON
+```json
+{
+    "success": false,
+    "code": 10,
+    "message": "Incorrect API Key"
+}
+```
+## Control Codes
+
+| _  | Error Codes |
+| :---------------: |:---------------|
+| 1 | API Key is required |
+| 10 | Incorrect API Key |
+| 200 | Everything went well! |
+
+', 'en', 32);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Insertion into the introduction table
+INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
+('---
+title: Activation
+description: >
+---
+# Activation et création des sous-comptes
+## Demande d’activation des sous-comptes
+> SMS Partner vous donne la possibilité de créer des sous-comptes. Ainsi vous pouvez gérer un nombre illimité de sous-compte à partir de votre compte principal.
+
+**Activation des sous-comptes**
+
+Pour activer cette fonctionnalité, il suffit de contacter notre [équipe technique.](https://www.smspartner.fr/contact).
+
+## Création des sous-comptes
+> Pour créer des sous-compte à partir de votre compte maitre, il y a deux solutions possibles.
+
+* Par l’API SMS : voir  [la page création de sous-compte](sous_comptep2.md).
+
+* Par fichier Excel: à partir du fichier à télécharger: Fichier modèle [Fichier modéle](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fmy.smspartner.fr%2Fsubaccount_model.xls&wdOrigin=BROWSELINK). <br> Il vous suffit de nous le renvoyer pour que nous l’intégrions à votre compte.
+* Par inscription manuelle: en créant manuellement les sous comptes depuis [la plateforme SMSPartner](https://my.smspartner.fr/connexion).
+
+
+
+', 'fr', 62);
+
+-- Insertion into the REQUETE_REPONSE table
+INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
+('
+
+# Response on a long number
+
+SMS Partner offers you the rental of a long number (example: 06 XX XX XX XX).
+To learn more about creating a dedicated number, [contact us](https://www.smspartner.fr/contact).
+
+   <div class="alert alert-info">
+Note: To receive responses: configure your <strong> response reception URL </strong> in your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS API </a> tab. </div>
+
+## Example of a response on a simple SMS (160 characters maximum)
+
+``` json
+Array
+(
+    \'msisdn\' => \'33xxxxxxxxx\', //number of the person sending the SMS
+    \'to\' => \'33xxxxxxxxx\',
+    \'messageId\' => \'02000000XXXXXXXXX\',
+    \'text\' => \'Test\',
+    \'type\' =>  \'text\',
+    \'keyword\' => \'Test\',
+    \'message-timestamp\' => \'2016-03-10 09:51:46\'
+
+)
+```
+## Example of a response on a long SMS (more than 160 characters)
+``` json
+Array
+(
+    \'msisdn\' => \'33xxxxxxxxx\', //number of the person sending the SMS
+    \'to\' => \'33xxxxxxxxx\',
+    \'messageId\' => \'02000000YYYYYYYY\',
+    \'concat\' => \'true\',
+    \'concat-ref\' => \'171\',
+    \'concat-total\' => \'2\',
+    \'concat-part\' => \'1\',
+    \'text\' => \'   Long message....\',
+    \'type\' => \'text\',
+    \'keyword\' => \'LONGMESSAGE\',
+    \'message-timestamp\' => \'2016-03-09 16:00:30\'
+)
+ 
+Array
+(
+    \'msisdn\' => \'33xxxxxxxxx\', //number of the person sending the SMS
+    \'to\' => \'33xxxxxxxxx\',
+    \'messageId\' => \'02000000XXXXXXXX\',
+    \'concat\' => \'true\',
+    \'concat-ref\' => \'171\',
+    \'concat-total\' => \'2\',
+    \'concat-part\' => \'2\',
+    \'text\' => \'....very long\',
+    \'type\' => \'text\',
+    \'keyword\' => \'VERYLONG\',
+    \'message-timestamp\' => \'2016-03-09 16:00:31\'
+)
+```
+<br> 
+# Response on a short number (SMS Premium) After sending a campaign from our short number, SMS Partner allows you to receive responses.
+To learn more, contact us. <div class="alert alert-info"> Note: To receive responses: configure your <strong> response reception URL </strong> in your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS API </a> tab. </div>
+
+## Example of a response from our short number
+
+```json
+Array (
+  \'type\' => \'response\',
+  \'phone_number\' => \'+336XXXXXXX1\',
+  \'text\' => \'My response\',
+  \'message_id\' => \'123\'
+)
+```
+',
+'en', 61);
 
