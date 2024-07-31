@@ -1,51 +1,52 @@
 ---
-title: Envoyer un SMS vocal
+title: Send a Voice SMS
 description: >
 ---
-# Envoyer un SMS vocal
+# Send a Voice SMS
 
-Envoyer un SMS vocal sur mobile Rate Limit: 2000 requêtes par heure
+Send a voice SMS to mobile Rate Limit: 2000 requests per hour
 
 
 
 ## URL
 
 <div>
-  <div style="background-color: #49CC90 ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
-  <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;">  https://api.voicepartner.fr/v1/tts/send </span>
+  <div style="background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">POST</div> 
+  <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.voicepartner.fr/v1/tts/send </span>
 </div>
 
 
-## Paramètres
+## Parameters
 
-Chaque demande d’API prend en charge les paramètres suivants :
+Each API request supports the following parameters:
            
-| Paramètre       | Description |
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-| **text**       | Texte du message vocal. Une pause entre les mots est possible. |
-| **tokenAudio**  | Identifiant du fichier audio, le paramètre “text” ne sera pas pris en compte. |
-| **lang**        | Langue dans laquelle le message est envoyé. |
-| **phoneNumbers**| Numéros de téléphone mobile des destinataires.<br>Pour l’envoi de plusieurs SMS, les numéros doivent être séparés par des virgules.<br>Ils peuvent être :<br>- au format national (06xxxxxxxx) ou international (+336xxxxxxxx), pour des numéros français. |
+| **apiKey**      | Your account's API key. You can obtain it from your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
+| **text**       | Text of the voice message. A pause between words is possible. |
+| **tokenAudio**  | Audio file identifier, the “text” parameter will not be taken into account. |
+| **lang**        | Language in which the message is sent. |
+| **phoneNumbers**| Mobile phone numbers of recipients.<br>For sending multiple SMS, numbers should be separated by commas.<br>They can be:<br>- in national format (06xxxxxxxx) or international format (+336xxxxxxxx), for French numbers. |
 
-## Paramètres optionnels
+## Optional Parameters
 
-| Paramètre      | Description |
+| Parameter      | Description |
 |:----------------:|-------------|
-| **speechRate**     | La vitesse de reproduction de la parole dans le message. Efficace uniquement lorsque vous utilisez du texte. La plage prise en charge va de 0.5 (parole ralentie) à 2 (accélération de la parole). Les valeurs inférieures à 0.5 seront remplacées par 0.5 et les valeurs supérieures à 2 seront remplacées par 2. La vitesse par défaut est 1. |
-| **notifyUrl**      | Url de retour du statut du SMS vocal envoyé en POST au format JSON. |
-| **scheduledDate**  | Date d’envoi du message, au format YYYY-mm-dd H:m:00 (ex : 2021-02-02 14:15:00). À définir uniquement si vous souhaitez que les SMS soient envoyés en différé. |
+| **speechRate**     | The speech reproduction speed in the message. Effective only when using text. The supported range is from 0.5 (slowed speech) to 2 (accelerated speech). Values below 0.5 will be replaced by 0.5 and values above 2 will be replaced by 2. The default speed is 1. |
+| **notifyUrl**      | Return URL for the vocal SMS status sent in POST in JSON format. |
+| **scheduledDate**  | Message sending date, in YYYY-mm-dd H:m:00 format (e.g., 2021-02-02 14:15:00). Define only if you want the SMS to be sent at a later time. |
 
-## Pause entre les mots
+## Pause between words
    <div class="alert alert-info">
-Il est possible d’ajouter des pauses entre les mots et d’allonger la durée du message vocal en utilisant la virgule «,».
-Par exemple, si vous souhaitez avoir une pause de 3 secondes après chaque mot, le paramètre text devrait alors ressembler à ceci: «un ,,,,,, deux ,,,,,, trois ,,,,,,». Chaque virgule crée <strong> une pause de 0,5 seconde. </strong></div>
+It is possible to add pauses between words and extend the duration of the voice message by using the comma “,”.
+For example, if you want a 3-second pause after each word, the text parameter should look like this: “one ,,,,,, two ,,,,,, three ,,,,,,”. Each comma creates <strong> a 0.5-second pause. </strong></div>
 
 
 
 
-## Requête
-Exemple de requête :
+## Request
+Request example
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -74,6 +75,7 @@ Exemple de requête :
     <a class="nav-link" id="csharp-tab" data-toggle="tab" href="#csharp" role="tab" aria-controls="csharp" aria-selected="false">C#</a>
   </li>
 </ul>
+
 
 <!-- Tab panes -->
 <div class="tab-content">
@@ -438,7 +440,7 @@ public class EnvoyerSmsVocal
   </code></pre>
   </div>
 </div>
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -461,7 +463,8 @@ public class EnvoyerSmsVocal
     }
 }
 ```
-## Exemple
+
+## Examples
 
 ```bash
 curl -X POST 

@@ -1,9 +1,9 @@
 ---
-title: Introduction Mail
+title: Crédits mails
 description: Page 01 MAIL.
 ---
 
-# Introduction MAIL
+# Introduction à l’API Mail Partner
 
 Cette requête est utilisée pour récupérer votre crédit disponible de SMS, ainsi que le nombre de SMS en instance de départ.
 

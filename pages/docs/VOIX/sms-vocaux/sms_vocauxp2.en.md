@@ -1,34 +1,35 @@
 ---
-title: Supprimer un envoi différé
+title: Cancel a Scheduled Send
 description: >
 ---
-# Supprimer un envoi différé
+# Cancel a Scheduled Send
 
-Permet d’annuler un envoi
-
+Allows you to cancel a send
 
 
 ## URL
 
 <div>
-  <div style="background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE</div> 
-  <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.voicepartner.fr/v1/campaign/cancel </span>
+  <div style="background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE</div> 
+  <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;">  https://api.voicepartner.fr/v1/campaign/cancel</span>
 </div>
 
 
-## Paramètres
-Chaque demande d’API prend en charge les paramètres suivants :
+## Parameters
 
-| Paramètre       | Description |
+Each API request supports the following parameters:
+           
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte Voice Partner</a>. |
-| **campaignId**       | id de message |
+| **apiKey**      | Your account's API key. You can obtain it from your <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">SMS Partner account</a>. |
+| **campaignId**       | Message ID |
 
 
 
 
-## Requête
-Exemple de requête :
+## Request
+Request example
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -58,12 +59,12 @@ Exemple de requête :
   </li>
 </ul>
 
+
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
 &lt;? 
-
 // Activer l'affichage des erreurs pour le débogage
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -161,15 +162,17 @@ else:
     print(f'Réponse : {response.text}')
    </code></pre>
   </div>
+   
     <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
     <pre><code class="language-bash">
 curl -X DELETE 'https://api.voicepartner.fr/v1/campaign/cancel/YOUR_API_KEY/CAMPAIGN_ID'
+
  </code></pre>
   </div>
-
     <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
      <pre><code class="language-javascript">
+   
     <!-- NodeJS code example goes here -->
 const axios = require('axios');
 
@@ -303,7 +306,7 @@ namespace API.ApiClients
   </code></pre>
   </div>
 </div>
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -314,7 +317,8 @@ namespace API.ApiClients
     "currency": "EUR"
 }
 ```
-## Exemple
+
+## Examples
 
 ```bash
 curl -X DELETE 
@@ -325,14 +329,15 @@ curl -X DELETE
 
 
 
-## Code de contrôle
+## Control Codes
 
-| _  | Code erreurs |
-| :---------------: |:---------------|
-|200 |Tout s’est bien passé ! |
-|400 | Mauvaise requête|
-|10 | Action non autorisé. |
-|404 |Ressource non trouvé. |
+| _  | Error Codes         |
+|:--:|:--------------------|
+| 200 | Everything went well! |
+| 400 | Bad request         |
+| 401 | Unauthorized action  |
+| 404 | Resource not found   |
+
 
 
 

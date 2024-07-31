@@ -1,10 +1,10 @@
 ---
-title: Liste des fichiers audio
+title: List of Audio Files
 description: >
 ---
-# Liste des fichiers audio
+# List of Audio Files
 
-Récupére la liste des fichiers audios ajoutés et validés
+Retrieve the list of added and validated audio files
 
 
 
@@ -17,18 +17,19 @@ Récupére la liste des fichiers audios ajoutés et validés
 </div>
 
 
-## Paramètres
-Chaque demande d’API prend en charge les paramètres suivants :
+## Parameters
+Each API request supports the following parameters:
 
-| Paramètre       | Description |
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte Voice Partner</a>. |
+| **apiKey**      | Your account's API key. You can obtain it from your <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voice Partner account</a>. |
 
 
 
 
-## Requête
-Exemple de requête :
+## Request
+Request example
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -58,14 +59,12 @@ Exemple de requête :
   </li>
 </ul>
 
-
-
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
 &lt;? 
-// L'URL de l'API où vous voulez envoyer la requête'URL de l'API où vous voulez envoyer la requête
+// L'URL de l'API où vous voulez envoyer la requête
 $url = 'http://api.voicepartner.fr/v1/audios/YOUR_API_KEY';
 
 // Initialisation de cURL
@@ -271,7 +270,7 @@ namespace API.ApiClients
   </code></pre>
   </div>
 </div>
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -303,7 +302,8 @@ namespace API.ApiClients
     ]
 }
 ```
-## Exemple
+
+## Examples
 
 ```bash
 curl -X GET 

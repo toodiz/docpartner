@@ -1,34 +1,35 @@
 ---
-title: Supprimer un envoi différé
+title: Cancel a Scheduled Send
 description: >
 ---
-# Supprimer un envoi différé
+# Cancel a Scheduled Send
 
-Permet d’annuler un envoi
+Allows you to cancel a scheduled send
 
 
 
 ## URL
 
 <div>
-  <div style="background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE</div> 
+  <div style="background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE</div> 
   <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.voicepartner.fr/v1/campaign/cancel </span>
 </div>
 
 
-## Paramètres
-Chaque demande d’API prend en charge les paramètres suivants :
+## Parameters
+Each API request supports the following parameters:
 
-| Paramètre       | Description |
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte Voice Partner</a>. |
-| **campaignId**       | id de message |
+| **apiKey**      | Your account's API key. You can obtain it from your <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voice Partner account</a>. |
+| **campaignId**       | Message ID |
 
 
 
 
-## Requête
-Exemple de requête :
+## Request
+Request example
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -303,7 +304,7 @@ namespace API.ApiClients
   </code></pre>
   </div>
 </div>
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -314,7 +315,8 @@ namespace API.ApiClients
     "currency": "EUR"
 }
 ```
-## Exemple
+
+## Examples
 
 ```bash
 curl -X DELETE 
@@ -325,14 +327,15 @@ curl -X DELETE
 
 
 
-## Code de contrôle
+## Control Codes
 
-| _  | Code erreurs |
-| :---------------: |:---------------|
-|200 |Tout s’est bien passé ! |
-|400 | Mauvaise requête|
-|10 | Action non autorisé. |
-|404 |Ressource non trouvé. |
+| _  | Error Codes         |
+|:--:|:--------------------|
+| 200 | Everything went well! |
+| 400 | Bad request         |
+| 401 | Unauthorized action  |
+| 404 | Resource not found   |
+
 
 
 

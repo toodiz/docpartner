@@ -1,22 +1,21 @@
 -- Insertion dans la table chemin
 INSERT INTO chemin (path) VALUES 
-('pages/docs/voix/message-vocal/message_vocalp1.md');
+('pages/docs/mail/mailp1.md');
 INSERT INTO chemin (path) VALUES 
-('pages/docs/voix/message-vocal/message_vocalp1.en.md');
+('pages/docs/mail/mailp1.en.md');
 
 
 -- Insertion dans la table introduction
 INSERT INTO introduction (textcode, langue, id_chemin) VALUES 
 ('---
-title: Introduction
+title: Introduction Mail
 description: >
 ---
-# Introduction à l’API VOICE Partner
+# Introduction à l’API Mail Partner
 
+Les envois de mail sont effectués à partir de la plateforme [Mail Partner](shttps://mailpartner.fr ) ou d’effectuer des [dépôts de messages directement sur répondeur.](message-vocal/message_vocalp3.md) Ces fonctionnalités sont proposées à partir de la plateforme [Voice Partner](https://www.voicepartner.fr/).Depuis le site, vous avez un accès immédiat à notre API gratuite : elle vous permet d’intégrer facilement nos services de mail à votre site web, logiciel ou application CRM en PHP, ASP, .NET, Java ou tout autre langage.
 
-L’API permet d’effectuer des envois de [SMS Vocaux](sms-vocaux/sms_vocauxp1.md ) ou d’effectuer des [dépôts de messages directement sur répondeur.](message-vocal/message_vocalp3.md) Ces fonctionnalités sont proposées à partir de la plateforme [Voice Partner](https://www.voicepartner.fr/). Depuis le site, vous avez un accès immédiat à notre API gratuite : elle vous permet d’intégrer facilement nos services de voix à votre site web, logiciel ou application CRM.
-
-', 'fr', 79);
+', 'fr', 96);
 
 
 
@@ -29,7 +28,7 @@ INSERT INTO URLAPI (textcode, id_chemin) VALUES
   <span style=" display: inline-block; vertical-align: middle; margin-left: 10px;"> http://api.smspartner.fr/v1/vn/callforward</span>
 </div>
 
-', 66);
+', 96);
 
 -- Insertion dans la table PARAMETRE
 INSERT INTO PARAMETRE (textcode, langue, id_chemin) VALUES 
@@ -40,40 +39,53 @@ Chaque demande d’API prend en charge les paramètres suivants :
            
 | Paramètre       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
-| **number**      |Numéro virtuel |
-| **type**      |Type de transfert: <br> 0 => Désactivé <br> 1 => Transfert d’appel <br> 2 => Messagerie|
-| **param**      |Si type = 0 laisser vide <br> Si type = 1 ajouter le numéro du transfert. <br> Si type = 2 ajouter l’email qui sera notifié d’un nouveau message |
+| **apiKey**      | Clé API de votre compte. Vous l\'obtiendrez dans votre <a href="https://my.mailpartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
 
-', 'fr', 66);
+## Paramètres optionnels
+
+| Paramètre      | Description |
+|:----------------:|-------------|
+| **_format**     | Format de la réponse. Vous avez le choix entre json et xml. Par défaut, le format de réponse est json. <br> Exemple : https://api.mailpartner.fr/v1/me?apiKey=YOUR_API_KEY&_format=json |
+
+| _format      | Content-Type |
+|:----------------:|-------------|
+| **json**     | application/json |
+| **xml**     | application/xml |
+
+
+## Pause entre les mots
+   <div class="alert alert-info">
+Il est possible d’ajouter des pauses entre les mots et d’allonger la durée du message vocal en utilisant la virgule «,».
+Par exemple, si vous souhaitez avoir une pause de 3 secondes après chaque mot, le paramètre text devrait alors ressembler à ceci: «un ,,,,,, deux ,,,,,, trois ,,,,,,». Chaque virgule crée <strong> une pause de 0,5 seconde. </strong></div>
+
+', 'fr', 96);
 
 -- Insertion dans la table REQUETE_REPONSE
 INSERT INTO REQUETE_REPONSE (textcode, langue, id_chemin) VALUES 
 ('
-## Requête
-Exemple de requête :
+Vous pouvez, par exemple, formater la requête au format json ou xml, mais vous devez renseigner l’en-tête Content-Type en conséquence:
 
-``` bash
-{
-curl --location \'https://api.smspartner.fr/v1/vn/callforward\' \
---header \'Content-Type: application/json\' \
---data \'{
-    "apiKey": "API_KEY",
-    "number": "NUMBET",
-    "type": 0, 
-    "param": ""
-}\'
-```
-## Réponses
 ``` json
+POST /v1/send HTTP/1.1
+Host: api.mailpartner.fr
+Content-Type: application/json
 {
-    "success": true,
-    "code": 2,
-    "message": "Callforward disabled"
+    "apiKey": "API_KEY",
+    "subject": "Mon premier email",
+    "htmlContent": "Hello world",
+    "params":{
+        "to":[
+             {
+                "email":"mon@email2.com"
+             }
+         ]
+    }
 }
 ```
+## Requêtes
+Toutes les demandes de l’API doivent être envoyées à **http://api.mailpartner.fr/v1/commande**, **commande** est l’appel API que vous souhaitez exécuter, avec les paramètres inclus dans le **body POST** ou **l’URL (GET)**.
 ',
-'fr', 66);
+'fr', 96);
 
 -- Insertion dans la table Suitecode 
 INSERT INTO erreur_controlecode (textcode, langue, id_chemin) VALUES 

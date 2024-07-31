@@ -1,10 +1,10 @@
 ---
-title: Renommer un fichier audio
+title: Rename an Audio File
 description: >
 ---
-# Renommer un fichier audio
+# Rename an Audio File
 
-Récupére la liste des fichiers audios ajoutés et validés
+Rename an added and validated audio file
 
 
 
@@ -17,18 +17,19 @@ Récupére la liste des fichiers audios ajoutés et validés
 </div>
 
 
-## Paramètres
-Chaque demande d’API prend en charge les paramètres suivants :
+## Parameters
+Each API request supports the following parameters:
 
-| Paramètre       | Description |
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte Voice Partner</a>. |
-| tokenAudio       | Identifiant du fichier audio |
-| filename       | 	Nouveau nom du fichier compris entre 3 et 50 caractères |
+| **apiKey**      | Your account's API key. You can obtain it from your <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voice Partner account</a>. |
+| tokenAudio       | Audio file identifier |
+| filename       | New filename between 3 and 50 characters |
 
 
-## Requête
-Exemple de requête :
+## Request
+Request example
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -57,6 +58,7 @@ Exemple de requête :
     <a class="nav-link" id="csharp-tab" data-toggle="tab" href="#csharp" role="tab" aria-controls="csharp" aria-selected="false">C#</a>
   </li>
 </ul>
+
 
 <!-- Tab panes -->
 <div class="tab-content">
@@ -366,7 +368,7 @@ namespace API.ApiClients
   </code></pre>
   </div>
 </div>
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -376,7 +378,8 @@ namespace API.ApiClients
     "tokenAudio": "TOKEN DU FICHIER AUDIO"
 }
 ```
-## Exemple
+
+## Examples
 
 ```bash
 curl --location --request POST 'https://api.voicepartner.fr/v1/audio-file/rename' 

@@ -1,18 +1,18 @@
 ---
-title: Déposer un message vocal
+title: Leave a Voice Message
 description: >
 ---
-# Déposer un message vocal
+# Leave a Voice Message
 
-Le [dépôt d’un message vocal (VMS)](https://www.voicepartner.fr/depot-de-messages-vocaux) est disponible sur l’API. Le dépôt fonctionne sur les fixes et sur les mobiles. Il est important de noter que le fonctionnement est différent.
+The [Voice Message Service (VMS)] (https://www.voicepartner.fr/depot-de-messages-vocaux) is available on the API. The service works on both landlines and mobile phones. It's important to note that the operation is different.
 
-Pour rappel, sur un numéro mobile le message est directement déposé sur le répondeur alors que sur un numéro fixe, le téléphone sonne et le message est déposé uniquement si le destinataire ne répond pas.
+As a reminder, on a mobile number, the message is directly deposited on the voicemail, while on a landline number, the phone rings and the message is only left if the recipient doesn't answer.
 
-Pour déposer un message vocal sur les répondeurs mobile Rate Limit: 2000 requêtes par heure
+To leave a voice message on mobile voicemails Rate Limit: 2000 requests per hour
 
-Limite: 5 requêtes par minute
+Limit: 5 requests per minute
 
-Limite d’envoi sur une même requête : 500 numéros
+Sending limit on a single request: 500 numbers
 
 
 
@@ -25,26 +25,27 @@ Limite d’envoi sur une même requête : 500 numéros
 </div>
 
 
-## Paramètres
-Chaque demande d’API prend en charge les paramètres suivants :
+## Parameters
+Each API request supports the following parameters:
 
-| Paramètre       | Description |
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte Voice Partner</a>. |
-| **tokenAudio**       | Identifiant du fichier audio |
-| **emailForNotification**       | 	La notification de fin de campagne sera envoyé vers cette adresse email |
-| **phoneNumbers**       | 	Numéros de téléphone mobile des destinataires. <br> Pour l’envoi de plusieurs SMS les numéros doivent être séparés par des virgules. <br> Ils peuvent être : <li> au format national (06xxxxxxxx) ou international (+336xxxxxxxx), pour des numéros français. </li> |
+| **apiKey**      | Your account's API key. You can obtain it from your <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">Voice Partner account</a>. |
+| **tokenAudio**       | Audio file identifier |
+| **emailForNotification**       | The campaign end notification will be sent to this email address |
+| **phoneNumbers**       | Mobile phone numbers of recipients. <br> For sending multiple SMS, numbers should be separated by commas. <br> They can be: <li> in national format (06xxxxxxxx) or international format (+336xxxxxxxx), for French numbers. </li> |
 
-### Paramètres optionnels
-| Paramètre       | Description |
+### Optional Parameters
+| Parameter       | Description |
 |:-----------------:|-------------| 
-| **sender**       | Numéro de téléphone portable qui peut être rappelé. Ce numéro doit être validé au préalable sur la plateforme my.voicepartner.fr. |
-| **scheduledDate**       | Date d’envoi du message, au format YYYY-mm-dd H:m:00 (ex: 2021-02-02 14:15:00). A définir uniquement si vous souhaitez que les dépôts soient envoyés en différé. |
-| **notifyUrl**       | Url de retour du statut de la campagne envoyé en GET |
+| **sender**       | Mobile phone number that can be called back. This number must be validated beforehand on the my.voicepartner.fr platform. |
+| **scheduledDate**       | Message sending date, in YYYY-mm-dd H:m:00 format (e.g., 2021-02-02 14:15:00). Define only if you want the deposits to be sent at a later time. |
+| **notifyUrl**       | Return URL for the campaign status sent in GET |
 
 
-## Requête
-Exemple de requête :
+## Request
+Request example
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -421,7 +422,7 @@ public class DeposerMessageVocal
   </code></pre>
   </div>
 </div>
-## Réponses
+## Response
 
 ### JSON
 ```json
@@ -444,7 +445,8 @@ public class DeposerMessageVocal
     }
 }
 ```
-## Exemple
+
+## Examples
 
 ```bash
 curl -X POST 

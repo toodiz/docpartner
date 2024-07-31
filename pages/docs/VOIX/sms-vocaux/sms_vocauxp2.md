@@ -3,7 +3,6 @@ title: Supprimer un envoi différé
 description: >
 ---
 # Supprimer un envoi différé
-
 Permet d’annuler un envoi
 
 
@@ -12,17 +11,18 @@ Permet d’annuler un envoi
 
 <div>
   <div style="background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE</div> 
-  <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;"> https://api.voicepartner.fr/v1/campaign/cancel </span>
+  <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;">  https://api.voicepartner.fr/v1/campaign/cancel</span>
 </div>
 
 
 ## Paramètres
-Chaque demande d’API prend en charge les paramètres suivants :
 
+Chaque demande d’API prend en charge les paramètres suivants :
+           
 | Paramètre       | Description |
 |:-----------------:|-------------| 
-| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://www.voicepartner.fr" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte Voice Partner</a>. |
-| **campaignId**       | id de message |
+| **apiKey**      | Clé API de votre compte. Vous l'obtiendrez dans votre <a href="https://my.smspartner.fr/connexion" style="background-color: #47a947; color: white; padding: 5px 8px; text-decoration: none; border-radius: 4px;">compte SMS Partner</a>. |
+| **campaignId**       | id de message|
 
 
 
@@ -63,7 +63,6 @@ Exemple de requête :
   <div class="tab-pane fade show active" id="php" role="tabpanel" aria-labelledby="php-tab">
     <pre><code class="language-php">
 &lt;? 
-
 // Activer l'affichage des erreurs pour le débogage
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -161,15 +160,17 @@ else:
     print(f'Réponse : {response.text}')
    </code></pre>
   </div>
+   
     <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
     <!-- cURL code example goes here -->
     <pre><code class="language-bash">
 curl -X DELETE 'https://api.voicepartner.fr/v1/campaign/cancel/YOUR_API_KEY/CAMPAIGN_ID'
+
  </code></pre>
   </div>
-
     <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab">
      <pre><code class="language-javascript">
+   
     <!-- NodeJS code example goes here -->
 const axios = require('axios');
 
