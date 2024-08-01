@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/xsl/atom.xsl" media="all"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
+  <id>http://localhost:8000/blog/</id>
+  <title>Doc Partner - Blog</title>
+  <subtitle><![CDATA[Site description.]]></subtitle>
+  <link href="http://localhost:8000/blog/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:8000/blog/" rel="alternate" type="text/html" />
+  <updated>2024-04-26T00:00:00+00:00</updated>
+  <author>
+    <name>NDA MEDIA</name>
+    <uri>https://ndamedia.fr/</uri>
+  </author>
+  <entry xml:lang="fr">
+    <id>http://localhost:8000/blog/post-demo-2/</id>
+    <title>Blog post demo 2</title>
+    <content type="html">
+      <![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum in nisl laoreet venenatis. Morbi eleifend libero augue, eu mattis nisi suscipit vitae. Cras facilisis mi vitae placerat rutrum. Sed fermentum neque et nulla sodales egestas. Suspendisse ultrices eleifend nibh, eu rutrum lectus. Donec vitae varius magna. Donec semper, nisl eget luctus mattis, sem magna ultrices nibh, vel vulputate turpis purus ultrices mi. Proin mollis felis ut sagittis semper.</p>
+<!-- break -->
+<p>Vivamus blandit aliquet nisl, sed venenatis odio porttitor at. Ut ac accumsan massa. Donec eget finibus risus, eget porta lacus. In mollis ante est, at rhoncus elit rhoncus sit amet. Donec lorem diam, lobortis a sagittis vitae, ultrices sit amet metus. Nunc tristique tempor mauris quis venenatis. Ut at feugiat purus. Aliquam varius luctus lectus, in ultrices odio pellentesque vitae. Nam tincidunt, dui porttitor aliquam efficitur, nunc nibh fringilla diam, viverra imperdiet dui diam quis massa. Praesent mollis mauris eu quam venenatis, in tincidunt neque eleifend. Nam nec risus vulputate, placerat quam at, ultricies dui. Etiam mauris tortor, bibendum sed malesuada vitae, fringilla at ipsum. Quisque et dui ut augue auctor consectetur. Sed ac pretium nunc. In at dolor iaculis, porttitor ipsum a, suscipit neque. Aenean venenatis ultricies iaculis.</p>
+<p>Integer ac scelerisque diam. Etiam laoreet, ex id placerat malesuada, risus justo tincidunt arcu, at fermentum nunc ipsum id tellus. Nullam viverra ac nisl ut feugiat. Sed id elementum leo. In in elit sit amet lorem sodales accumsan. Aenean sed mauris iaculis, efficitur erat id, viverra magna. Pellentesque nisi massa, accumsan vel lacinia eget, ultricies convallis dui. Curabitur iaculis gravida augue non cursus. Quisque varius, libero id pellentesque eleifend, risus nibh lacinia nibh, gravida congue mi justo ac neque. Aliquam efficitur leo at purus consequat convallis. Etiam consectetur mi dui, sit amet condimentum nulla posuere id. Nam mollis sem non enim lacinia consequat.</p>]]>
+    </content>
+    <link href="http://localhost:8000/blog/post-demo-2/" rel="alternate" type="text/html" />
+    <published>2024-04-26T00:00:00+00:00</published>
+    <updated>2024-05-27T22:55:24+00:00</updated>
+  </entry>
+  <entry xml:lang="fr">
+    <id>http://localhost:8000/blog/post-demo-1/</id>
+    <title>Blog post demo 1</title>
+    <content type="html">
+      <![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum in nisl laoreet venenatis. Morbi eleifend libero augue, eu mattis nisi suscipit vitae. Cras facilisis mi vitae placerat rutrum. Sed fermentum neque et nulla sodales egestas. Suspendisse ultrices eleifend nibh, eu rutrum lectus. Donec vitae varius magna. Donec semper, nisl eget luctus mattis, sem magna ultrices nibh, vel vulputate turpis purus ultrices mi. Proin mollis felis ut sagittis semper.</p>
+<!-- break -->
+<p>Vivamus blandit aliquet nisl, sed venenatis odio porttitor at. Ut ac accumsan massa. Donec eget finibus risus, eget porta lacus. In mollis ante est, at rhoncus elit rhoncus sit amet. Donec lorem diam, lobortis a sagittis vitae, ultrices sit amet metus. Nunc tristique tempor mauris quis venenatis. Ut at feugiat purus. Aliquam varius luctus lectus, in ultrices odio pellentesque vitae. Nam tincidunt, dui porttitor aliquam efficitur, nunc nibh fringilla diam, viverra imperdiet dui diam quis massa. Praesent mollis mauris eu quam venenatis, in tincidunt neque eleifend. Nam nec risus vulputate, placerat quam at, ultricies dui. Etiam mauris tortor, bibendum sed malesuada vitae, fringilla at ipsum. Quisque et dui ut augue auctor consectetur. Sed ac pretium nunc. In at dolor iaculis, porttitor ipsum a, suscipit neque. Aenean venenatis ultricies iaculis.</p>
+<p>Integer ac scelerisque diam. Etiam laoreet, ex id placerat malesuada, risus justo tincidunt arcu, at fermentum nunc ipsum id tellus. Nullam viverra ac nisl ut feugiat. Sed id elementum leo. In in elit sit amet lorem sodales accumsan. Aenean sed mauris iaculis, efficitur erat id, viverra magna. Pellentesque nisi massa, accumsan vel lacinia eget, ultricies convallis dui. Curabitur iaculis gravida augue non cursus. Quisque varius, libero id pellentesque eleifend, risus nibh lacinia nibh, gravida congue mi justo ac neque. Aliquam efficitur leo at purus consequat convallis. Etiam consectetur mi dui, sit amet condimentum nulla posuere id. Nam mollis sem non enim lacinia consequat.</p>]]>
+    </content>
+    <link href="http://localhost:8000/blog/post-demo-1/" rel="alternate" type="text/html" />
+    <published>2024-04-25T00:00:00+00:00</published>
+    <updated>2024-05-27T22:55:24+00:00</updated>
+  </entry>
+</feed>
