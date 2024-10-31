@@ -79,3 +79,7 @@ after that you can use this bash which takes two parameters the path file.md and
  ./mon_script.sh pages/docs/sms/smsp1.md es
 
 ```
+
+## Search Bar
+
+Run the getContent.py script, which will generate a file called search-data.json. Once generated, copy the JSON content into the data variable in the JavaScript of the file: themes/docs/layouts/partials/menu.html.twig.
