@@ -1,36 +1,61 @@
+
+
 ---
-title: Introduction Mail
-description: Page 01 MAIL.
+title: Mail Credits
+description: Page 02 MAIL.
 ---
 
-# Introduction MAIL
+# Mail Credits
 
-Cette requête est utilisée pour récupérer votre crédit disponible de SMS, ainsi que le nombre de SMS en instance de départ.
+This request is used to retrieve your available mail credit.
+
+
 
 ## URL
-
 <div>
   <div style="background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">GET</div> 
   <span style="color: red; display: inline-block; vertical-align: middle; margin-left: 10px;">https://api.smspartner.fr/v1/me</span>
 </div>
 
-## Paramètres
 
-Chaque demande d'API prend en charge les paramètres suivants :
 
-| Paramètre  | Description |
+
+
+
+
+## Parameters
+
+Each API request supports the following parameters:
+
+| Parameter  | Description |
 | :--------------- |:---------------|
-| **apiKey** | Clé API de votre compte. Vous l'obtenez dans votre compte SMS Partner. |
+| **apiKey** | Your account's API key. You get it in your SMS Partner account.
+ |
+| **messageId** | Found in the response when sending an email |
 
-### Paramètres optionnels
+### Optional Parameters
 
-| Paramètre  | Description |
+| Parameter  | Description |
 | :--------------- |:---------------|
-| **_format** | Format de la réponse. Vous pouvez choisir entre JSON ou XML. Par défaut, le format de réponse est JSON. |
+| **_format** | Response format. You can choose between JSON or XML. By default, the response format is JSON. |
 
-## Requête
+<div class="alert alert-info">
+             Note !! It is not possible to cancel the sending of an email <strong>less than 5 minutes before its sending</strong>.
+    </div>
 
-Exemple de requête :
+
+
+
+
+
+
+
+
+
+
+## Request
+
+Example request: 
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -160,16 +185,16 @@ URL = "https://api.smspartner.fr/v1"
  
 class SMSPartner():
     def get_balance(self):
-		url = URL + "/me?apiKey=" + API_KEY
-		r = requests.get(url)
-		r_json = r.json()
-		if r_json.get("success") == True:
-			print(r_json)
-			status = True
-		else:
-			print(r_json)
-			status = False
-		return status
+        url = URL + "/me?apiKey=" + API_KEY
+        r = requests.get(url)
+        r_json = r.json()
+        if r_json.get("success") == True:
+            print(r_json)
+            status = True
+        else:
+            print(r_json)
+            status = False
+        return status
    </code></pre>
   </div>
   <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
@@ -187,7 +212,7 @@ let data = 'apiKey=YOUR API KEY';
 let url = 'https://api.smspartner.fr/v1/me?' + data;
 
 https.get(url, (res) => {
-  let data = '';
+  let data = ';
 
   // Un morceau de données a été reçu.
   res.on('data', (chunk) => {
@@ -269,7 +294,7 @@ struct Credits: View {
  
     func getCredit() {
         let apiKey = "Your-api-key"
-        let urlString = "https://api.smspartner.fr/v1/me?apiKey=\(apiKey)"
+        let urlString = "https://api.smspartner.fr/v1/me?apiKey=(apiKey)"
  
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -278,7 +303,7 @@ struct Credits: View {
  
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: (error)")
             } else if let data = data {
                 let result = String(data: data, encoding: .utf8)
                 DispatchQueue.main.async {
@@ -304,32 +329,32 @@ struct CreditView_Previews: PreviewProvider {
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-	apiKey := "your_api_key"
-	url := "https://api.smspartner.fr/v1/me?apiKey=" + apiKey
+    apiKey := "your_api_key"
+    url := "https://api.smspartner.fr/v1/me?apiKey=" + apiKey
 
-	response, err := http.Get(url)
-	if err != nil {
-		fmt.Println("GET request failed:", err)
-		return
-	}
-	defer response.Body.Close()
+    response, err := http.Get(url)
+    if err != nil {
+        fmt.Println("GET request failed:", err)
+        return
+    }
+    defer response.Body.Close()
 
-	if response.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(response.Body)
-		if err != nil {
-			fmt.Println("Failed to read response body:", err)
-			return
-		}
-		fmt.Println(string(bodyBytes))
-	} else {
-		fmt.Println("GET request failed. Response Code:", response.StatusCode)
-	}
+    if response.StatusCode == http.StatusOK {
+        bodyBytes, err := ioutil.ReadAll(response.Body)
+        if err != nil {
+            fmt.Println("Failed to read response body:", err)
+            return
+        }
+        fmt.Println(string(bodyBytes))
+    } else {
+        fmt.Println("GET request failed. Response Code:", response.StatusCode)
+    }
 }
    </code></pre>
   </div>
@@ -372,66 +397,43 @@ class Program
   <li class="nav-item">
     <a class="nav-link active" id="json-tab" data-toggle="tab" href="#json" role="tab" aria-controls="json" aria-selected="true">JSON</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="xml-tab" data-toggle="tab" href="#xml" role="tab" aria-controls="xml" aria-selected="false">XML</a>
-  </li>
 </ul>
 
-<!-- Tab panes pour JSON et XML -->
-<div class="tab-content">
-  <div class="tab-pane fade show active" id="json" role="tabpanel" aria-labelledby="json-tab">
-    <pre><code class="language-json">
+
+
+## Response
+``` json
 {
     "success": true,
     "code": 200,
     "user": {
-        "username": "exemple@email.com",
-        "firstname": "John",
-        "lastname": "Doe"
+        "username": "exemple@email.com"
     },
     "credits": {
-        "creditSms": 269082,
-        "creditSmsLowCost": 444570 (Ce paramètre sera prochainement supprimé, il est actuellement remplacé par creditSmsECO)
-        "creditSmsECO": 444570,
-        "creditHlr": 2045023,
-        "toSend": 0,
-        "solde": "10225.119",
+        "creditMail": 269082,
         "currency": "EUR",
         "balance": "10225.119"
     }
 }
-    </code></pre>
-  </div>
-  <div class="tab-pane fade" id="xml" role="tabpanel" aria-labelledby="xml-tab">
-    <pre><code class="language-xml">
-<?xml version='1.0' encoding='UTF-8'?>
-<result>
-    <entry>true</entry>
-    <entry>200</entry>
-    <entry>
-        <username>exemple@email.com</username>
-        <firstname>John</firstname>
-        <lastname>Doe</lastname>
-    </entry>
-    <entry>
-        <entry>269070</entry>
-        <entry>444551</entry>
-        <entry>2044937</entry>
-        <entry>0</entry>
-        <entry>
-            <![CDATA[10224.688]]>
-        </entry>
-        <entry>
-            <![CDATA[EUR]]>
-        </entry>
-        <entry>
-            <![CDATA[10224.688]]>
-        </entry>
-    </entry>
-</result>
-    </code></pre>
-  </div>
-</div>
+```
+
+
+
+
+
+
+
+## Erreurs
+
+```json
+{
+    "success": false,
+    "code": 10,
+    "message": "Clé API incorrecte"
+}
+  ```
+
+
 
 ## Code de contrôle
 
@@ -439,9 +441,10 @@ class Program
 | :---------------: |:---------------|
 |10 | Clé API incorrecte |
 |200 | Tout s’est bien passé ! |
+  
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+

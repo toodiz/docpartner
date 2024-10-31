@@ -12,6 +12,6 @@ fi
 
 # Exécuter cecil serve
 echo "Démarrage de cecil serve..."
-cecil serve
+php cecil.phar serve
 
 # Note : cecil serve va continuer à s'exécuter, donc le script ne terminera pas automatiquement ici

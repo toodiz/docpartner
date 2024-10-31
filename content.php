@@ -22,8 +22,10 @@ if ($langue != 'fr') {
 // Paramètres de connexion à la base de données
 $host = 'localhost';
 $db   = 'api_docs';
-$user = 'root';
-$pass = '';
+// $user = 'root';
+// $pass = '';
+$user = 'test';
+$pass = 'test';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -49,9 +51,10 @@ if (!$result) {
 }
 
 $id_chemin = $result['id'];
+echo("hhhh $id_chemin");
 
 // Tableaux pour stocker les résultats
-$tables = ['introduction', 'URLAPI', 'PARAMETRE', 'REQUETE_REPONSE', 'ERREUR_ControleCode', 'Suitecode'];
+$tables = ['introduction', 'urlapi', 'parametre', 'requete_reponse', 'erreur_controlecode', 'suitecode'];
 $content = [];
 
 // Récupérer le contenu de chaque table

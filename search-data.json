@@ -1,0 +1,704 @@
+[
+    {
+        "Title": "Mail Introduction",
+        "Intro": ">",
+        "Content": "---\ntitle: Mail Introduction\ndescription: >\n---\n# Introduction to Mail Partner API\n\nEmail sending is done from the [Mail Partner](https://mailpartner.fr) platform or by [leaving messages directly on voicemail.](message-vocal/message_vocalp3.md) These features are offered through the [Voice Partner](https://www.voicepartner.fr/) platform. From the site, you have immediate access to our free API: it allows you to easily integrate our mail services into your website, software or CRM application in",
+        "Url": "en/docs/mail/mailp1"
+    },
+    {
+        "Title": "Mail Credits",
+        "Intro": "Page 02 MAIL",
+        "Content": "---\ntitle: Mail Credits\ndescription: Page 02 MAIL.\n---\n\n# Mail Credits\n\nThis request is used to retrieve your available mail credit.\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/me</span>\n</div>\n\n\n\n\n\n\n\n## Parameters\n\nEach API request supports the following",
+        "Url": "en/docs/mail/mailp2"
+    },
+    {
+        "Title": "Cancel Deferred Email Sending",
+        "Intro": "Page 03 MAIL",
+        "Content": "---\ntitle: Cancel Deferred Email Sending\ndescription: Page 03 MAIL.\n---\n\n# Cancel Deferred Email Sending\n\n\nThis request is used to cancel a deferred email sending.\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/message-cancel</span>\n</div>\n\n\n\n\n\n## Parameters",
+        "Url": "en/docs/mail/mailp3"
+    },
+    {
+        "Title": "Crédits mails",
+        "Intro": "Page 01 MAIL",
+        "Content": "---\ntitle: Crédits mails\ndescription: Page 01 MAIL.\n---\n\n# Introduction à l’API Mail Partner\n\nCette requête est utilisée pour récupérer votre crédit disponible de SMS, ainsi que le nombre de SMS en instance de départ.\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/",
+        "Url": "docs/mail/mailp2"
+    },
+    {
+        "Title": "Introduction Mail",
+        "Intro": ">",
+        "Content": "---\ntitle: Introduction Mail\ndescription: >\n---\n# Introduction à l’API Mail Partner\n\nLes envois de mail sont effectués à partir de la plateforme [Mail Partner](shttps://mailpartner.fr ) ou d’effectuer des [dépôts de messages directement sur répondeur.](message-vocal/message_vocalp3.md) Ces fonctionnalités sont proposées à partir de la plateforme [Voice Partner](https://www.voicepartner.fr/).Depuis le site, vous avez un accès immédiat à notre API gratuite : elle vous permet d’intégrer facilement",
+        "Url": "docs/mail/mailp1"
+    },
+    {
+        "Title": "Annuler l’envoi d’un Mail",
+        "Intro": "Page 03 MAIL",
+        "Content": "---\ntitle: Annuler l’envoi d’un Mail\ndescription: Page 03 MAIL.\n---\n\n# Annuler l’envoi d’un mail différé\n\nCette requête est utilisée pour annuler l’envoi d’un mail envoyé en différé.\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/message-cancel</span>\n</div>",
+        "Url": "docs/mail/mailp3"
+    },
+    {
+        "Title": "Statut par message",
+        "Intro": "Page 03 MAIL",
+        "Content": "---\ntitle: Statut par message\ndescription: Page 03 MAIL.\n---\n\n# Statut par message mail",
+        "Url": "docs/mail/status-de-remise/status_de_remisep1"
+    },
+    {
+        "Title": "Statut par message",
+        "Intro": ">",
+        "Content": "---\ntitle: Statut par message\ndescription: >\n---\n\n# Status by ID\n\nThis request allows you to retrieve the statuses of multiple emails based on an ID.\n\n<div class=\"alert alert-info no-margin\">Note: Reports are typically received a few seconds after the email is sent; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.</div>\n\n\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding:",
+        "Url": "en/docs/mail/status-de-remise/status_de_remisep1"
+    },
+    {
+        "Title": "Activation et création des sous-comptes",
+        "Intro": ">",
+        "Content": "---\ntitle: Activation et création des sous-comptes\n\ndescription: >\n---\n# Activation et création des sous-comptes\n\n## Demande d’activation des sous-comptes\n\n\nSMS Partner vous donne la possibilité de créer des sous-comptes. Ainsi vous pouvez gérer un nombre illimité de sous-compte à partir de votre compte principal.\n\n\n### Activation des sous-comptes\nPour activer cette fonctionnalité, il suffit de contacter notre <a style=\"color: #3eb0ad;\" href=\"https://www.mailpartner.fr/contact/\" target=\"_blank",
+        "Url": "docs/mail/sous-comptes/sous_comptep1"
+    },
+    {
+        "Title": "Retrieving Subaccounts",
+        "Intro": ">",
+        "Content": "---\ntitle: Retrieving Subaccounts\ndescription: >\n---\n\n# Retrieving Subaccounts\n\nTo retrieve the information of subaccounts, there are two methods:  \n### Via the platform:\nBy accessing your <a style=\"color: #3eb0ad;\" href=\"https://my.mailpartner.fr\"><strong>dashboard</strong></a>, you will have access to all the subaccounts associated with your account.\n### Via the API:\nBy making a request to the URL below.\n\n\n\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inli",
+        "Url": "en/docs/mail/sous-comptes/sous_comptep3"
+    },
+    {
+        "Title": "Récupération des sous comptes",
+        "Intro": ">",
+        "Content": "---\ntitle: Récupération des sous comptes\ndescription: >\n---\n\n# Récupération des sous comptes\n\nPour récupérer, les informations des sous comptes, il y a deux méthodes : \n### Par la plateforme:\nEn vous rendant sur votre <a style=\"color: #3eb0ad;\" href=\"https://my.mailpartner.fr\"><strong>tableau de bord</strong></a> ou vous aurez accès à l’ensemble des sous comptes associés à votre compte.\n### Par l'API;\nEn effectuant une requête sur l'url ci-dessous. \n\n\n\n\n\n\n\n\n\n## URL\n\n<div>\n  <div style=\"backgro",
+        "Url": "docs/mail/sous-comptes/sous_comptep3"
+    },
+    {
+        "Title": "Supprimer un mail de la liste des désabonnements",
+        "Intro": ">",
+        "Content": "---\ntitle:  Supprimer un mail de la liste des désabonnements\n\ndescription: >\n---\n# Supprimer un mail de la liste des désabonnements\n\n\nCette requête permet de supprimer un mail de la liste des désabonnements.\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/u",
+        "Url": "docs/mail/sous-comptes/sous_comptep4"
+    },
+    {
+        "Title": "Adding Credit",
+        "Intro": ">",
+        "Content": "---\ntitle: Adding Credit\ndescription: >\n---\n\n# Adding Credit\n\nFrom your account, you can add credits to your sub-accounts. The credits will be debited from your main account. \n\n\n\n\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.mailpartner.fr/v1/subaccount/credit/add</span>",
+        "Url": "en/docs/mail/sous-comptes/sous_comptep4"
+    },
+    {
+        "Title": "Creation of Sub-Account",
+        "Intro": ">",
+        "Content": "---\ntitle:  Creation of Sub-Account\n\ndescription: >\n---\n# Creation of Sub-Account\n\nCreating a sub-account.\n\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.mailpartner.fr/v1/subaccount/create</span>\n</div>\n\n\n\n\n\n\n\n\n\n\n\n\n\n## Parameters\n\nEach API request supports the fol",
+        "Url": "en/docs/mail/sous-comptes/sous_comptep2"
+    },
+    {
+        "Title": "Création de sous-compte",
+        "Intro": ">",
+        "Content": "---\ntitle:  Création de sous-compte\n\ndescription: >\n---\n# Création de sous-compte\n\n\nCréation de sous-compte.\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.mailpartner.fr/v1/subaccount/create</span>\n</div>\n\n\n\n\n\n\n\n\n  ## Paramètres\n\n\nChaque demande d’API prend en charg",
+        "Url": "docs/mail/sous-comptes/sous_comptep2"
+    },
+    {
+        "Title": "Activation and Creation of Sub-Accounts",
+        "Intro": ">",
+        "Content": "---\ntitle: Activation and Creation of Sub-Accounts\n\ndescription: >\n---\n# Activation and Creation of Sub-Accounts\n\n## Sub-Account Activation Request\n\nSMS Partner gives you the ability to create sub-accounts. This way, you can manage an unlimited number of sub-accounts from your main account.\n\n### Sub-Account Activation\nTo activate this feature, simply contact our <a style=\"color: #3eb0ad;\" href=\"https://www.mailpartner.fr/contact/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>technical team.",
+        "Url": "en/docs/mail/sous-comptes/sous_comptep1"
+    },
+    {
+        "Title": "Removing Credit",
+        "Intro": ">",
+        "Content": "---\ntitle: Removing Credit\ndescription: >\n---\n\n# Removing Credit\n\nFrom your account, you can remove credits from your sub-accounts. The credits will be added back to your main account.\n\n\n\n\n\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.mailpartner.fr/v1/subaccount/credit/",
+        "Url": "en/docs/mail/sous-comptes/sous_comptep5"
+    },
+    {
+        "Title": "Sending Emails",
+        "Intro": ">",
+        "Content": "---\ntitle: Sending Emails\ndescription: >\n---\n\n# Sending Emails\n\nThis request is used to send emails in real-time or on a delayed schedule.\n\n\n\n\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/send</span>\n</div>\n\n\n\n\n\n\n\n\n\n\n\n\n## Parameters\n\nEach API request supports the",
+        "Url": "en/docs/mail/envoyer-des-mails/envoyer_des_mailsp1"
+    },
+    {
+        "Title": "Envoi unitaire de mail",
+        "Intro": "Page 03 MAIL",
+        "Content": "---\ntitle: Envoi unitaire de mail\ndescription: Page 03 MAIL.\n---\n\n# Envoyer des mails\n\n\nCette requête est utilisée pour envoyer des mails en temps réel ou en différé.\n\n## URL\n\n<div>\n <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/send</span>\n</div>\n\n\n\n## Paramètres\nChaque demande d’API pr",
+        "Url": "docs/mail/envoyer-des-mails/envoyer_des_mailsp1"
+    },
+    {
+        "Title": "Unsubscription List",
+        "Intro": ">",
+        "Content": "---\ntitle: Unsubscription List\ndescription: >\n---\n\n# Unsubscription List\nThis request allows retrieving the unsubscription list.\n\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #ef4836; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/unsubscribe/list</span>\n</div>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n### Parameters\n\nEach API request su",
+        "Url": "en/docs/mail/gestion-des-désabonnements/desabonnementsp2"
+    },
+    {
+        "Title": "Add an email to the unsubscribe list",
+        "Intro": ">",
+        "Content": "---\ntitle: Add an email to the unsubscribe list\ndescription: >\n---\n\n# Add an email to the unsubscribe list\n\nThis request allows you to add an email to the unsubscribe list.\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/unsubscribe/add</span>\n</div>",
+        "Url": "en/docs/mail/gestion-des-désabonnements/desabonnementsp1"
+    },
+    {
+        "Title": "Ajouter un mail",
+        "Intro": ">",
+        "Content": "---\ntitle:  Ajouter un mail \ndescription: >\n---\n# Ajouter un mail à la liste des désinscriptions\n\nCette requête permet d’ajouter un mail à la liste des désinscriptions.\n\n\n## URL\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">  http://api.mailpartner.fr/v1/unsubscribe/add</span>\n</div>\n\n\n\n\n\n  ##",
+        "Url": "docs/mail/gestion-des-désabonnements/desabonnementsp1"
+    },
+    {
+        "Title": "Remove an email from the unsubscription list",
+        "Intro": ">",
+        "Content": "---\ntitle: Remove an email from the unsubscription list\ndescription: >\n---\n\n# Remove an email from the unsubscription list\nThis request allows removing an email from the unsubscription list.\n\n\n\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/unsubscribe/d",
+        "Url": "en/docs/mail/gestion-des-désabonnements/desabonnementsp3"
+    },
+    {
+        "Title": "Supprimer un mail de la liste des désabonnements",
+        "Intro": ">",
+        "Content": "---\ntitle:  Supprimer un mail de la liste des désabonnements\n\ndescription: >\n---\n# Supprimer un mail de la liste des désabonnements\n\n\nCette requête permet de supprimer un mail de la liste des désabonnements.\n\n\n\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.f",
+        "Url": "docs/mail/gestion-des-désabonnements/desabonnementsp3"
+    },
+    {
+        "Title": "Liste des désabonnements",
+        "Intro": ">",
+        "Content": "---\ntitle:  Liste des désabonnements\ndescription: >\n---\n# Liste des désabonnements\n\nCette requête permet de récupérer la liste désabonnements.\n\n\n\n\n\n## URL\n<div>\n  <div style=\"background-color: #ef4836; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.mailpartner.fr/v1/unsubscribe/list</span>\n</div>\n\n\n\n\n\n\n\n\n  ## Paramètres\n\n\nChaque d",
+        "Url": "docs/mail/gestion-des-désabonnements/desabonnementsp2"
+    },
+    {
+        "Title": "Crédits voix",
+        "Intro": ">",
+        "Content": "---\ntitle: Crédits voix\ndescription: >\n---\n# Crédits voix\nCette requête est utilisée pour récupérer votre crédit disponible de messages vocaux, dépôt de messages.\n\nLimite: 5 requêtes par minute\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/me</span>\n</div>",
+        "Url": "docs/voix/voixp2"
+    },
+    {
+        "Title": "Introduction",
+        "Intro": ">",
+        "Content": "---\ntitle: Introduction\ndescription: >\n---\n# Introduction to the VOICE Partner API\n\n\nThe API allows for the sending of [Voice SMS](sms-vocaux/sms_vocauxp1.md) or for making [deposits of messages directly on the answering machine.](message-vocal/message_vocalp3.md) These features are offered through the [Voice Partner](https://www.voicepartner.fr/) platform. From the website, you have immediate access to our free API: it allows you to easily integrate our voice services into your website, softwar",
+        "Url": "en/docs/voix/voixp1"
+    },
+    {
+        "Title": "Introduction",
+        "Intro": ">",
+        "Content": "---\ntitle: Introduction\ndescription: >\n---\n# Introduction à l’API VOICE Partner\n\n\nL’API permet d’effectuer des envois de [SMS Vocaux](sms-vocaux/sms_vocauxp1.md ) ou d’effectuer des [dépôts de messages directement sur répondeur.](message-vocal/message_vocalp3.md) Ces fonctionnalités sont proposées à partir de la plateforme [Voice Partner](https://www.voicepartner.fr/). Depuis le site, vous avez un accès immédiat à notre API gratuite : elle vous permet d’intégrer facilement nos services de voix à",
+        "Url": "docs/voix/voixp1"
+    },
+    {
+        "Title": "Voice Credits",
+        "Intro": ">",
+        "Content": "---\ntitle: Voice Credits\ndescription: >\n---\n# Voice Credits\nThis request is used to retrieve your available credit for voice messages, message deposits.\n\nLimit: 5 requests per minute\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/me</span>\n</div>\n\n\n## Parame",
+        "Url": "en/docs/voix/voixp2"
+    },
+    {
+        "Title": "Liste des fichiers audio",
+        "Intro": ">",
+        "Content": "---\ntitle: Liste des fichiers audio\ndescription: >\n---\n# Liste des fichiers audio\n\nRécupére la liste des fichiers audios ajoutés et validés\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/audios</span>\n</div>\n\n\n## Paramètres\nChaque demande d’API prend en ch",
+        "Url": "docs/voix/message-vocal/message_vocalp1"
+    },
+    {
+        "Title": "Leave a Voice Message",
+        "Intro": ">",
+        "Content": "---\ntitle: Leave a Voice Message\ndescription: >\n---\n# Leave a Voice Message\n\nThe [Voice Message Service (VMS)] (https://www.voicepartner.fr/depot-de-messages-vocaux) is available on the API. The service works on both landlines and mobile phones. It's important to note that the operation is different.\n\nAs a reminder, on a mobile number, the message is directly deposited on the voicemail, while on a landline number, the phone rings and the message is only left if the recipient doesn't answer.\n\nTo",
+        "Url": "en/docs/voix/message-vocal/message_vocalp3"
+    },
+    {
+        "Title": "Supprimer un envoi différé",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer un envoi différé\ndescription: >\n---\n# Supprimer un envoi différé\n\nPermet d’annuler un envoi\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/campaign/cancel </span>\n</div>\n\n\n## Paramètres\nChaque demande d’API prend en charge les param",
+        "Url": "docs/voix/message-vocal/message_vocalp4"
+    },
+    {
+        "Title": "Renommer un fichier audio",
+        "Intro": ">",
+        "Content": "---\ntitle: Renommer un fichier audio\ndescription: >\n---\n# Renommer un fichier audio\n\nRécupére la liste des fichiers audios ajoutés et validés\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/audio-file/rename</span>\n</div>\n\n\n## Paramètres\nChaque demande",
+        "Url": "docs/voix/message-vocal/message_vocalp2"
+    },
+    {
+        "Title": "Cancel a Scheduled Send",
+        "Intro": ">",
+        "Content": "---\ntitle: Cancel a Scheduled Send\ndescription: >\n---\n# Cancel a Scheduled Send\n\nAllows you to cancel a scheduled send\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/campaign/cancel </span>\n</div>\n\n\n## Parameters\nEach API request supports the following p",
+        "Url": "en/docs/voix/message-vocal/message_vocalp4"
+    },
+    {
+        "Title": "List of Audio Files",
+        "Intro": ">",
+        "Content": "---\ntitle: List of Audio Files\ndescription: >\n---\n# List of Audio Files\n\nRetrieve the list of added and validated audio files\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/audios</span>\n</div>\n\n\n## Parameters\nEach API request supports the following parame",
+        "Url": "en/docs/voix/message-vocal/message_vocalp1"
+    },
+    {
+        "Title": "Déposer un message vocal",
+        "Intro": ">",
+        "Content": "---\ntitle: Déposer un message vocal\ndescription: >\n---\n# Déposer un message vocal\n\nLe [dépôt d’un message vocal (VMS)](https://www.voicepartner.fr/depot-de-messages-vocaux) est disponible sur l’API. Le dépôt fonctionne sur les fixes et sur les mobiles. Il est important de noter que le fonctionnement est différent.\n\nPour rappel, sur un numéro mobile le message est directement déposé sur le répondeur alors que sur un numéro fixe, le téléphone sonne et le message est déposé uniquement si le destina",
+        "Url": "docs/voix/message-vocal/message_vocalp3"
+    },
+    {
+        "Title": "Rename an Audio File",
+        "Intro": ">",
+        "Content": "---\ntitle: Rename an Audio File\ndescription: >\n---\n# Rename an Audio File\n\nRename an added and validated audio file\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/audio-file/rename</span>\n</div>\n\n\n## Parameters\nEach API request supports the following",
+        "Url": "en/docs/voix/message-vocal/message_vocalp2"
+    },
+    {
+        "Title": "Send a Voice SMS",
+        "Intro": ">",
+        "Content": "---\ntitle: Send a Voice SMS\ndescription: >\n---\n# Send a Voice SMS\n\nSend a voice SMS to mobile Rate Limit: 2000 requests per hour\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.voicepartner.fr/v1/tts/send </span>\n</div>\n\n\n## Parameters\n\nEach API request supports the follo",
+        "Url": "en/docs/voix/sms-vocaux/sms_vocauxp1"
+    },
+    {
+        "Title": "Supprimer un envoi différé",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer un envoi différé\ndescription: >\n---\n# Supprimer un envoi différé\nPermet d’annuler un envoi\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">  https://api.voicepartner.fr/v1/campaign/cancel</span>\n</div>\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les param",
+        "Url": "docs/voix/sms-vocaux/sms_vocauxp2"
+    },
+    {
+        "Title": "Cancel a Scheduled Send",
+        "Intro": ">",
+        "Content": "---\ntitle: Cancel a Scheduled Send\ndescription: >\n---\n# Cancel a Scheduled Send\n\nAllows you to cancel a send\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">  https://api.voicepartner.fr/v1/campaign/cancel</span>\n</div>\n\n\n## Parameters\n\nEach API request supports the following parameters:",
+        "Url": "en/docs/voix/sms-vocaux/sms_vocauxp2"
+    },
+    {
+        "Title": "Envoyer un SMS vocal",
+        "Intro": ">",
+        "Content": "---\ntitle: Envoyer un SMS vocal\ndescription: >\n---\n# Envoyer un SMS vocal\n\nEnvoyer un SMS vocal sur mobile Rate Limit: 2000 requêtes par heure\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90 ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">  https://api.voicepartner.fr/v1/tts/send </span>\n</div>\n\n\n## Paramètres\n\nChaque demande d’AP",
+        "Url": "docs/voix/sms-vocaux/sms_vocauxp1"
+    },
+    {
+        "Title": "",
+        "Intro": "",
+        "Content": "// Activer l\\'affichage des erreurs pour le débogage\nini_set(\\'display_errors\\', 1);\nini_set(\\'display_startup_errors\\', 1);\nerror_reporting(E_ALL);\n\n// L\\'URL de l\\'API pour annuler la campagne\n$apiKey = \\'YOUR_API_KEY\\'; // Remplacez par votre clé API réelle\n$campaignId = \\'CAMPAIGN_ID\\'; // Remplacez par l\\'ID de campagne réel\n\n// Construction de l\\'URL avec la clé API et l\\'ID de campagne\n$url = \"https://api.voicepartner.fr/v1/campaign/cancel/$apiKey/$campaignId\";\n\n// Initialisation de cURL",
+        "Url": "docs/voix/sms-vocaux/smskj/l"
+    },
+    {
+        "Title": "Introducción",
+        "Intro": "Page d'introduction à l'API SMS Partner",
+        "Content": "---\ntitle: Introducción\nlang: es\ndescription: Page d'introduction à l'API SMS Partner.\n---\n\n# Introducción a la API de SMS Partner\n\nLos envíos de SMS se realizan desde [la plataforma SMS Partner](https://www.smspartner.fr/api-sms/) de SMS Partner.. Desde el sitio, usted tiene acceso inmediato a nuestra API gratuita, la cual le permitirá integrar fácilmente nuestros servicios de SMS a su sitio web, software o aplicación de CRM en PHP, ASP, .NET, Java o cualquier otro lenguaje.\n\n\n## Configuracione",
+        "Url": "docs/sms/smsp1.es"
+    },
+    {
+        "Title": "Code d’erreurs",
+        "Intro": ">",
+        "Content": "---\ntitle: Code d’erreurs\ndescription: >\n---\n# Codes erreurs API\nVous trouverez ci dessous, les codes erreurs pour l’API SMS :\n\n* Envoi de SMS\n* Annulation des SMS\n* Récupération des statuts\n* Liste des statuts\n* Codes erreurs des statuts\n* Vérification des numéros\n* Location\n* Sous-compte\n* Envoi de messages vocaux / VMS\n* Envoi des mails\n \n\n\n\n## Envoi de SMS\n\n992 Sender non autorisé\n\n| Codes | Message                                                                                      |\n|:----",
+        "Url": "docs/gestion-des-erreurs/erreurp1"
+    },
+    {
+        "Title": "Error Codes",
+        "Intro": ">",
+        "Content": "---\ntitle: Error Codes\ndescription: >\n---\n# API Error Codes\nBelow you will find the error codes for the SMS API:\n\n* Sending SMS\n* SMS Cancellation\n* Status Retrieval\n* Status List\n* Status Error Codes\n* Number Verification\n* Location\n* Sub-account\n* Sending Voice Messages / VMS\n* Sending Emails\n\n\n\n\n\n## Sending SMS\n\n992 Unauthorized sender\n\n| Codes | Message                                                                                      |\n|:-----:|--------------------------------------------",
+        "Url": "en/docs/gestion-des-erreurs/erreurp1"
+    },
+    {
+        "Title": "Send Verification",
+        "Intro": ">",
+        "Content": "---\ntitle: Send Verification\ndescription: >\n---\n\n# Verify the Validity of a Phone Number\n\n### The mobile number verification API (<a href=\"https://www.smspartner.fr/api-hlr/\">HLR API</a>) allows you to check if a mobile number actually exists.\n\n<div class=\"alert alert-warning\">Limit: 360 requests per minute.<br>\nIf you exceed these limits, you will receive an HTTP 429 response.</div>\n\n\n\n\n\n\n\n\n\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; padding: 2px 6px; f",
+        "Url": "en/docs/verification-numeros/verification_page1"
+    },
+    {
+        "Title": "Envoyer une vérification",
+        "Intro": ">",
+        "Content": "---\ntitle: Envoyer une vérification\ndescription: >\n---\n\n# Vérifier la validité d'un numéro\n\n### L’API de vérification de numéros de mobile (<a href=\"https://www.smspartner.fr/api-hlr/\">API HLR)</a> permet de vérifier qu’un numéro de portable existe réellement.\n\n<div class=\"alert alert-warning\">Limite: 360 requêtes par minute.<br>\nSi vous dépassez ces limites, vous recevrez une réponse HTTP 429.</div>\n\n## URL\n\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; pad",
+        "Url": "docs/verification-numeros/verification page1"
+    },
+    {
+        "Title": "Check the Format of a Number",
+        "Intro": ">",
+        "Content": "---\ntitle: Check the Format of a Number\ndescription: >\n---\n\n# Check the Format of a Number\n\nThis feature allows you to check the format of a mobile phone number. It is available for free.\n\n<div class=\"alert alert-warning\">Limit: 360 requests per minute.<br>\nIf you exceed these limits, you will receive an HTTP 429 response.</div>\n\n\n\n\n\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #5cb85c; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div",
+        "Url": "en/docs/verification-numeros/verification_page2"
+    },
+    {
+        "Title": "Crédits",
+        "Intro": "Page 2 Crédits",
+        "Content": "---\ntitle: Crédits\ndescription: Page 2 Crédits.\n---\n\n# Introduction à l'API SMS Partner\n\nCette requête est utilisée pour récupérer votre crédit disponible de SMS, ainsi que le nombre de SMS en instance de départ.\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/me",
+        "Url": "docs/sms/smsp2"
+    },
+    {
+        "Title": "Introdução",
+        "Intro": "Página de introdução à API SMS Partner",
+        "Content": "---\ntitle: Introdução\nlang: pt\ndescription: Página de introdução à API SMS Partner.\n---\n\n# Introdução à API SMS Partner\n\nOs envios de SMS são feitos através da [API SMS](https://www.smspartner.fr/api-sms/) da SMS Partner. A partir do site, você tem acesso imediato à nossa API gratuita: ela permite integrar facilmente nossos serviços de SMS ao seu site, software ou aplicação CRM em PHP, ASP, .NET, Java ou qualquer outro idioma.\n\n\n\n## Configurações\n\nCada solicitação da API suporta pelo menos os se",
+        "Url": "docs/sms/smsp1.pt"
+    },
+    {
+        "Title": "Gérer le transfert d’appel",
+        "Intro": ">",
+        "Content": "---\ntitle: Gérer le transfert d’appel\ndescription: >\n---\n# Transfert d’appel\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/vn/callforward</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètre       | Des",
+        "Url": "docs/sms/smsp3"
+    },
+    {
+        "Title": "Manage Call Forwarding",
+        "Intro": ">",
+        "Content": "---\ntitle: Manage Call Forwarding\ndescription: >\n---\n# Call Forwarding\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/vn/callforward</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:----",
+        "Url": "en/docs/sms/smsp3"
+    },
+    {
+        "Title": "créditos",
+        "Intro": "Page 2 créditos",
+        "Content": "---\ntitle: créditos\ndescription: Page 2 créditos.\n---\n\n# Introdução ao Parceiro API SMS\n\nEsta consulta é usado para recuperar seu crédito SMS disponível e o número de pendente de início SMS.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/me</span>\n</div>\n\n### C",
+        "Url": "docs/sms/smsp2.pt"
+    },
+    {
+        "Title": "Introduction",
+        "Intro": "Page d'introduction à l'API SMS Partner",
+        "Content": "---\ntitle: Introduction \nlang: fr\ndescription: Page d'introduction à l'API SMS Partner.\n---\n\n# Introduction à l'API SMS Partner\n\nLes envois de SMS sont effectués à partir de l'[API SMS](https://www.smspartner.fr/api-sms/) de SMS Partner. Depuis le site, vous avez un accès immédiat à notre API gratuite : elle vous permet d’intégrer facilement nos services de SMS à votre site web, logiciel ou application CRM en PHP, ASP, .NET, Java ou tout autre langage.\n\n\n## Paramètres\n\nChaque demande d'API prend",
+        "Url": "docs/sms/smsp1"
+    },
+    {
+        "Title": "Credits",
+        "Intro": "Page 2 Credits",
+        "Content": "---\ntitle: Credits\ndescription: Page 2 Credits.\n---\n\n# Introduction to SMS Partner API\n\nThis endpoint is used to retrieve your available SMS credits and the number of pending SMS.\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/me</span>\n</div>\n\n## Parameters",
+        "Url": "en/docs/sms/smsp2"
+    },
+    {
+        "Title": "Crediti",
+        "Intro": "Page 2 Crediti",
+        "Content": "---\ntitle: Crediti\ndescription: Page 2 Crediti.\n---\n\n# Introduzione all'API Partner SMS\n\nQuesta interrogazione serve a recuperare il credito SMS disponibile e il numero di messaggi SMS in attesa.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/me</span>\n</div>",
+        "Url": "docs/sms/smsp2.it"
+    },
+    {
+        "Title": "Introduzione",
+        "Intro": "Pagina introduttiva dell'API SMS Partner",
+        "Content": "---\ntitle: Introduzione\nlang: it\ndescription: Pagina introduttiva dell'API SMS Partner.\n---\n\n# Introduzione all'API SMS Partner\n\nGli SMS sono inviati tramite [PartnerSMS](https://www.smspartner.fr/api-sms/) di SMS Partner. Dal sito, hai accesso immediato alla nostra API gratuita: ti permette di integrare facilmente i nostri servizi di SMS nel tuo sito web, software o applicazione CRM in PHP, ASP, .NET, Java o qualsiasi altro linguaggio.\n\n## Parametri\n\nOgni richiesta API supporta almeno i seguent",
+        "Url": "docs/sms/smsp1.it"
+    },
+    {
+        "Title": "Créditos",
+        "Intro": "Page 2 Créditos",
+        "Content": "---\ntitle: Créditos\ndescription: Page 2 Créditos.\n---\n\n# Introducción a la API de SMS Partner\n\nEsta solicitud se utiliza para recuperar su crédito disponible de SMS y el número de SMS pendiente de inicio.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/me</span>",
+        "Url": "docs/sms/smsp2.es"
+    },
+    {
+        "Title": "Introduction",
+        "Intro": "Page d'introduction à l'API SMS Partner",
+        "Content": "---\ntitle: Introduction \nlang: en\ndescription: Page d'introduction à l'API SMS Partner.\nslug: page-01\n---\n\n# Introduction to SMS Partner’s API\n\nSMS messages are sent from the [SMS Partner](https://www.smspartner.fr/api-sms/) platform. From the site, you have immediate access to our free API: it allows you to easily integrate our SMS services into your website, software or CRM application in PHP, ASP, .NET, Java or any other language.\n\n\n## Parameters\n\nEach API request supports at least the follow",
+        "Url": "en/docs/sms/smsp1"
+    },
+    {
+        "Title": "Ajouter un stop SMS",
+        "Intro": ">",
+        "Content": "---\ntitle: Ajouter un stop SMS\ndescription: >\n---\n# Ajouter un numéro à la liste des stops\nCette requête permet d’ajouter un numéro à la liste des stops.\n  \n   <div class=\"alert alert-info\">\nA noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme.    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; paddin",
+        "Url": "docs/sms/gestion-des-reponses-et-stop/gestion_reponsep2"
+    },
+    {
+        "Title": "Remove a number",
+        "Intro": ">",
+        "Content": "---\ntitle: Remove a number\ndescription: >\n---\n# Remove a number from the stop list\nThis request allows you to remove a number from the stop list.\n  \n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/stop-sms/delete</span>\n</div>\n\n\n## Parameters\nEach API request s",
+        "Url": "en/docs/sms/gestion-des-reponses-et-stop/gestion_reponsep3"
+    },
+    {
+        "Title": "Liste des stops",
+        "Intro": ">",
+        "Content": "---\ntitle: Liste des stops\ndescription: >\n---\n# Liste des stops\nCette requête permet de récupérer la liste des numéros qui ont envoyé un stop.\n  \n   <div class=\"alert alert-info\">\n   A noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme.\n    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px",
+        "Url": "docs/sms/gestion-des-reponses-et-stop/gestion_reponsep1"
+    },
+    {
+        "Title": "Response Management",
+        "Intro": ">",
+        "Content": "---\ntitle: Response Management\ndescription: >\n---\n\n\n\n\n\n# Response on a long number\n\nSMS Partner offers you the rental of a long number (example: 06 XX XX XX XX).\nTo learn more about creating a dedicated number, [contact us](https://www.smspartner.fr/contact).\n\n   <div class=\"alert alert-info\">\nNote: To receive responses: configure your <strong> response reception URL </strong> in your <a href=\"https://my.smspartner.fr/connexion\" style=\"background-color: #47a947; color: white; padding: 5px 8px; t",
+        "Url": "en/docs/sms/gestion-des-reponses-et-stop/gestion_reponsep4"
+    },
+    {
+        "Title": "List of stops",
+        "Intro": ">",
+        "Content": "---\ntitle: List of stops\ndescription: >\n---\n# List of stops\nThis request allows you to retrieve the list of numbers that have sent a stop.\n  \n   <div class=\"alert alert-info\">\n   Note: The reports are received on average a few seconds after the SMS is sent; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.\n    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-w",
+        "Url": "en/docs/sms/gestion-des-reponses-et-stop/gestion_reponsep1"
+    },
+    {
+        "Title": "Add a stop SMS",
+        "Intro": ">",
+        "Content": "---\ntitle: Add a stop SMS\ndescription: >\n---\n# Add a number to the stop list\nThis request allows you to add a number to the stop list.\n  \n   <div class=\"alert alert-info\">\nNote: The reports are received on average a few seconds after the SMS is sent; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.\n    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight:",
+        "Url": "en/docs/sms/gestion-des-reponses-et-stop/gestion_reponsep2"
+    },
+    {
+        "Title": "Supprimer un numéro",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer un numéro\ndescription: >\n---\n# Supprimer un numéro de la liste des stops\nCette requête permet de supprimer un numéro à la liste des stops.\n  \n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/stop-sms/delete</span>\n</div>\n\n\n## Paramètres\nChaq",
+        "Url": "docs/sms/gestion-des-reponses-et-stop/gestion_reponsep3"
+    },
+    {
+        "Title": "Gestion des réponses",
+        "Intro": ">",
+        "Content": "---\ntitle: Gestion des réponses\ndescription: >\n---\n\n\n# Réponse sur un numéro long\n\nSMS Partner vous propose la location d’un numéro long (exemple : 06 XX XX XX XX).\nPour en savoir plus sur la création d’un numéro dédié, [contactez-nous](https://www.smspartner.fr/contact).\n\n   <div class=\"alert alert-info\">\nA noter : Pour recevoir les réponses: paramétrer votre <strong> URL de réception des réponses </strong> dans votre onglet   <a href=\"https://my.smspartner.fr/connexion\" style=\"background-color",
+        "Url": "docs/sms/gestion-des-reponses-et-stop/gestion_reponsep4"
+    },
+    {
+        "Title": "List of Replaced Characters",
+        "Intro": "List of Replaced Characters",
+        "Content": "---\ntitle: List of Replaced Characters\ndescription: List of Replaced Characters\n---\n<br>\n# List of Replaced Characters\n\n| Characters | Replaced by |\n|:------------:|:---------------:|\n| ą          | à             |\n| ’          | ‘             |\n| ÿ          | y             |\n| ç          | Ç             |\n| û          | u             |\n| ü          | u             |\n| ï          | i             |\n| ô          | o             |\n| ö          | o             |\n| ó          | o             |\n| î",
+        "Url": "en/docs/sms/envoyer-des-sms/envois_smsp4"
+    },
+    {
+        "Title": "Annuler l’envoi d’un SMS",
+        "Intro": ">",
+        "Content": "---\ntitle: Annuler l’envoi d’un SMS\ndescription: >\n---\n# Annuler l’envoi d’un SMS différé\nCette requête est utilisée pour envoyer un sondage en temps réel ou en différé.\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/message-cancel</span>\n</div>\n\n\n\n## Paramètres",
+        "Url": "docs/sms/envoyer-des-sms/envois_smsp6"
+    },
+    {
+        "Title": "Bulk Sending",
+        "Intro": ">",
+        "Content": "---\ntitle: Bulk Sending\ndescription: >\n---\n# Sending SMS\nThis request is used to send SMS in real-time or scheduled...\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/send</span>\n</div>\n\n\n## Parameters\n\n   <div class=\"alert alert-info\">\n        The platform does not send",
+        "Url": "en/docs/sms/envoyer-des-sms/envois_smsp2"
+    },
+    {
+        "Title": "Send a Survey",
+        "Intro": ">",
+        "Content": "---\ntitle: Send a Survey\ndescription: >\n---\n# Send a Survey\nThis request is used to send a survey in real-time or scheduled.\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/sondage/to/send</span>\n</div>\n\n\n\n\n## Parameters\n\n   <div class=\"alert alert-info\">\n        The p",
+        "Url": "en/docs/sms/envoyer-des-sms/envois_smsp5"
+    },
+    {
+        "Title": "Envoyer des SMS via un numéro long",
+        "Intro": "Envoyer des SMS via un numéro long",
+        "Content": "---\ntitle: Envoyer des SMS via un numéro long\ndescription: Envoyer des SMS via un numéro long\n---\n# Envoyer des SMS via un numéro long\nCette requête est utilisée pour envoyer des SMS en temps réel ou en différé avec un numéro long.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.smspartne",
+        "Url": "docs/sms/envoyer-des-sms/envois_smsp3"
+    },
+    {
+        "Title": "Envoi unitaire",
+        "Intro": ">",
+        "Content": "---\ntitle: Envoi unitaire\ndescription: >\n---\n# Envoyer des SMS\nCette requête est utilisée pour envoyer des SMS en temps réel ou en différé.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/send</span>\n</div>\n\n\n## Paramètres\n\n   <div class=\"alert alert-info\">\n        La p",
+        "Url": "docs/sms/envoyer-des-sms/envois_smsp1"
+    },
+    {
+        "Title": "Liste des caractères remplacés",
+        "Intro": "Liste des caractères remplacés",
+        "Content": "---\ntitle: Liste des caractères remplacés\ndescription: Liste des caractères remplacés\n---\n<br>\n# Liste des caractères remplacés\n\n\n| Caractères | Remplacé par |\n|:------------:|:---------------:|\n| ą          | à             |\n| ’          | ‘             |\n| ÿ          | y             |\n| ç          | Ç             |\n| û          | u             |\n| ü          | u             |\n| ï          | i             |\n| ô          | o             |\n| ö          | o             |\n| ó          | o",
+        "Url": "docs/sms/envoyer-des-sms/envois_smsp4"
+    },
+    {
+        "Title": "Single Send",
+        "Intro": ">",
+        "Content": "---\ntitle: Single Send\ndescription: >\n---\n# Sending SMS\nThis request is used to send SMS in real-time or scheduled.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/send</span>\n</div>\n\n\n## Parameters\n\n   <div class=\"alert alert-info\">\n        The platform does not send c",
+        "Url": "en/docs/sms/envoyer-des-sms/envois_smsp1"
+    },
+    {
+        "Title": "Cancel SMS Sending",
+        "Intro": ">",
+        "Content": "---\ntitle: Cancel SMS Sending\ndescription: >\n---\n# Cancel Scheduled SMS Sending\nThis request is used to cancel a scheduled SMS sending.\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/message-cancel</span>\n</div>\n\n\n## Parameters\n           \n| Parameter       |",
+        "Url": "en/docs/sms/envoyer-des-sms/envois_smsp6"
+    },
+    {
+        "Title": "Envoyer un sondage",
+        "Intro": ">",
+        "Content": "---\ntitle: Envoyer un sondage\ndescription: >\n---\n# Envoyer un sondage\nCette requête est utilisée pour envoyer un sondage en temps réel ou en différé.\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/sondage/to/send</span>\n</div>\n\n\n## Paramètres\n\n   <div class=\"alert ale",
+        "Url": "docs/sms/envoyer-des-sms/envois_smsp5"
+    },
+    {
+        "Title": "Send SMS via Long Number",
+        "Intro": "Send SMS via Long Number",
+        "Content": "---\ntitle: Send SMS via Long Number\ndescription: Send SMS via Long Number\n---\n# Send SMS via Long Number\nThis request is used to send SMS in real-time or delayed using a long number.\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.smspartner.fr/v1/vn/send</span>\n</div>\n\n\n## Parameters\n\n|",
+        "Url": "en/docs/sms/envoyer-des-sms/envois_smsp3"
+    },
+    {
+        "Title": "Envoi par lots",
+        "Intro": ">",
+        "Content": "---\ntitle: Envoi par lots\ndescription: >\n---\n# Envoyer des SMS\nCette requête est utilisée pour envoyer des SMS en temps réel ou en différé...\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/bulk-send</span>\n</div>\n\n## Paramètres\n\n   <div class=\"alert alert-info\">",
+        "Url": "docs/sms/envoyer-des-sms/envois_smsp2"
+    },
+    {
+        "Title": "Activation",
+        "Intro": ">",
+        "Content": "---\ntitle: Activation\ndescription: >\n---\n# Activation et création des sous-comptes\n## Demande d’activation des sous-comptes\n> SMS Partner vous donne la possibilité de créer des sous-comptes. Ainsi vous pouvez gérer un nombre illimité de sous-compte à partir de votre compte principal.\n\n**Activation des sous-comptes**\n\nPour activer cette fonctionnalité, il suffit de contacter notre [équipe technique.](https://www.smspartner.fr/contact).\n\n## Création des sous-comptes\n> Pour créer des sous-compte à",
+        "Url": "docs/sms/sous-comptes/sous_comptep1"
+    },
+    {
+        "Title": "Remove Credits",
+        "Intro": ">",
+        "Content": "---\ntitle: Remove Credits\ndescription: >\n---\n# Removing Credit\n> From your account, you can remove credits from your sub-accounts. The credits will be added to your main account.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/subaccount/credit/remove</span",
+        "Url": "en/docs/sms/sous-comptes/sous_comptep6"
+    },
+    {
+        "Title": "Delete a sub-account",
+        "Intro": ">",
+        "Content": "---\ntitle: Delete a sub-account\ndescription: >\n---\n# Delete a sub-account\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\"display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/subaccount/remove</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:--",
+        "Url": "en/docs/sms/sous-comptes/sous_comptep3"
+    },
+    {
+        "Title": "Ajouter des crédits",
+        "Intro": ">",
+        "Content": "---\ntitle: Ajouter des crédits\ndescription: >\n---\n# Ajout de crédit\n> Depuis votre compte, il vous est possible d’ajouter des crédits sur vos sous comptes. Les crédits seront débités de votre compte principal.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1",
+        "Url": "docs/sms/sous-comptes/sous_comptep5"
+    },
+    {
+        "Title": "Supprimer un sous-compte",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer un sous-compte\ndescription: >\n---\n# Supprimer un sous-compte\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/subaccount/remove</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètre",
+        "Url": "docs/sms/sous-comptes/sous_comptep3"
+    },
+    {
+        "Title": "Supprimer des crédits",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer des crédits\ndescription: >\n---\n# Suppression de crédit\n> Depuis votre compte, il vous est possible de supprimer des crédits de vos sous comptes. Les crédits seront ajoutés à votre compte principal.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspart",
+        "Url": "docs/sms/sous-comptes/sous_comptep6"
+    },
+    {
+        "Title": "Liste des sous-comptes",
+        "Intro": ">",
+        "Content": "---\ntitle: Liste des sous-comptes\ndescription: >\n---\n# Récupération des sous comptes\n> Pour récupérer, les informations des sous comptes, il y a deux méthodes : <li> Par la plateforme: </li>  En vous rendant sur votre [tableau de bord](https://my.smspartner.fr/connexion).ou vous aurez accès à l’ensemble des sous comptes associés à votre compte. <br> <li> Par l’API: </li> En effectuant une requête sur l’url ci-dessous.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: in",
+        "Url": "docs/sms/sous-comptes/sous_comptep4"
+    },
+    {
+        "Title": "List of sub-accounts",
+        "Intro": ">",
+        "Content": "---\ntitle: List of sub-accounts\ndescription: >\n---\n# Retrieving sub-accounts\n> To retrieve sub-account information, there are two methods: <li> Through the platform: </li> By going to your [dashboard](https://my.smspartner.fr/connexion) where you will have access to all sub-accounts associated with your account. <br> <li> Through the API: </li> By making a request to the URL below.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white; display: inline-block; padding: 2px 6px; font-we",
+        "Url": "en/docs/sms/sous-comptes/sous_comptep4"
+    },
+    {
+        "Title": "Sub-account Creation",
+        "Intro": ">",
+        "Content": "---\ntitle: Sub-account Creation\ndescription: >\n---\n# Sub-account Creation\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/subaccount/create</span>\n</div>\n\n\n## Parameters\nEach API request supports the following parameters:\n\n| Parameter       | Description |\n|",
+        "Url": "en/docs/sms/sous-comptes/sous_comptep2"
+    },
+    {
+        "Title": "Création de sous-compte",
+        "Intro": ">",
+        "Content": "---\ntitle: Création de sous-compte\ndescription: >\n---\n# Création de sous-compte\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/subaccount/create</span>\n</div>\n\n\n## Paramètres\nChaque demande d’API prend en charge les paramètres suivants :\n\n| Paramètre",
+        "Url": "docs/sms/sous-comptes/sous_comptep2"
+    },
+    {
+        "Title": "Activation",
+        "Intro": ">",
+        "Content": "---\ntitle: Activation\ndescription: >\n---\n# Activation and creation of sub-accounts\n## Request for sub-account activation\n> SMS Partner gives you the ability to create sub-accounts. This way, you can manage an unlimited number of sub-accounts from your main account.\n\n**Sub-account activation**\n\nTo activate this feature, simply contact our [technical team.](https://www.smspartner.fr/contact).\n\n## Creation of sub-accounts\n> There are two possible solutions to create sub-accounts from your master ac",
+        "Url": "en/docs/sms/sous-comptes/sous_comptep1"
+    },
+    {
+        "Title": "Add Credits",
+        "Intro": ">",
+        "Content": "---\ntitle: Add Credits\ndescription: >\n---\n# Adding Credit\n> From your account, you can add credits to your sub-accounts. The credits will be debited from your main account.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\"color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/subaccount/credit/add</span>\n</div>",
+        "Url": "en/docs/sms/sous-comptes/sous_comptep5"
+    },
+    {
+        "Title": "Statistique des envois",
+        "Intro": ">",
+        "Content": "---\ntitle: Statistique des envois\ndescription: >\n---\n# Statistique des envois\nCette requête est utilisée pour récupérer les statistiques des envois sur une période précise. Elle permet de récupérer le nombre de SMS envoyés et le cout associé à ces envoiS.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-",
+        "Url": "docs/sms/status-et-statistiques/statusp5"
+    },
+    {
+        "Title": "Status by Message",
+        "Intro": ">",
+        "Content": "---\ntitle: Status by Message\ndescription: >\n---\n# Status by ID\nThis request allows you to retrieve the statuses of multiple SMS from an ID.\n\n<div class=\"alert alert-info\">\nNote: delivery reports are typically received a few seconds after sending the SMS; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.\n    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-",
+        "Url": "en/docs/sms/status-et-statistiques/statusp3"
+    },
+    {
+        "Title": "Sending Statistics",
+        "Intro": ">",
+        "Content": "---\ntitle: Sending Statistics\ndescription: >\n---\n# Sending Statistics\nThis request is used to retrieve sending statistics for a specific period. It allows you to get the number of SMS sent and the associated cost of these sends.\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\"color: red; display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.sm",
+        "Url": "en/docs/sms/status-et-statistiques/statusp5"
+    },
+    {
+        "Title": "Individual Status",
+        "Intro": ">",
+        "Content": "---\ntitle: Individual Status\ndescription: >\n---\n# Individual Delivery Status\nThis request allows you to retrieve the status of an SMS.\n\n<div class=\"alert alert-info\">\nNote: delivery reports are typically received a few seconds after sending the SMS;\nhowever, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.\n    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weigh",
+        "Url": "en/docs/sms/status-et-statistiques/statusp1"
+    },
+    {
+        "Title": "Status by Tag",
+        "Intro": ">",
+        "Content": "---\ntitle: Status by Tag\ndescription: >\n---\n# Status by Tag\nThis request allows you to retrieve the statuses of multiple SMS using a Tag.\n<div class=\"alert alert-info\">\nNote: delivery reports are typically received a few seconds after sending the SMS; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform. </div>\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight:",
+        "Url": "en/docs/sms/status-et-statistiques/statusp4"
+    },
+    {
+        "Title": "Multiple Status",
+        "Intro": ">",
+        "Content": "---\ntitle: Multiple Status\ndescription: >\n---\n# Delivery Status\nThis request allows you to retrieve the status of multiple SMS (maximum 500 numbers).\n\n<div class=\"alert alert-info\">\nNote: delivery reports are typically received a few seconds after sending the SMS; however, this delay can extend up to a maximum of 48 hours depending on the operators and the load on our platform.\n    </div>\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px",
+        "Url": "en/docs/sms/status-et-statistiques/statusp2"
+    },
+    {
+        "Title": "Statut par Tag",
+        "Intro": ">",
+        "Content": "---\ntitle: Statut par Tag\ndescription: >\n---\n# Statut par Tag\nCette requête permet de récupérer les statuts de plusieurs SMS à partir d’un Tag.\n<div class=\"alert alert-info\">\nA noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme. </div>\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font",
+        "Url": "docs/sms/status-et-statistiques/statusp4"
+    },
+    {
+        "Title": "Statut multiple",
+        "Intro": ">",
+        "Content": "---\ntitle: Statut multiple\ndescription: >\n---\n# Statut de remise\nCette requête permet de récupérer le statut de plusieurs SMS (maximum 500 numéros).\n\n<div class=\"alert alert-info\">\nA noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme.\n    </div>\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2p",
+        "Url": "docs/sms/status-et-statistiques/statusp2"
+    },
+    {
+        "Title": "Statut unitaire",
+        "Intro": ">",
+        "Content": "---\ntitle: Statut unitaire\ndescription: >\n---\n# Statut de remise unitaire\nCette requête permet de récupérer le statut d’un SMS.\n\n<div class=\"alert alert-info\">\nA noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ;\ncependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme.\n    </div>\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px 6px; font-weight: b",
+        "Url": "docs/sms/status-et-statistiques/statusp1"
+    },
+    {
+        "Title": "Statut par message",
+        "Intro": ">",
+        "Content": "---\ntitle: Statut par message\ndescription: >\n---\n# Statut par ID\nCette requête permet de récupérer les statuts de plusieurs SMS à partir d’un ID.\n\n<div class=\"alert alert-info\">\nA noter : les comptes-rendus sont reçus en moyenne quelques secondes après l’envoi du SMS ; cependant, ce délai peut s’étendre jusqu’à 48h maximum selon les opérateurs et la charge de notre plateforme.\n    </div>\n\n\n\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #FF4C4C; color: white; display: inline-block; padding: 2px",
+        "Url": "docs/sms/status-et-statistiques/statusp3"
+    },
+    {
+        "Title": "Ajouter un lot de contacts",
+        "Intro": ">",
+        "Content": "---\ntitle: Ajouter un lot de contacts\ndescription: >\n---\n# Ajouter un lot de contacts\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/contact/add</span>\n\n</div>\n\nCette requête est utilisée pour ajouter un lot de 500 contacts (maximum).\n\n\n\n## Requête\n\nExemple de requête :",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp4"
+    },
+    {
+        "Title": "Obtenir le détail d’un contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Obtenir le détail d’un contact\ndescription: >\n---\n# Obtenir le détail d’un contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/contact/detail</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètr",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp9"
+    },
+    {
+        "Title": "Delete a contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Delete a contact\ndescription: >\n---\n# Delete a contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.smspartner.fr/v1/contact/delete</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:----------",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp6"
+    },
+    {
+        "Title": "Get the list of groups",
+        "Intro": ">",
+        "Content": "---\ntitle: Get the list of groups\ndescription: >\n---\n# Get the list of contact groups\n\n\n## URL\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/group/list</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp7"
+    },
+    {
+        "Title": "Modifier un contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Modifier un contact\ndescription: >\n---\n# Modifier un contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/contact/update</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètre       | Descript",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp5"
+    },
+    {
+        "Title": "Get contact details",
+        "Intro": ">",
+        "Content": "---\ntitle: Get contact details\ndescription: >\n---\n# Get contact details\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> https://api.smspartner.fr/v1/contact/detail</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:-------",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp9"
+    },
+    {
+        "Title": "Ajouter un contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Ajouter un contact\ndescription: >\n---\n# Ajouter un contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/contact/add</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètre       | Description |",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp2"
+    },
+    {
+        "Title": "Supprimer un contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer un contact\ndescription: >\n---\n# Supprimer un contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">http://api.smspartner.fr/v1/contact/delete</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètre       | Descrip",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp6"
+    },
+    {
+        "Title": "Ajouter un groupe",
+        "Intro": ">",
+        "Content": "---\ntitle: Ajouter un groupe\ndescription: >\n---\n# Ajouter un groupe\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/group/add</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramètre       | Description |\n|:-",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp1"
+    },
+    {
+        "Title": "Modify a contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Modify a contact\ndescription: >\n---\n# Modify a contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/contact/update</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:---------",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp5"
+    },
+    {
+        "Title": "Add a contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Add a contact\ndescription: >\n---\n# Add a contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/contact/add</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:-----------------:",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp2"
+    },
+    {
+        "Title": "Supprimer un groupe de contact",
+        "Intro": ">",
+        "Content": "---\ntitle: Supprimer un groupe de contact\ndescription: >\n---\n# Supprimer un groupe de contact\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">  http://api.smspartner.fr/v1/groupe/delete</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Paramè",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp3"
+    },
+    {
+        "Title": "Obtenir la liste des groupes",
+        "Intro": ">",
+        "Content": "---\ntitle: Obtenir la liste des groupes\ndescription: >\n---\n# Obtenir la liste des groupes de contacts\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">GET</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">https://api.smspartner.fr/v1/group/list</span>\n</div>\n\n\n\n\n## Paramètres\n\nChaque demande d’API prend en charge les paramètres suivants :\n           \n| Param",
+        "Url": "docs/sms/gestion-des-contacts/gestion_contactp7"
+    },
+    {
+        "Title": "Add a group",
+        "Intro": ">",
+        "Content": "---\ntitle: Add a group\ndescription: >\n---\n# Add a group\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/group/add</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:-----------------:|-----",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp1"
+    },
+    {
+        "Title": "Add a batch of contacts",
+        "Intro": ">",
+        "Content": "---\ntitle: Add a batch of contacts\ndescription: >\n---\n# Add a batch of contacts\n\n\n## URL\n\n<div>\n  <div style=\"background-color: #49CC90; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">POST</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\"> http://api.smspartner.fr/v1/contact/add</span>\n\n</div>\n\nThis request is used to add a batch of 500 contacts (maximum).\n\n\n\n## Request\nExample of a request:\n\n``` bash\n {",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp4"
+    },
+    {
+        "Title": "Delete a contact group",
+        "Intro": ">",
+        "Content": "---\ntitle: Delete a contact group\ndescription: >\n---\n# Delete a contact group\n\n\n## URL\n\n<div>\n  <div style=\"background-color: red; color: white;  display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;\">DELETE</div> \n  <span style=\" display: inline-block; vertical-align: middle; margin-left: 10px;\">  http://api.smspartner.fr/v1/group/delete</span>\n</div>\n\n\n\n\n## Parameters\n\nEach API request supports the following parameters:\n           \n| Parameter       | Description |\n|:",
+        "Url": "en/docs/sms/gestion-des-contacts/gestion_contactp3"
+    }
+]

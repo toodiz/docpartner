@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introducción
 lang: es
 description: Page d'introduction à l'API SMS Partner.
 ---

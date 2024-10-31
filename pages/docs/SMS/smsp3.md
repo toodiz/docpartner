@@ -65,6 +65,7 @@ Exemple de message d’erreur :
 }
 ```
 
+
 ## Code de contrôle
 
 | _  | Code erreurs |
@@ -85,6 +86,4 @@ Exemple de message d’erreur :
 | 18   | Le transfert d’appel est déjà désactivé |
 
 <br>
-
-
 

@@ -18,7 +18,7 @@ INSERT INTO URLAPI (textcode, id_chemin) VALUES
 ('## URL
 
 <div>
-  <div style="background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE</div> 
+  <div style="background-color: red ; color: white; display: inline-block; padding: 2px 6px; font-weight: bold; border-radius: 4px;">DELETE </div> 
   <span style="color: #FF4C4C; display: inline-block; vertical-align: middle; margin-left: 10px;">  https://api.voicepartner.fr/v1/campaign/cancel</span>
 </div>
 ',  94);
